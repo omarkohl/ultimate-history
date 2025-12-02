@@ -1,0 +1,131 @@
+crowdanki_uuid: 61d815fe-ceb4-11f0-8661-6154742e1518
+deck_config_uuid: 61d8263e-ceb4-11f0-8661-6154742e1518
+deck_configurations:
+- __type__: DeckConfig
+  answerAction: 0
+  autoplay: true
+  buryInterdayLearning: true
+  crowdanki_uuid: 61d8263e-ceb4-11f0-8661-6154742e1518
+  desiredRetention: 0.9
+  dyn: false
+  easyDaysPercentages:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  fsrsParams5:
+  - 0.74378365
+  - 3.3308978
+  - 8.728701
+  - 25.981348
+  - 5.2066474
+  - 1.7694893
+  - 1.5957514
+  - 0.025999105
+  - 2.1706922
+  - 0.1493431
+  - 1.3373141
+  - 2.0122523
+  - 0.09522998
+  - 0.31466594
+  - 1.00644
+  - 0.027075332
+  - 3.9996064
+  fsrsParams6:
+  - 0.018639695
+  - 0.5397597
+  - 5.5975876
+  - 41.049927
+  - 6.484245
+  - 0.7690794
+  - 3.0564547
+  - 0.018547056
+  - 1.8103392
+  - 0.21039544
+  - 0.738583
+  - 1.4756385
+  - 0.051673383
+  - 0.24792211
+  - 1.6103477
+  - 0.63078964
+  - 1.8729
+  - 0.6187498
+  - 0.22106819
+  - 0.15878594
+  - 0.20002507
+  fsrsWeights:
+  - 0.74378365
+  - 3.3308978
+  - 8.728701
+  - 25.981348
+  - 5.2066474
+  - 1.7694893
+  - 1.5957514
+  - 0.025999105
+  - 2.1706922
+  - 0.1493431
+  - 1.3373141
+  - 2.0122523
+  - 0.09522998
+  - 0.31466594
+  - 1.00644
+  - 0.027075332
+  - 3.9996064
+  ignoreRevlogsBeforeDate: '1970-01-01'
+  interdayLearningMix: 0
+  lapse:
+    delays:
+    - 30.0
+    leechAction: 0
+    leechFails: 8
+    minInt: 1
+    mult: 0.0
+  maxTaken: 30
+  name: Default
+  new:
+    bury: true
+    delays:
+    - 10.0
+    - 25.0
+    initialFactor: 2500
+    ints:
+    - 3
+    - 4
+    - 0
+    order: 1
+    perDay: 10
+  newGatherPriority: 5
+  newMix: 0
+  newPerDayMinimum: 0
+  newSortOrder: 4
+  questionAction: 0
+  replayq: true
+  rescheduleFsrsCards: false
+  rev:
+    bury: true
+    ease4: 1.3
+    hardFactor: 1.2
+    ivlFct: 1.0
+    maxIvl: 36500
+    perDay: 100
+  reviewOrder: 2
+  secondsToShowAnswer: 0.0
+  secondsToShowQuestion: 0.0
+  sm2Retention: 0.9
+  stopTimerOnAnswer: false
+  timer: 0
+  waitForAudio: true
+  weightSearch: ''
+desc: ''
+desiredRetention: null
+dyn: 0
+extendNew: 20
+extendRev: 0
+name: Ultimate History | 19th Century
+newLimit: null
+newLimitToday: null
+reviewLimit: null
+reviewLimitToday: null

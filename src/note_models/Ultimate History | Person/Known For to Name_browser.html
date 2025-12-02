@@ -1,0 +1,63 @@
+<div class="value value--top">?</div>
+{{#Picture}}
+  <div class="value value--image">
+    <svg
+      class="placeholder"
+      xmlns="http://www.w3.org/2000/svg"
+      width="225"
+      height="150"
+      viewBox="0 0 225 150"
+    >
+      <rect width="225" height="150" />
+    </svg>
+  </div>
+{{/Picture}}
+
+<div class="info"></div>
+
+<hr>
+
+<div class="type">Historical Person | Name</div>
+<div class="value"><b>Known For:</b> {{Known For}}</div>
+
+--
+
+<div class="value value--top">{{Name}}</div>
+{{#Picture}}
+  <div class="value value--image">{{Picture}}</div>
+{{/Picture}}
+
+<div class="info"></div>
+
+<hr>
+
+<div class="type">Historical Person | Name</div>
+<div class="value"><b>Known for:</b> {{Known For}}</div>
+<div class="value"><b>Life:</b> {{Date of Birth}} - {{Date of Death}}</div>
+<div class="value">
+  <b>Related people:</b>
+  <ul>
+    {{#Related Person 1}}<li>{{Related Person 1}}</li>{{/Related Person 1}}
+    {{#Related Person 2}}<li>{{Related Person 2}}</li>{{/Related Person 2}}
+    {{#Related Person 3}}<li>{{Related Person 3}}</li>{{/Related Person 3}}
+    {{#Related Person 4}}<li>{{Related Person 4}}</li>{{/Related Person 4}}
+    {{#Related Person 5}}<li>{{Related Person 5}}</li>{{/Related Person 5}}
+    {{#Personal Related Person 1}}<li>{{Personal Related Person 1}}</li>{{/Personal Related Person 1}}
+    {{#Personal Related Person 2}}<li>{{Personal Related Person 2}}</li>{{/Personal Related Person 2}}
+    {{#Personal Related Person 3}}<li>{{Personal Related Person 3}}</li>{{/Personal Related Person 3}}
+  </ul>
+</div>
+<div class="value">
+  <b>Related events:</b>
+  <ul>
+    {{#Related Event 1}}<li>{{Related Event 1}}</li>{{/Related Event 1}}
+    {{#Related Event 2}}<li>{{Related Event 2}}</li>{{/Related Event 2}}
+    {{#Related Event 3}}<li>{{Related Event 3}}</li>{{/Related Event 3}}
+    {{#Related Event 4}}<li>{{Related Event 4}}</li>{{/Related Event 4}}
+    {{#Related Event 5}}<li>{{Related Event 5}}</li>{{/Related Event 5}}
+    {{#Personal Related Event 1}}<li>{{Personal Related Event 1}}</li>{{/Personal Related Event 1}}
+    {{#Personal Related Event 2}}<li>{{Personal Related Event 2}}</li>{{/Personal Related Event 2}}
+    {{#Personal Related Event 3}}<li>{{Personal Related Event 3}}</li>{{/Personal Related Event 3}}
+  </ul>
+</div>
+<div class="info">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>
