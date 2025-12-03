@@ -135,7 +135,7 @@
             "weightSearch": ""
         }
     ],
-    "desc": "",
+    "desc": "Learn about human history.\nSee <a href=\"https://github.com/omarkohl/ultimate-history\">github.com/omarkohl/ultimate-history</a>\nto submit bug reports and your own improvements! Everyone can collaborate in\nimproving this deck.\n<b>Version: </b>0.1.0\n",
     "desiredRetention": null,
     "dyn": 0,
     "extendNew": 20,

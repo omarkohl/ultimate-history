@@ -9,22 +9,24 @@
 - build_parts:
   - note_models_from_yaml_part:
       part_id: Ultimate History | Person
-      file: src/note_models/Ultimate History | Person/Ultimate History | 
+      file: src/note_models/Ultimate History | Person/Ultimate History |
         Person.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | Event
-      file: src/note_models/Ultimate History | Event/Ultimate History | 
+      file: src/note_models/Ultimate History | Event/Ultimate History |
         Event.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | QA
       file: src/note_models/Ultimate History | QA/Ultimate History | QA.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | Cloze
-      file: src/note_models/Ultimate History | Cloze/Ultimate History | 
+      file: src/note_models/Ultimate History | Cloze/Ultimate History |
         Cloze.yaml
   - headers_from_yaml_part:
-      part_id: deck_headers
-      file: src/headers/header1.yaml
+      - part_id: deck_headers
+        file: src/headers/header1.yaml
+        override:
+          deck_description_html_file: src/headers/description.html
   - notes_from_csvs:
       part_id: deck_notes
       save_to_file: null
