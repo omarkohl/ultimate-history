@@ -20,18 +20,27 @@ def anki_to_source() -> None:
     run("uv run brainbrew run recipes/anki_to_source.yaml")
 
 
+def validate() -> None:
+    """Validate references in CSV files."""
+    args = " ".join(sys.argv[2:])
+    run(f"uv run python src/validate_references.py {args}")
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>")
         print("\nAvailable commands:")
         print("  source-to-anki    Export source files to Anki")
         print("  anki-to-source    Import Anki changes back to source")
+        print("  validate          Validate references in CSV files")
+        print("                    Use --auto-fix to automatically apply fixes")
         sys.exit(1)
 
     command = sys.argv[1]
     commands = {
         "source-to-anki": source_to_anki,
         "anki-to-source": anki_to_source,
+        "validate": validate,
     }
 
     if command not in commands:

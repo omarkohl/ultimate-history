@@ -7,6 +7,10 @@ Anki deck to learn about human history. Collaboratively edited.
 ```bash
 uv run main.py source-to-anki
 uv run main.py anki-to-source
+
+# Verify and fix references to people and events
+uv run main.py validate
+uv run main.py validate --auto-fix
 ```
 
 ## Inspiration
