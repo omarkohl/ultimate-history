@@ -5,8 +5,8 @@ Anki deck to learn about human history. Collaboratively edited.
 ## Development
 
 ```bash
-uv run brainbrew run recipes/source_to_anki.yaml
-uv run brainbrew run recipes/anki_to_source.yaml
+uv run main.py source-to-anki
+uv run main.py anki-to-source
 ```
 
 ## Inspiration
