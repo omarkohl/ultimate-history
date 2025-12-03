@@ -24,7 +24,13 @@
       note_model: Ultimate History | Person
     - file: src/data/Ultimate History | Event.csv
       note_model: Ultimate History | Event
+    - file: src/data/Ultimate History | QA.csv
+      note_model: Ultimate History | QA
+    - file: src/data/Ultimate History | Cloze.csv
+      note_model: Ultimate History | Cloze
     note_model_mappings:
     - note_models:
       - Ultimate History | Person
       - Ultimate History | Event
+      - Ultimate History | QA
+      - Ultimate History | Cloze

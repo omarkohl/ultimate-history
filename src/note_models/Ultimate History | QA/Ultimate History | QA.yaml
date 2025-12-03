@@ -1,0 +1,58 @@
+name: Ultimate History | QA
+id: 909dc8e2-d022-11f0-b0c0-bf12fd7e12f7
+css_file: src/note_models/Ultimate History | QA/style.css
+latex_pre: "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\
+  \\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\
+  \\begin{document}\n"
+fields:
+- name: Question
+- name: Answer
+  font: Arimo
+- name: Related Person 1
+  font: Arial
+  font_size: 15
+- name: Related Person 2
+  font: Arial
+  font_size: 15
+- name: Related Person 3
+  font: Arial
+  font_size: 15
+- name: Related Person 4
+  font: Arial
+  font_size: 15
+- name: Related Person 5
+  font: Arial
+  font_size: 15
+- name: Related Event 1
+  font: Arimo
+  font_size: 15
+- name: Related Event 2
+  font: Arimo
+  font_size: 15
+- name: Related Event 3
+  font: Arimo
+  font_size: 15
+- name: Related Event 4
+  font: Arimo
+  font_size: 15
+- name: Related Event 5
+  font: Arimo
+  font_size: 15
+- name: Notes
+  font: Arimo
+  font_size: 15
+- name: Personal Notes
+  font: Arial
+  font_size: 15
+- name: Source & License
+  font: Arial
+  font_size: 15
+templates:
+- name: Question to Answer
+  html_file: src/note_models/Ultimate History | QA/Question to Answer.html
+  browser_html_file: src/note_models/Ultimate History | QA/Question to 
+    Answer_browser.html
+required_fields_per_template:
+- - 0
+  - any
+  - - 0

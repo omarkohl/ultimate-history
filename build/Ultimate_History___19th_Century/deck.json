@@ -749,46 +749,35 @@
                     0,
                     "any",
                     [
-                        4
+                        1
                     ]
                 ],
                 [
                     1,
                     "any",
                     [
-                        1
+                        0
                     ]
                 ],
                 [
                     2,
                     "any",
                     [
-                        0,
-                        4
+                        0
                     ]
                 ],
                 [
                     3,
                     "any",
                     [
-                        0,
-                        4
+                        0
                     ]
                 ],
                 [
                     4,
                     "any",
                     [
-                        0,
-                        4
-                    ]
-                ],
-                [
-                    5,
-                    "any",
-                    [
-                        0,
-                        4
+                        0
                     ]
                 ]
             ],
@@ -857,6 +846,346 @@
                 }
             ],
             "type": 0,
+            "vers": []
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "css": ".card {\n  padding: 0.2em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: left;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  margin-top: 1em;\n  max-width: 30em;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  margin-top: 0.4em;\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 0;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n.value > ul {\n  margin-top: 0.1em;\n  margin-bottom: 0;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > rect {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n\n@font-face {\n  font-family: Gentium;\n  src: url(\"_GentiumPlus-Regular.ttf\");\n}\n\npre {\n  text-align: center;\n  font-family: Gentium, \"Times New Roman\", Arial;\n}\n",
+            "flds": [
+                {
+                    "font": "Liberation Sans",
+                    "media": [],
+                    "name": "Question",
+                    "ord": 0,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Answer",
+                    "ord": 1,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 1",
+                    "ord": 2,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 2",
+                    "ord": 3,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 3",
+                    "ord": 4,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 4",
+                    "ord": 5,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 5",
+                    "ord": 6,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 1",
+                    "ord": 7,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 2",
+                    "ord": 8,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 3",
+                    "ord": 9,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 4",
+                    "ord": 10,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 5",
+                    "ord": 11,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Notes",
+                    "ord": 12,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Personal Notes",
+                    "ord": 13,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Source & License",
+                    "ord": 14,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Ultimate History | QA",
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "<div class=\"value value--top\">{{Question}}</div>\n\n<hr>\n\n<div class=\"type\">History | QA</div>\n<div class=\"value\">{{Answer}}</div>\n<div class=\"info\">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>",
+                    "bafmt": "<div class=\"value value--top\">{{Question}}</div>\n\n<hr>\n\n<div class=\"type\">History | QA</div>\n<div class=\"value\">{{Answer}}</div>\n<div class=\"info\">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>",
+                    "bfont": "",
+                    "bqfmt": "<div class=\"value value--top\">{{Question}}</div>\n\n<hr>\n\n<div class=\"type\">History | QA</div>",
+                    "bsize": 0,
+                    "did": null,
+                    "name": "Question to Answer",
+                    "ord": 0,
+                    "qfmt": "<div class=\"value value--top\">{{Question}}</div>\n\n<hr>\n\n<div class=\"type\">History | QA</div>",
+                    "scratchPad": 0
+                }
+            ],
+            "type": 0,
+            "vers": []
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
+            "css": ".card {\n  padding: 0.2em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: left;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  margin-top: 1em;\n  max-width: 30em;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  margin-top: 0.4em;\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 0;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n.value > ul {\n  margin-top: 0.1em;\n  margin-bottom: 0;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > rect {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n\n@font-face {\n  font-family: Gentium;\n  src: url(\"_GentiumPlus-Regular.ttf\");\n}\n\npre {\n  text-align: center;\n  font-family: Gentium, \"Times New Roman\", Arial;\n}\n",
+            "flds": [
+                {
+                    "font": "Liberation Sans",
+                    "media": [],
+                    "name": "Text",
+                    "ord": 0,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": true
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 1",
+                    "ord": 1,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 2",
+                    "ord": 2,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 3",
+                    "ord": 3,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 4",
+                    "ord": 4,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Related Person 5",
+                    "ord": 5,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 1",
+                    "ord": 6,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 2",
+                    "ord": 7,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 3",
+                    "ord": 8,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 4",
+                    "ord": 9,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Related Event 5",
+                    "ord": 10,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arimo",
+                    "media": [],
+                    "name": "Notes",
+                    "ord": 11,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Personal Notes",
+                    "ord": 12,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                },
+                {
+                    "font": "Arial",
+                    "media": [],
+                    "name": "Source & License",
+                    "ord": 13,
+                    "rtl": false,
+                    "size": 15,
+                    "sticky": false
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Ultimate History | Cloze",
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [
+                "english",
+                "orthography"
+            ],
+            "tmpls": [
+                {
+                    "afmt": "<div class=\"type\">History | Cloze</div>\n<div class=\"value value--top\">{{cloze:Text}}</div>\n\n<div class=\"info\">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>\n",
+                    "bafmt": "<div class=\"type\">History | Cloze</div>\n<div class=\"value value--top\">{{cloze:Text}}</div>\n\n<div class=\"info\">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>\n",
+                    "bfont": "",
+                    "bqfmt": "<div class=\"type\">History | Cloze</div>\n<div class=\"value value--top\">{{cloze:Text}}</div>",
+                    "bsize": 0,
+                    "did": null,
+                    "name": "Cloze",
+                    "ord": 0,
+                    "qfmt": "<div class=\"type\">History | Cloze</div>\n<div class=\"value value--top\">{{cloze:Text}}</div>",
+                    "scratchPad": 0
+                }
+            ],
+            "type": 1,
             "vers": []
         }
     ],
@@ -2404,6 +2733,179 @@
             "flags": 0,
             "guid": "p1KG=fP9TY",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "What was the main goal of the Congress of Vienna?",
+                "To restore political stability in Europe after the Napoleonic Wars by reestablishing a balance of power and reinstating traditional monarchies.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Congress of Vienna",
+                "",
+                "",
+                "",
+                "",
+                "The major negotiators—Metternich (Austria), Castlereagh (Britain), Talleyrand (France), Hardenberg (Prussia), and Nesselrode (Russia)—helped shape Europe’s borders for decades. The congress system that followed tried to prevent revolutions and maintain conservative order.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "NWdR#p+yIM",
+            "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "What major issue triggered the Crimean War?",
+                "Disputes between Russia and the Ottoman Empire over the protection of Christian minorities and influence in holy sites.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Crimean War",
+                "",
+                "",
+                "",
+                "",
+                "The war is famous for Florence Nightingale’s reforms to battlefield medicine and for being one of the first conflicts heavily documented by newspapers and photographers. It also marked the decline of the Concert of Europe.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "vAEqTCN[.D",
+            "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "What was the primary cause of the Revolutions of 1848 across Europe?",
+                "Demands for liberal reforms, national self-determination, and better socioeconomic conditions.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Revolutions of 1848",
+                "",
+                "",
+                "",
+                "",
+                "Although most revolutions failed, they accelerated nationalist movements and spread liberal political ideas.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "D}CY#s7`?!",
+            "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Who is known as the &#x27;father of Italian unification&#x27;?",
+                "Count Camillo di Cavour.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Unification of Italy (Risorgimento)",
+                "",
+                "",
+                "",
+                "",
+                "Cavour used diplomacy and alliances while Garibaldi led volunteer forces; unification mixed Realpolitik with popular nationalism.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "Iaqn50-O}/",
+            "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "What was the primary cause of the American Civil War?",
+                "Conflict over slavery, especially its expansion into new territories.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "American Civil War",
+                "",
+                "",
+                "",
+                "",
+                "The war saw major technological changes such as ironclads, telegraphs, and railroads, and resulted in the abolition of slavery.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "q#G^^J|V#z",
+            "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "The leadership trio of Italian unification included:<br><ul><li>{{c1::Cavour}}, {{c4::who handled diplomacy}}</li><li>{{c2::Garibaldi}}, {{c5::who led volunteer military campaigns}}</li><li>{{c3::Mazzini}}, {{c6::who promoted nationalist ideology}}</li></ul>",
+                "Giuseppe Mazzini",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "OE{tsH4.j|",
+            "note_model_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "{{c1::Simón Bolívar}} played a central role in the independence of:<br><ul><li>{{c2::Bolivia}}</li><li>{{c3::Colombia}}</li><li>{{c4::Ecuador}}</li><li>{{c5::Peru}}</li><li>{{c6::Venezuela}}</li></ul>",
+                "Simón Bolívar",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Known as “El Libertador,” Bolívar envisioned a large unified Latin American state, though regional divisions prevented it.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "mF6%Gv8!oa",
+            "note_model_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
             "tags": []
         }
     ]
