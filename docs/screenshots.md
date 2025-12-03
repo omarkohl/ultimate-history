@@ -14,7 +14,7 @@
 ![Question](imgs/person-knownfor-to-name-01-question.png)
 ![Answer](imgs/person-knownfor-to-name-02-answer.png)
 
-### Person: Life Summary
+### Person: Life
 ![Question](imgs/person-life-01-question.png)
 ![Answer](imgs/person-life-02-anwer.png)
 
