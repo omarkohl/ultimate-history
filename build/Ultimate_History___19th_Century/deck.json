@@ -135,7 +135,7 @@
             "weightSearch": ""
         }
     ],
-    "desc": "Learn about human history.\nSee <a href=\"https://github.com/omarkohl/ultimate-history\">github.com/omarkohl/ultimate-history</a>\nto submit bug reports and your own improvements! Everyone can collaborate in\nimproving this deck.\n<b>Version: </b>0.1.0\n",
+    "desc": "Learn about human history.\nSee <a href=\"https://github.com/omarkohl/ultimate-history\">github.com/omarkohl/ultimate-history</a> to submit bug reports and your own improvements! Everyone can collaborate on improving this deck.\n<b>Version: </b>0.1.0\n",
     "desiredRetention": null,
     "dyn": 0,
     "extendNew": 20,
@@ -170,6 +170,8 @@
         "250px-Victor_Hugo_by_Étienne_Carjat_1876_-_full.jpg",
         "250px-Watt_James_von_Breda.jpg",
         "250px-Zar_Alexander_II_(cropped).jpg",
+        "Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored_&_Adjusted_(3x4_cropped_b).png",
+        "Thomas_Henry_Huxley._Photograph_by_Lock_&_Whitfield._Wellcome_V0026596.jpg",
         "_GentiumPlus-Regular.ttf"
     ],
     "name": "Ultimate History | 19th Century",
@@ -1300,7 +1302,7 @@
                 "Foundational theorist of socialism and communism; co-author of <em>The Communist Manifesto</em> (1848).",
                 "1818",
                 "1883",
-                "<img alt=\"Black-and-white portrait photograph of Marx sitting\" src=\"250px-Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored_&amp;_Adjusted_(3x4_cropped_b).png\">",
+                "<img alt=\"Black-and-white portrait photograph of Marx sitting\" src=\"Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored_&_Adjusted_(3x4_cropped_b).png\">",
                 "Friedrich Engels (1820–1895): collaborator, benefactor, and co-author who helped develop and disseminate Marx’s ideas",
                 "Jenny von Westphalen (1814–1881): Marx’s wife and intellectual partner who supported his political and literary work",
                 "Wilhelm Liebknecht (1826–1900): ally in socialist activism who helped propagate Marxist thought in Germany",
@@ -1742,7 +1744,7 @@
                 "Biologist and leading defender of Darwin’s theory",
                 "1825",
                 "1895",
-                "<img src=\"250px-Thomas_Henry_Huxley._Photograph_by_Lock_&amp;_Whitfield._Wellcome_V0026596.jpg\">",
+                "<img src=\"Thomas_Henry_Huxley._Photograph_by_Lock_&_Whitfield._Wellcome_V0026596.jpg\">",
                 "Charles Darwin (1809–1882): scientific ally whose theory Huxley vigorously defended and popularized",
                 "Alfred Russel Wallace (1823–1913): fellow evolutionist whose work Huxley supported within the scientific community",
                 "Joseph Dalton Hooker (1817–1911): close friend and collaborator who joined Huxley in promoting evolutionary science",
