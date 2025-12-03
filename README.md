@@ -2,6 +2,16 @@
 
 Anki deck to learn about human history. Collaboratively edited.
 
+## Screenshots
+
+<img src="docs/imgs/person-picture-to-name-01-question.png" width="400" alt="Person card example">
+<img src="docs/imgs/event-when-01-question.png" width="400" alt="Event card example">
+<img src="docs/imgs/qa-01-question.png" width="400" alt="Q&A card example">
+<img src="docs/imgs/cloze-01-question.png" width="400" alt="Cloze card example">
+
+[View all screenshots](docs/screenshots.md)
+
+
 ## Development
 
 ```bash
