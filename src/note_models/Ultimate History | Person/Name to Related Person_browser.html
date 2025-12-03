@@ -1,10 +1,11 @@
+{{#Related Person 1}}
 <div class="value value--top">{{Name}}</div>
 <div class="value value--image">{{Picture}}</div>
 
 <hr>
 
 <div class="type">Historical person | One Related Person</div>
-
+{{/Related Person 1}}
 --
 
 <div class="value value--top">{{Name}}</div>
@@ -12,11 +13,10 @@
   <div class="value value--image">{{Picture}}</div>
 {{/Picture}}
 
-<div class="info"></div>
-
 <hr>
 
 <div class="type">Historical Person | One Related Person</div>
+{{#Related Person 1}}
 <div class="value">
   <b>Related people:</b>
   <ul>
@@ -30,8 +30,14 @@
     {{#Personal Related Person 3}}<li>{{Personal Related Person 3}}</li>{{/Personal Related Person 3}}
   </ul>
 </div>
+{{/Related Person 1}}
+{{#Known For}}
 <div class="value"><b>Known for:</b> {{Known For}}</div>
+{{/Known For}}
+{{#Date of Birth}}
 <div class="value"><b>Life:</b> {{Date of Birth}} - {{Date of Death}}</div>
+{{/Date of Birth}}
+{{#Related Event 1}}
 <div class="value">
   <b>Related events:</b>
   <ul>
@@ -45,4 +51,5 @@
     {{#Personal Related Event 3}}<li>{{Personal Related Event 3}}</li>{{/Personal Related Event 3}}
   </ul>
 </div>
+{{/Related Event 1}}
 <div class="info">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>

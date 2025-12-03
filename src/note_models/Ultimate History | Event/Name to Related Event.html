@@ -1,18 +1,19 @@
+{{#Related Event 1}}
 <div class="value value--top">{{Name}}</div>
 
 <hr>
 
 <div class="type">Historical event | One Related Event</div>
+{{/Related Event 1}}
 
 --
 
 <div class="value value--top">{{Name}}</div>
 
-<div class="info"></div>
-
 <hr>
 
 <div class="type">Historical event | One Related Event</div>
+{{#Related Event 1}}
 <div class="value">
   <b>Related events:</b>
   <ul>
@@ -26,8 +27,14 @@
     {{#Personal Related Event 3}}<li>{{Personal Related Event 3}}</li>{{/Personal Related Event 3}}
   </ul>
 </div>
+{{/Related Event 1}}
+{{#Summary}}
 <div class="value"><b>Summary:</b> {{Summary}}</div>
+{{/Summary}}
+{{#Start Date}}
 <div class="value"><b>When:</b> {{Start Date}}{{#End Date}} - {{End Date}}{{/End Date}}</div>
+{{/Start Date}}
+{{#Related Person 1}}
 <div class="value">
   <b>Related people:</b>
   <ul>
@@ -41,4 +48,5 @@
     {{#Personal Related Person 3}}<li>{{Personal Related Person 3}}</li>{{/Personal Related Person 3}}
   </ul>
 </div>
+{{/Related Person 1}}
 <div class="info">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>
