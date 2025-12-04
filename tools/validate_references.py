@@ -6,25 +6,11 @@ import csv
 import re
 from collections import defaultdict
 from dataclasses import dataclass
-from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Optional
 
-
-@dataclass
-class Person:
-    name: str
-    birth: Optional[str]
-    death: Optional[str]
-    guid: str
-
-
-@dataclass
-class Event:
-    name: str
-    start: Optional[str]
-    end: Optional[str]
-    guid: str
+from model import Event, Person
+from utils import format_reference, fuzzy_match, get_data_dir, parse_reference
 
 
 @dataclass
@@ -74,109 +60,6 @@ class ReferenceValidator:
                     guid=row["guid"],
                 )
 
-    def fuzzy_match(
-        self, name: str, candidates: dict[str, Person | Event]
-    ) -> Optional[str]:
-        """Find the best fuzzy match for a name."""
-        best_match = None
-        best_ratio = 0.0
-
-        for candidate in candidates.keys():
-            ratio = SequenceMatcher(None, name.lower(), candidate.lower()).ratio()
-            if ratio > best_ratio and ratio >= self.fuzzy_threshold:
-                best_ratio = ratio
-                best_match = candidate
-
-        return best_match
-
-    def parse_reference(
-        self, value: str
-    ) -> tuple[str, Optional[str], Optional[str], Optional[str]]:
-        """Parse a reference in format 'NAME (DATE[ - DATE]): RELATIONSHIP' or 'NAME (DATE[ - DATE]) – DESCRIPTION'.
-
-        Name can contain parentheses, e.g., "Unification of Italy (Risorgimento) (1848–1871): description"
-        The dates are in the LAST set of parentheses before the separator.
-
-        Returns: (name, date1, date2, relationship)
-        If parsing fails completely, returns (original_value, None, None, None)
-        """
-        if not value or not value.strip():
-            return "", None, None, None
-
-        value = value.strip()
-
-        # Strategy: Look for the separator (: or – or —) first
-        # Everything before the last separator is name+dates
-        # Everything after is the relationship
-
-        # Find the last occurrence of a separator that's likely the relationship separator
-        # It should be near the end or followed by descriptive text
-        separator_match = None
-        for sep_pattern in [r":\s*", r"[–—]\s+"]:
-            matches = list(re.finditer(sep_pattern, value))
-            if matches:
-                # Take the last match
-                separator_match = matches[-1]
-                break
-
-        if separator_match:
-            before_sep = value[: separator_match.start()].strip()
-            relationship = value[separator_match.end() :].strip()
-        else:
-            before_sep = value
-            relationship = None
-
-        # Now parse before_sep to extract name and dates
-        # Dates should be in the last set of parentheses
-        paren_matches = list(re.finditer(r"\(([^)]+)\)", before_sep))
-
-        if paren_matches:
-            last_paren = paren_matches[-1]
-            dates_str = last_paren.group(1)
-            name = before_sep[: last_paren.start()].strip()
-
-            # Check if this looks like dates (contains digits)
-            if re.search(r"\d", dates_str):
-                # Parse the dates
-                date_parts = re.split(r"\s*[–—-]\s*", dates_str)
-                if len(date_parts) == 1:
-                    date1 = date_parts[0].strip()
-                    date2 = None
-                elif len(date_parts) == 2:
-                    date1 = date_parts[0].strip()
-                    date2 = date_parts[1].strip()
-                else:
-                    # Too many dashes - unparseable
-                    return value, None, None, None
-            else:
-                # Last paren doesn't contain dates, so include it in the name
-                name = before_sep
-                date1, date2 = None, None
-        else:
-            # No parentheses at all
-            name = before_sep
-            date1, date2 = None, None
-
-        return name, date1, date2, relationship
-
-    def format_reference(
-        self,
-        name: str,
-        date1: Optional[str],
-        date2: Optional[str],
-        relationship: Optional[str],
-    ) -> str:
-        """Format a reference in standard format: NAME (DATE[ - DATE]): RELATIONSHIP."""
-        result = name
-        if date1:
-            if date2:
-                result += f" ({date1}–{date2})"
-            else:
-                result += f" ({date1})"
-        if relationship:
-            result += f": {relationship}"
-        return result
-
     def check_format(
         self,
         value: str,
@@ -186,7 +69,7 @@ class ReferenceValidator:
         relationship: Optional[str],
     ) -> bool:
         """Check if the reference follows the standard format."""
-        expected = self.format_reference(name, date1, date2, relationship)
+        expected = format_reference(name, date1, date2, relationship)
         # Normalize whitespace and dash characters for comparison
         normalized_value = re.sub(r"\s+", " ", value.strip())
         normalized_expected = re.sub(r"\s+", " ", expected.strip())
@@ -204,7 +87,7 @@ class ReferenceValidator:
         if not value or not value.strip():
             return None
 
-        name, date1, date2, relationship = self.parse_reference(value)
+        name, date1, date2, relationship = parse_reference(value)
         if not name:
             return None
 
@@ -244,18 +127,18 @@ class ReferenceValidator:
                         error_type="date_mismatch",
                         message=f"Dates don't match for '{name}'",
                         current_value=value,
-                        suggested_fix=self.format_reference(
+                        suggested_fix=format_reference(
                             name, expected_date1, expected_date2, relationship
                         ),
                     )
                 )
-                fix_needed = self.format_reference(
+                fix_needed = format_reference(
                     name, expected_date1, expected_date2, relationship
                 )
             else:
                 # Check format even if data is correct
                 if not self.check_format(value, name, date1, date2, relationship):
-                    formatted = self.format_reference(name, date1, date2, relationship)
+                    formatted = format_reference(name, date1, date2, relationship)
                     self.errors.append(
                         ValidationError(
                             csv_file=csv_file,
@@ -270,7 +153,7 @@ class ReferenceValidator:
                     fix_needed = formatted
         else:
             # Try fuzzy match
-            match = self.fuzzy_match(name, self.people)
+            match = fuzzy_match(name, self.people, self.fuzzy_threshold)
             if match:
                 person = self.people[match]
                 self.errors.append(
@@ -281,12 +164,12 @@ class ReferenceValidator:
                         error_type="name_mismatch",
                         message=f"Name mismatch: '{name}' should be '{match}'",
                         current_value=value,
-                        suggested_fix=self.format_reference(
+                        suggested_fix=format_reference(
                             match, person.birth, person.death, relationship
                         ),
                     )
                 )
-                fix_needed = self.format_reference(
+                fix_needed = format_reference(
                     match, person.birth, person.death, relationship
                 )
             else:
@@ -311,7 +194,7 @@ class ReferenceValidator:
         if not value or not value.strip():
             return None
 
-        name, date1, date2, relationship = self.parse_reference(value)
+        name, date1, date2, relationship = parse_reference(value)
         if not name:
             return None
 
@@ -351,18 +234,18 @@ class ReferenceValidator:
                         error_type="date_mismatch",
                         message=f"Dates don't match for '{name}'",
                         current_value=value,
-                        suggested_fix=self.format_reference(
+                        suggested_fix=format_reference(
                             name, expected_date1, expected_date2, relationship
                         ),
                     )
                 )
-                fix_needed = self.format_reference(
+                fix_needed = format_reference(
                     name, expected_date1, expected_date2, relationship
                 )
             else:
                 # Check format even if data is correct
                 if not self.check_format(value, name, date1, date2, relationship):
-                    formatted = self.format_reference(name, date1, date2, relationship)
+                    formatted = format_reference(name, date1, date2, relationship)
                     self.errors.append(
                         ValidationError(
                             csv_file=csv_file,
@@ -377,7 +260,7 @@ class ReferenceValidator:
                     fix_needed = formatted
         else:
             # Try fuzzy match
-            match = self.fuzzy_match(name, self.events)
+            match = fuzzy_match(name, self.events, self.fuzzy_threshold)
             if match:
                 event = self.events[match]
                 self.errors.append(
@@ -388,12 +271,12 @@ class ReferenceValidator:
                         error_type="name_mismatch",
                         message=f"Name mismatch: '{name}' should be '{match}'",
                         current_value=value,
-                        suggested_fix=self.format_reference(
+                        suggested_fix=format_reference(
                             match, event.start, event.end, relationship
                         ),
                     )
                 )
-                fix_needed = self.format_reference(
+                fix_needed = format_reference(
                     match, event.start, event.end, relationship
                 )
             else:
@@ -458,7 +341,7 @@ class ReferenceValidator:
         missing_people = {}
         for error in self.errors:
             if error.error_type == "missing_person":
-                name, date1, date2, _ = self.parse_reference(error.current_value)
+                name, date1, date2, _ = parse_reference(error.current_value)
                 if name and name not in missing_people:
                     missing_people[name] = (date1, date2)
 
@@ -489,7 +372,7 @@ class ReferenceValidator:
         missing_events = {}
         for error in self.errors:
             if error.error_type == "missing_event":
-                name, date1, date2, _ = self.parse_reference(error.current_value)
+                name, date1, date2, _ = parse_reference(error.current_value)
                 if name and name not in missing_events:
                     missing_events[name] = (date1, date2)
 
@@ -557,8 +440,7 @@ def main():
     )
     args = parser.parse_args()
 
-    data_dir = Path(__file__).parent / "data"
-    validator = ReferenceValidator(data_dir)
+    validator = ReferenceValidator(get_data_dir())
 
     print("Loading people and events...")
     validator.load_people()
@@ -567,7 +449,7 @@ def main():
     print(f"Loaded {len(validator.people)} people and {len(validator.events)} events")
 
     all_fixes = {}
-    csv_files = list(data_dir.glob("*.csv"))
+    csv_files = list(validator.data_dir.glob("*.csv"))
 
     print(f"\nValidating {len(csv_files)} CSV files...")
     for csv_file in csv_files:

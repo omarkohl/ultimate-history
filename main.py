@@ -26,14 +26,22 @@ def validate() -> None:
     run(f"uv run python tools/validate_references.py {args}")
 
 
+def list_relationships() -> None:
+    """List relationships between notes."""
+    args = " ".join(sys.argv[2:])
+    run(f"uv run python tools/list_relationships.py {args}")
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>")
         print("\nAvailable commands:")
-        print("  source-to-anki    Export source files to Anki")
-        print("  anki-to-source    Import Anki changes back to source")
-        print("  validate          Validate references in CSV files")
-        print("                    Use --auto-fix to automatically apply fixes")
+        print("  source-to-anki      Export source files to Anki")
+        print("  anki-to-source      Import Anki changes back to source")
+        print("  validate            Validate references in CSV files")
+        print("                      Use --auto-fix to automatically apply fixes")
+        print("  list-relationships  List relationships between notes")
+        print("                      Use --sort asc/desc, --search <term>, --limit <n>")
         sys.exit(1)
 
     command = sys.argv[1]
@@ -41,6 +49,7 @@ def main() -> None:
         "source-to-anki": source_to_anki,
         "anki-to-source": anki_to_source,
         "validate": validate,
+        "list-relationships": list_relationships,
     }
 
     if command not in commands:
