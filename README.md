@@ -14,10 +14,14 @@ Anki deck to learn about human history. Collaboratively edited.
 [View all screenshots](docs/screenshots.md)
 
 
+## Contributing
+
+Want to add historical figures, events, or improve existing cards? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on how to contribute.
+
 ## Development
 
 ```bash
-# Import/export between source files and Anki
+# Import/export between source files (CSV) and Anki (CrowdAnki JSON format)
 uv run main.py source-to-anki
 uv run main.py anki-to-source
 
@@ -31,7 +35,7 @@ uv run main.py list-relationships --sort asc --limit 10  # Show least connected
 uv run main.py list-relationships --search "Napoleon"   # Filter by search term
 ```
 
-## Inspiration
+## Inspiration & Credits
 
 The note templates, the name and the general idea of collaboratively editing
 high quality Anki decks are based on [Ultimate
