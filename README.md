@@ -15,6 +15,9 @@ The aim of this project is collaborating in the creation of high quality, free a
 
 [View all screenshots](docs/screenshots.md)
 
+## Learning with this Deck
+
+See [learning.md](docs/learning.md) for recommendations on how to study effectively with this deck.
 
 ## Contributing
 
