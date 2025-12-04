@@ -1224,7 +1224,10 @@
             "flags": 0,
             "guid": "zp!Yf$olQi",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1258,7 +1261,10 @@
             "flags": 0,
             "guid": "eLu1.hLEHd",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1292,7 +1298,10 @@
             "flags": 0,
             "guid": "J<%Q-)S_C.",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1326,7 +1335,10 @@
             "flags": 0,
             "guid": "FnX=px3*b.",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1360,7 +1372,10 @@
             "flags": 0,
             "guid": "GJ+DB98u#+",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1394,7 +1409,10 @@
             "flags": 0,
             "guid": "yoKc^IhJVn",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1428,7 +1446,10 @@
             "flags": 0,
             "guid": "Na!;mzgW|.",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Asia",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1462,7 +1483,10 @@
             "flags": 0,
             "guid": "epL6[AAIvk",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1496,7 +1520,10 @@
             "flags": 0,
             "guid": "x20~>kQ}dx",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1530,7 +1557,10 @@
             "flags": 0,
             "guid": "p.iL=#6Rh/",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1564,7 +1594,10 @@
             "flags": 0,
             "guid": "f1rm4H,qqo",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1598,7 +1631,10 @@
             "flags": 0,
             "guid": "tg8,S2DJQ+",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1632,7 +1668,10 @@
             "flags": 0,
             "guid": "n}]mA>V<o!",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Asia",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1666,7 +1705,10 @@
             "flags": 0,
             "guid": "ok7sdno!.3",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1700,7 +1742,10 @@
             "flags": 0,
             "guid": "rxf/S^j#IR",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1734,7 +1779,10 @@
             "flags": 0,
             "guid": "kFZsSB}9U1",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1768,7 +1816,10 @@
             "flags": 0,
             "guid": "LleiW79/XU",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1802,7 +1853,10 @@
             "flags": 0,
             "guid": "LHtydE)}7n",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1836,7 +1890,10 @@
             "flags": 0,
             "guid": "K9.3bMXKTG",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1870,7 +1927,10 @@
             "flags": 0,
             "guid": "B/)rgZ77oZ",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1904,7 +1964,10 @@
             "flags": 0,
             "guid": "G}3%L9=wF6",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1938,7 +2001,10 @@
             "flags": 0,
             "guid": "tH5*;acflo",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -1972,7 +2038,10 @@
             "flags": 0,
             "guid": "nEl-BOx4K8",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2006,7 +2075,10 @@
             "flags": 0,
             "guid": "z,e4$VG:FW",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2040,7 +2112,10 @@
             "flags": 0,
             "guid": "Kr=AP_djuP",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2074,7 +2149,10 @@
             "flags": 0,
             "guid": "Hj>+BlXd2y",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2108,7 +2186,10 @@
             "flags": 0,
             "guid": "g||d)k^x-p",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2142,7 +2223,10 @@
             "flags": 0,
             "guid": "QzfM$aYnPx",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2176,7 +2260,10 @@
             "flags": 0,
             "guid": "qP;K.B$jrz",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2210,7 +2297,10 @@
             "flags": 0,
             "guid": "LP7xj#u9m5",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2244,7 +2334,10 @@
             "flags": 0,
             "guid": "W>xgw`x/)",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2278,7 +2371,10 @@
             "flags": 0,
             "guid": "jHqbL$j;j,",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2312,7 +2408,10 @@
             "flags": 0,
             "guid": "q1N#T4S!QV",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2346,7 +2445,10 @@
             "flags": 0,
             "guid": "rA%]|>PbDg",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2380,7 +2482,10 @@
             "flags": 0,
             "guid": "e0wz|;uW*C",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2414,7 +2519,10 @@
             "flags": 0,
             "guid": "tR1_4Y>qzr",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2448,7 +2556,10 @@
             "flags": 0,
             "guid": "Pu1KjlC8T<",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2482,7 +2593,10 @@
             "flags": 0,
             "guid": "zK1D)4J,9$",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2516,7 +2630,10 @@
             "flags": 0,
             "guid": "I$L]TL~s<|",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2550,7 +2667,10 @@
             "flags": 0,
             "guid": "O?XA-mBF@s",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2584,7 +2704,10 @@
             "flags": 0,
             "guid": "B{hQ:|4}Y<",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2618,7 +2741,10 @@
             "flags": 0,
             "guid": "IJFZb<fa{%",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2652,7 +2778,10 @@
             "flags": 0,
             "guid": "hjF$@IK2}8",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2686,7 +2815,10 @@
             "flags": 0,
             "guid": "p[Lq?0bv79",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2720,7 +2852,10 @@
             "flags": 0,
             "guid": "i.Is2NVKyy",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2754,7 +2889,10 @@
             "flags": 0,
             "guid": "uSoX0;$6W]",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2788,7 +2926,10 @@
             "flags": 0,
             "guid": "b<f0=S@P@p",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2822,7 +2963,10 @@
             "flags": 0,
             "guid": "pWHrSK*Qk",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2856,7 +3000,10 @@
             "flags": 0,
             "guid": "Dt:raMl,4c",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2890,7 +3037,10 @@
             "flags": 0,
             "guid": "pq(fIaV[[S",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2924,7 +3074,10 @@
             "flags": 0,
             "guid": "Ke-LND8P9u",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2958,7 +3111,10 @@
             "flags": 0,
             "guid": "qT,L{^Xo)U",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -2992,7 +3148,10 @@
             "flags": 0,
             "guid": "v@2o8jwd-#",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3026,7 +3185,10 @@
             "flags": 0,
             "guid": "z.Q;A8h187",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3060,7 +3222,10 @@
             "flags": 0,
             "guid": "C6`gm5w?</",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3094,7 +3259,10 @@
             "flags": 0,
             "guid": "thK63[ZW.T",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3128,7 +3296,10 @@
             "flags": 0,
             "guid": "l8R}3kd:dl",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3162,7 +3333,10 @@
             "flags": 0,
             "guid": "sSPAF^Im<m",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3196,7 +3370,10 @@
             "flags": 0,
             "guid": "u2+0,X.xZ]",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3230,7 +3407,10 @@
             "flags": 0,
             "guid": "Kwx=AL`9b$",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3264,7 +3444,10 @@
             "flags": 0,
             "guid": "i`G)~SJH6<",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3298,7 +3481,10 @@
             "flags": 0,
             "guid": "h6@rE_N?yN",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3332,7 +3518,10 @@
             "flags": 0,
             "guid": "y%M6R*buoc",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3366,7 +3555,10 @@
             "flags": 0,
             "guid": "ru1]gGhNQp",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3400,7 +3592,10 @@
             "flags": 0,
             "guid": "hBWb0c=)ji",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3434,7 +3629,10 @@
             "flags": 0,
             "guid": "o/oT7jn2wW",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::South_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3468,7 +3666,10 @@
             "flags": 0,
             "guid": "N=!GKUlcj*",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Asia",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3502,7 +3703,10 @@
             "flags": 0,
             "guid": "kj3*!27P[L",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3536,7 +3740,10 @@
             "flags": 0,
             "guid": "ji5(#{yRZd",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3570,7 +3777,10 @@
             "flags": 0,
             "guid": "Q`h5L9?9:_",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3604,7 +3814,10 @@
             "flags": 0,
             "guid": "BvD:+n>55j",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3638,7 +3851,10 @@
             "flags": 0,
             "guid": "DHy-.l|mJT",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::South_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3672,7 +3888,10 @@
             "flags": 0,
             "guid": "fk~bR~KC!n",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::South_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3706,7 +3925,10 @@
             "flags": 0,
             "guid": "O>vo`T]<+p",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3740,7 +3962,10 @@
             "flags": 0,
             "guid": "viQNtq<UX^",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3774,7 +3999,10 @@
             "flags": 0,
             "guid": "I^Q!D!77KJ",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Asia",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3808,7 +4036,10 @@
             "flags": 0,
             "guid": "AGc2+rG/F5",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3842,7 +4073,10 @@
             "flags": 0,
             "guid": "eGO^aCP)(y",
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3875,7 +4109,11 @@
             "flags": 0,
             "guid": "wXiY(xtcVV",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century",
+                "UH::Period::18th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3908,7 +4146,10 @@
             "flags": 0,
             "guid": "OTfFrU^?wV",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3941,7 +4182,10 @@
             "flags": 0,
             "guid": "DtyZq5U9Rq",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -3974,7 +4218,10 @@
             "flags": 0,
             "guid": "bZgXHup$Vt",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4007,7 +4254,10 @@
             "flags": 0,
             "guid": "uD)3Z(]g4",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4040,7 +4290,10 @@
             "flags": 0,
             "guid": "wu8I<wCf$X",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::18th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4073,7 +4326,10 @@
             "flags": 0,
             "guid": "dEQz3e8<~M",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4106,7 +4362,10 @@
             "flags": 0,
             "guid": "i#?*IF]#=y",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4139,7 +4398,11 @@
             "flags": 0,
             "guid": "P!g&_%i*G&",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Region::Asia",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4172,7 +4435,10 @@
             "flags": 0,
             "guid": "zJ4%|1KRN4",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4205,7 +4471,10 @@
             "flags": 0,
             "guid": "Etd*}m/.1$",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4238,7 +4507,10 @@
             "flags": 0,
             "guid": "xC3jmsN8kl",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4271,7 +4543,12 @@
             "flags": 0,
             "guid": "NNealv^CM|",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Region::Africa",
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4304,7 +4581,10 @@
             "flags": 0,
             "guid": "dgiyJ+Cd>z",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4337,7 +4617,10 @@
             "flags": 0,
             "guid": "H4QZD&0V>x",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4403,7 +4686,10 @@
             "flags": 0,
             "guid": "tZ3e(sOwIZ",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4436,7 +4722,10 @@
             "flags": 0,
             "guid": "n*TqKE5:V0",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4469,7 +4758,10 @@
             "flags": 0,
             "guid": "p1KG=fP9TY",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4502,7 +4794,10 @@
             "flags": 0,
             "guid": "k+T}oG}0H<",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4535,7 +4830,10 @@
             "flags": 0,
             "guid": "s:7/cm<}cq",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4601,7 +4899,10 @@
             "flags": 0,
             "guid": "IySH}sN{1H",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4634,7 +4935,10 @@
             "flags": 0,
             "guid": "ggN(ty*<tv",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4667,7 +4971,10 @@
             "flags": 0,
             "guid": "mA?9~5g^`j",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4700,7 +5007,10 @@
             "flags": 0,
             "guid": "EoY6,%{?Va",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4733,7 +5043,10 @@
             "flags": 0,
             "guid": "PyDN_THI&f",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4766,7 +5079,10 @@
             "flags": 0,
             "guid": "ry%G6qtxA3",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4799,7 +5115,10 @@
             "flags": 0,
             "guid": "ghLp#id#$Y",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4832,7 +5151,10 @@
             "flags": 0,
             "guid": "QB2P=2fN*$",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4865,7 +5187,10 @@
             "flags": 0,
             "guid": "ci-~PN6znY",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -4898,7 +5223,10 @@
             "flags": 0,
             "guid": "hpMl/7`EEU",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6309,7 +6637,10 @@
             "flags": 0,
             "guid": "NWdR#p+yIM",
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6334,7 +6665,10 @@
             "flags": 0,
             "guid": "vAEqTCN[.D",
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6359,7 +6693,10 @@
             "flags": 0,
             "guid": "D}CY#s7`?!",
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6384,7 +6721,10 @@
             "flags": 0,
             "guid": "Iaqn50-O}/",
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6409,7 +6749,10 @@
             "flags": 0,
             "guid": "q#G^^J|V#z",
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::North_America",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6433,7 +6776,10 @@
             "flags": 0,
             "guid": "OE{tsH4.j|",
             "note_model_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::Europe",
+                "UH::Period::19th_Century"
+            ]
         },
         {
             "__type__": "Note",
@@ -6457,7 +6803,10 @@
             "flags": 0,
             "guid": "mF6%Gv8!oa",
             "note_model_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
-            "tags": []
+            "tags": [
+                "UH::Region::South_America",
+                "UH::Period::19th_Century"
+            ]
         }
     ]
 }
