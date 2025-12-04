@@ -1,6 +1,8 @@
 # Ultimate History
 
-Anki deck to learn about human history. Collaboratively edited.
+The aim of this project is collaborating in the creation of high quality, free and open source Anki decks on the topic of human history.
+
+[Anki](https://apps.ankiweb.net/) is open-source [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) software available for Windows, macOS, Linux, Android and iOS. Check the [installations instructions](https://apps.ankiweb.net/#downloads). Spaced repetition is an improvement over classic _flashcards_ that allows for more flexible and efficient learning.
 
 ## Screenshots
 
@@ -19,6 +21,8 @@ Anki deck to learn about human history. Collaboratively edited.
 Want to add historical figures, events, or improve existing cards? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on how to contribute.
 
 ## Development
+
+This project uses [brain-brew](https://github.com/ohare93/brain-brew) to bidirectionally convert between CrowdAnki JSON format and CSV files. The CrowdAnki files can be found in the `build/` directory. The CSV files under `src/data/` and the note types and templates under `src/note_models/`.
 
 ```bash
 # Import/export between source files (CSV) and Anki (CrowdAnki JSON format)
