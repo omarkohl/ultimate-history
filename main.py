@@ -23,7 +23,7 @@ def anki_to_source() -> None:
 def validate() -> None:
     """Validate references in CSV files."""
     args = " ".join(sys.argv[2:])
-    run(f"uv run python src/validate_references.py {args}")
+    run(f"uv run python tools/validate_references.py {args}")
 
 
 def main() -> None:
