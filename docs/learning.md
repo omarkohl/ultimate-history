@@ -46,5 +46,9 @@ Create filtered decks by **region and period** to:
 
 For example to learn only new cards for Europe in the 19th century: `tag:UH::Period::19th\_Century tag:UH::Region::Europe is:new`
 
+Read more about filtered decks in the [Anki documentation](https://docs.ankiweb.net/filtered-decks.html).
+
+!["Filtered deck creation screen"](imgs/filtered-deck.png)
+
 ### Transition to Mixed Review
 Once cards enter regular review (after initial learning), it's fine to mix all cards together. By then, you'll have built the foundational connections through your filtered deck study.
