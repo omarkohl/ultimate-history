@@ -32,7 +32,7 @@ This project uses [brain-brew](https://github.com/ohare93/brain-brew) to bidirec
 uv run main.py source-to-anki
 uv run main.py anki-to-source
 
-# Verify and fix references to people and events
+# Verify and fix data
 uv run main.py validate
 uv run main.py validate --auto-fix
 

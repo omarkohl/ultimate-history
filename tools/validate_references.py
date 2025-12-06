@@ -5,23 +5,12 @@ import argparse
 import csv
 import re
 from collections import defaultdict
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
 from model import Event, Person
 from utils import format_reference, fuzzy_match, get_data_dir, parse_reference
-
-
-@dataclass
-class ValidationError:
-    csv_file: str
-    row_num: int
-    column: str
-    error_type: str
-    message: str
-    current_value: str
-    suggested_fix: Optional[str] = None
+from validation_common import ValidationError
 
 
 class ReferenceValidator:
