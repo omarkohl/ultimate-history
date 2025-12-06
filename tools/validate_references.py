@@ -325,6 +325,8 @@ class ReferenceValidator:
         with open(csv_file, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             fieldnames = reader.fieldnames
+            if fieldnames is None:
+                raise ValueError(f"No fieldnames found in {csv_file}")
             for row_num, row in enumerate(reader, start=2):
                 for column in row.keys():
                     if (row_num, column) in fixes:
@@ -353,6 +355,8 @@ class ReferenceValidator:
             with open(person_file, "r", encoding="utf-8") as rf:
                 reader = csv.DictReader(rf)
                 fieldnames = reader.fieldnames
+                if fieldnames is None:
+                    raise ValueError(f"No fieldnames found in {person_file}")
 
             writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
             for name, (birth, death) in missing_people.items():
@@ -384,6 +388,8 @@ class ReferenceValidator:
             with open(event_file, "r", encoding="utf-8") as rf:
                 reader = csv.DictReader(rf)
                 fieldnames = reader.fieldnames
+                if fieldnames is None:
+                    raise ValueError(f"No fieldnames found in {event_file}")
 
             writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
             for name, (start, end) in missing_events.items():
