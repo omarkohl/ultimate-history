@@ -1,5 +1,11 @@
 # Learning Recommendations
 
+## Modifications
+
+**DO NOT MODIFY** the content of the cards if you want to update the decks with improvements by the Ultimate History maintainers. The only exception is if you use the `CrowdAnki` plugin AND you only modify the personal fields. See the [installation and update](./installation.md) instructions for details.
+
+If you have improvements for the decks please contribute them as described in the [contribution documentation](./CONTRIBUTING.md).
+
 ## Settings
 
 It is strongly recommended that you enable **Burying** in the deck options. Otherwise the initial learning is too easy because you remember too much from a sibling card. A few weeks later you are then more likely to fail those cards.
