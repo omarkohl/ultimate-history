@@ -51,3 +51,12 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
 The note templates, the name and the general idea of collaboratively editing
 high quality Anki decks are based on [Ultimate
 Geography](https://github.com/anki-geo/ultimate-geography).
+
+## License
+
+This project uses a dual licensing approach:
+
+- **Code** (Python scripts, templates, build tools): [MIT License](LICENSE-CODE)
+- **Content** (historical data, text, card content): [CC BY-SA 4.0](LICENSE-CONTENT)
+
+Third-party content such as images whose source is indicated on the Anki notes is not covered by these licenses and remains subject to its original copyright and licensing terms.
