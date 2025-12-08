@@ -10,7 +10,7 @@ If you have improvements for the decks please contribute them as described in th
 
 It is strongly recommended that you enable **Burying** in the deck options. Otherwise the initial learning is too easy because you remember too much from a sibling card. A few weeks later you are then more likely to fail those cards.
 
-!["Decks options / Burying"](imgs/options-burying.png)
+!["Deck options / Burying"](imgs/options-burying.png)
 
 ## Rating Cards
 
