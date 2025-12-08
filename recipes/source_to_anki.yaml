@@ -50,7 +50,7 @@
       source: src/media/
       recursive: true
 - generate_crowd_anki:
-    folder: build/Ultimate_History___19th_Century/
+    folder: build/Ultimate_History/
     notes:
       part_id: deck_notes
     note_models:

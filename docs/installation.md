@@ -34,7 +34,7 @@ This method is recommended if you plan to contribute to the deck or want to stay
    git clone https://github.com/omarkohl/ultimate-history.git
    ```
 4. In Anki, go to File > CrowdAnki: Import from disk
-5. Select the appropriate directory in `build/` (e.g., `build/Ultimate_History___19th_Century/`)
+5. Select the appropriate directory in `build/` (e.g., `build/Ultimate_History/`)
 
 ## Updating the Deck
 
