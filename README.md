@@ -31,6 +31,10 @@ See [docs/learning.md](docs/learning.md) for recommendations on how to study eff
 
 Want to add historical figures, events, or improve existing cards? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on how to contribute.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes to this project.
+
 ## Development
 
 This project uses [brain-brew](https://github.com/ohare93/brain-brew) to bidirectionally convert between CrowdAnki JSON format and CSV files. The CrowdAnki files can be found in the `build/` directory. The CSV files under `src/data/` and the note types and templates under `src/note_models/`.
