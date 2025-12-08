@@ -33,6 +33,12 @@ def list_relationships() -> None:
     run(f"uv run python tools/list_relationships.py {args}")
 
 
+def bump_version() -> None:
+    """Bump version in description.html."""
+    args = " ".join(sys.argv[2:])
+    run(f"uv run python tools/bump_version.py {args}")
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>")
@@ -43,6 +49,8 @@ def main() -> None:
         print("                      Use --auto-fix to automatically apply fixes")
         print("  list-relationships  List relationships between notes")
         print("                      Use --sort asc/desc, --search <term>, --limit <n>")
+        print("  bump-version        Bump version in description.html")
+        print("                      Use [major|minor|patch] [--dev]")
         sys.exit(1)
 
     command = sys.argv[1]
@@ -51,6 +59,7 @@ def main() -> None:
         "anki-to-source": anki_to_source,
         "validate": validate,
         "list-relationships": list_relationships,
+        "bump-version": bump_version,
     }
 
     if command not in commands:
