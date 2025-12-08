@@ -3972,7 +3972,7 @@
                 "",
                 "",
                 "Born Manikarnika Tambe, also know as Rani Lakshmibai. Became regent of Jhansi for her minor adopted son after her husband's death in 1853. When the British refused to recognize the adoption and moved to annex Jhansi, she joined the 1857 rebellion. Led her troops in fierce defense of Jhansi and continued fighting after its fall. Died in battle at Gwalior in June 1858, becoming a symbol of Indian resistance and national heroism.",
-                "Claude Sonnet 4.5"
+                "Claude Sonnet 4.5<br><br>Image:&nbsp;https://en.wikipedia.org/wiki/Rani_of_Jhansi#/media/File:Rani_of_jhansi.jpg<br>Public domain"
             ],
             "flags": 0,
             "guid": "yn9LbOrR)<",
@@ -5877,16 +5877,16 @@
                 "Era of classical music falling between the Baroque and Romantic periods.",
                 "1750",
                 "1820",
+                "Joseph Haydn (1732–1809): Prolific composer whose symphonies and string quartets helped define the classical style.",
+                "Ludwig van Beethoven (1770–1827): Bridged the Classical and Romantic periods with his innovative compositions.",
                 "",
                 "",
                 "",
                 "",
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
+                "Age of Enlightenment (1687–1789): The intellectual movement that shaped classical music's emphasis on clarity and order.",
+                "Napoleonic Wars (1803–1815): Occurred during the late Classical period and influenced composers like Beethoven.",
                 "",
                 "",
                 "",
@@ -5895,7 +5895,7 @@
                 "",
                 "The best-known composers from this period are Joseph Haydn, Wolfgang Amadeus Mozart, Ludwig van Beethoven, and Franz Schubert.",
                 "",
-                ""
+                "Claude Sonnet 4.5"
             ],
             "flags": 0,
             "guid": "f5s4mei:xy",
@@ -5914,6 +5914,7 @@
                 "Period in the history of Europe and Western civilization during which the Enlightenment, an intellectual and cultural movement, flourished.",
                 "1687",
                 "1789",
+                "Johann Wolfgang von Goethe (1749–1832): Embodied Enlightenment ideals through his literary and scientific works.",
                 "",
                 "",
                 "",
@@ -5921,6 +5922,9 @@
                 "",
                 "",
                 "",
+                "French Revolution (1789–1799): Revolutionary ideals drew heavily from Enlightenment philosophy about rights and reason.",
+                "Classical period (music) (1750–1820): Musical style reflected Enlightenment values of balance and rational form.",
+                "Napoleonic Wars (1803–1815): Post-Enlightenment conflicts tested and spread Enlightenment political ideas.",
                 "",
                 "",
                 "",
@@ -5928,16 +5932,16 @@
                 "",
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "Claude Sonnet 4.5"
             ],
             "flags": 0,
             "guid": "p*e/-Ey0[x",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
-            "tags": []
+            "tags": [
+                "UH::Period::18th_Century",
+                "UH::Period::19th_Century",
+                "UH::Region::Europe"
+            ]
         },
         {
             "__type__": "Note",
