@@ -6,6 +6,8 @@
 
 If you have improvements for the decks please contribute them as described in the [contribution documentation](./CONTRIBUTING.md).
 
+What you CAN do is adding new cards (notes) using the existing UH note types, even keeping them in the same deck.
+
 ## Settings
 
 It is strongly recommended that you enable **Burying** in the deck options. Otherwise the initial learning is too easy because you remember too much from a sibling card. A few weeks later you are then more likely to fail those cards.
