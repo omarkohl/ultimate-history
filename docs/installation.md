@@ -7,7 +7,7 @@ There are three ways to install the Ultimate History deck:
 ### Option 1: Download from AnkiWeb
 
 1. Install [Anki](https://apps.ankiweb.net/) if you haven't already
-2. Download the deck from AnkiWeb: (TODO)
+2. Download the deck from AnkiWeb: https://ankiweb.net/shared/info/1816180599
 3. Double-click the downloaded `.apkg` file, or go to File > Import in Anki
 
 This is the simplest method for most users.
