@@ -37,22 +37,7 @@ See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes to this proje
 
 ## Development
 
-This project uses [brain-brew](https://github.com/ohare93/brain-brew) to bidirectionally convert between CrowdAnki JSON format and CSV files. The CrowdAnki files can be found in the `build/` directory. The CSV files under `src/data/` and the note types and templates under `src/note_models/`.
-
-```bash
-# Import/export between source files (CSV) and Anki (CrowdAnki JSON format)
-uv run main.py source-to-anki
-uv run main.py anki-to-source
-
-# Verify and fix data
-uv run main.py validate
-uv run main.py validate --auto-fix
-
-# List notes by relationship count to identify highly-connected or isolated notes
-uv run main.py list-relationships
-uv run main.py list-relationships --sort asc --limit 10  # Show least connected
-uv run main.py list-relationships --search "Napoleon"   # Filter by search term
-```
+See [docs/development.md](docs/development.md) for technical details on development and releasing new versions.
 
 ## Inspiration & Credits
 
