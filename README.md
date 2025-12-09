@@ -4,9 +4,9 @@ The aim of this project is collaborating in the creation of high quality, free a
 
 [Anki](https://apps.ankiweb.net/) is open-source [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) software available for Windows, macOS, Linux, Android and iOS. Check the [installations instructions](https://apps.ankiweb.net/#downloads). Spaced repetition is an improvement over classic _flashcards_ that allows for more flexible and efficient learning.
 
-The underlying idea of this project is to view history as a **graph of events and people** who are connected. The Anki cards not only query you about individual events and people but also about the **relationships** between them. Thus testing your understanding of who was involved in which events, how historical figures influenced each other, and how events are causally linked. This approach helps build a deeper, more interconnected understanding of history.
+The underlying idea of this project is to view history as a **graph of events and people** who are connected. The Anki cards not only query you about individual events and people but also about the **relationships** between them.
 
-<a href="docs/imgs/history-as-graph.png"><img src="docs/imgs/history-as-graph.png" width="60%" alt="History as a graph"></a>
+<a href="docs/imgs/history-as-graph.png"><img src="docs/imgs/history-as-graph.png" width="100%" alt="History as a graph"></a>
 
 ## Screenshots
 
