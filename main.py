@@ -40,10 +40,18 @@ def bump_version() -> None:
     run(f"uv run python tools/bump_version.py {args}")
 
 
+def sync() -> None:
+    """Export to Anki, import back, and validate."""
+    source_to_anki()
+    anki_to_source()
+    validate()
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>")
         print("\nAvailable commands:")
+        print("  sync                Export to Anki, import back, and validate")
         print("  source-to-anki      Export source files to Anki")
         print("  anki-to-source      Import Anki changes back to source")
         print("  validate            Validate references in CSV files")
@@ -56,6 +64,7 @@ def main() -> None:
 
     command = sys.argv[1]
     commands = {
+        "sync": sync,
         "source-to-anki": source_to_anki,
         "anki-to-source": anki_to_source,
         "validate": validate,

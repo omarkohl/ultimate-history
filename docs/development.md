@@ -13,6 +13,9 @@ This project uses [brain-brew](https://github.com/ohare93/brain-brew) to bidirec
 ## Common Development Tasks
 
 ```bash
+# Most common workflow: export to Anki, import back, and validate
+uv run main.py sync
+
 # Import/export between source files (CSV) and Anki (CrowdAnki JSON format)
 uv run main.py source-to-anki
 uv run main.py anki-to-source
