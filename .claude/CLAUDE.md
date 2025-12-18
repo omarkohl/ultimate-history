@@ -22,3 +22,19 @@ Use `uv run main.py <command>`:
 - Use `jj` for version control
 - Edit files in `src/`, never modify or read `build/` directly
 - `build/` contains CrowdAnki format decks, only modified by running `uv run main.py source-to-anki`
+
+## Python Code Standards
+
+- **Always** run Python scripts with `uv run <script>` (never with plain `python`)
+- **Always** format and lint code with `uv run ruff check --fix` and `uv run ruff format` before committing
+- **Always** write CSV files with these exact settings:
+  ```python
+  csv.DictWriter(
+      f,
+      fieldnames=fieldnames,
+      lineterminator="\n",
+      quoting=csv.QUOTE_ALL,
+      escapechar=None,
+      doublequote=True,
+  )
+  ```
