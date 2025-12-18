@@ -25,6 +25,7 @@ def validate() -> None:
     args = " ".join(sys.argv[2:])
     run(f"uv run python tools/validate_format.py {args}")
     run(f"uv run python tools/validate_references.py {args}")
+    run(f"uv run python tools/validate_images.py {args}")
 
 
 def list_relationships() -> None:
