@@ -10,10 +10,10 @@ Note that this guide refers exclusively to modifying the content of the cards, f
 
 1. **Fork and clone** this repository ([GitHub guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo))
 2. **Edit CSV files** (for example using _Microsoft Excel_) in `src/data/`:
-   - `Ultimate History | Person.csv` - Historical figures
-   - `Ultimate History | Event.csv` - Historical events
-   - `Ultimate History | QA.csv` - Question & answer cards
-   - `Ultimate History | Cloze.csv` - Cloze deletion cards
+   - `person.csv` - Historical figures
+   - `event.csv` - Historical events
+   - `qa.csv` - Question & answer cards
+   - `cloze.csv` - Cloze deletion cards
 3. **Ignore the GUID column** - it will be auto-generated later by the project maintainers
 4. **Submit a pull request** ([GitHub guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request))
 

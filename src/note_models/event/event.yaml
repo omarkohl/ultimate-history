@@ -1,18 +1,16 @@
-name: Ultimate History | Person
-id: 61d8a7c6-ceb4-11f0-8661-6154742e1518
-css_file: src/note_models/Ultimate History | Person/style.css
+name: Ultimate History | Event
+id: 61d8b298-ceb4-11f0-8661-6154742e1518
+css_file: src/note_models/event/style.css
 latex_pre: "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\
   \\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\
   \\begin{document}\n"
 fields:
 - name: Name
-- name: Known For
+- name: Summary
   font: Arial
-- name: Date of Birth
+- name: Start Date
   font: Arial
-- name: Date of Death
-  font: Arial
-- name: Picture
+- name: End Date
   font: Arial
 - name: Related Person 1
   font: Arial
@@ -72,52 +70,34 @@ fields:
   font: Arial
   font_size: 15
 templates:
-- name: Picture to Name
-  html_file: src/note_models/Ultimate History | Person/Picture to Name.html
-  browser_html_file: src/note_models/Ultimate History | Person/Picture to 
-    Name_browser.html
-- name: Known For to Name
-  html_file: src/note_models/Ultimate History | Person/Known For to Name.html
-  browser_html_file: src/note_models/Ultimate History | Person/Known For to 
-    Name_browser.html
+- name: Summary to Name
+  html_file: src/note_models/event/summary_to_name.html
+  browser_html_file: src/note_models/event/summary_to_name_browser.html
 - name: Name to Dates
-  html_file: src/note_models/Ultimate History | Person/Name to Dates.html
-  browser_html_file: src/note_models/Ultimate History | Person/Name to 
-    Dates_browser.html
-- name: Name to Known For
-  html_file: src/note_models/Ultimate History | Person/Name to Known For.html
-  browser_html_file: src/note_models/Ultimate History | Person/Name to Known 
-    For_browser.html
+  html_file: src/note_models/event/name_to_dates.html
+  browser_html_file: src/note_models/event/name_to_dates_browser.html
+- name: Name to Summary
+  html_file: src/note_models/event/name_to_summary.html
+  browser_html_file: src/note_models/event/name_to_summary_browser.html
 - name: Name to Related Person
-  html_file: src/note_models/Ultimate History | Person/Name to Related 
-    Person.html
-  browser_html_file: src/note_models/Ultimate History | Person/Name to Related 
-    Person_browser.html
+  html_file: src/note_models/event/name_to_related_person.html
+  browser_html_file: src/note_models/event/name_to_related_person_browser.html
 - name: Name to Related Event
-  html_file: src/note_models/Ultimate History | Person/Name to Related 
-    Event.html
-  browser_html_file: src/note_models/Ultimate History | Person/Name to Related 
-    Event_browser.html
+  html_file: src/note_models/event/name_to_related_event.html
+  browser_html_file: src/note_models/event/name_to_related_event_browser.html
 required_fields_per_template:
 - - 0
   - any
-  - - 4
+  - - 1
 - - 1
   - any
-  - - 1
+  - - 0
 - - 2
   - any
   - - 0
-    - 4
 - - 3
   - any
   - - 0
-    - 4
 - - 4
   - any
   - - 0
-    - 4
-- - 5
-  - any
-  - - 0
-    - 4

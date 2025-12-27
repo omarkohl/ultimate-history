@@ -77,25 +77,25 @@ class RelationshipAnalyzer:
     def load_all_notes(self):
         """Load all note types from CSV files."""
         self.load_notes_from_csv(
-            self.data_dir / "Ultimate History | Person.csv",
+            self.data_dir / "person.csv",
             Person,
             {"name": "name", "date of birth": "birth", "date of death": "death"},
         )
 
         self.load_notes_from_csv(
-            self.data_dir / "Ultimate History | Event.csv",
+            self.data_dir / "event.csv",
             Event,
             {"name": "name", "start date": "start", "end date": "end"},
         )
 
         self.load_notes_from_csv(
-            self.data_dir / "Ultimate History | QA.csv",
+            self.data_dir / "qa.csv",
             QA,
             {"question": "question", "answer": "answer"},
         )
 
         self.load_notes_from_csv(
-            self.data_dir / "Ultimate History | Cloze.csv",
+            self.data_dir / "cloze.csv",
             Cloze,
             {"text": "text"},
         )

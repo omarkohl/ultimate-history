@@ -23,7 +23,7 @@ class ReferenceValidator:
 
     def load_people(self):
         """Load all people from Person.csv."""
-        person_file = self.data_dir / "Ultimate History | Person.csv"
+        person_file = self.data_dir / "person.csv"
         with open(person_file, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -37,7 +37,7 @@ class ReferenceValidator:
 
     def load_events(self):
         """Load all events from Event.csv."""
-        event_file = self.data_dir / "Ultimate History | Event.csv"
+        event_file = self.data_dir / "event.csv"
         with open(event_file, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -344,7 +344,7 @@ class ReferenceValidator:
         if not missing_people:
             return
 
-        person_file = self.data_dir / "Ultimate History | Person.csv"
+        person_file = self.data_dir / "person.csv"
         with open(person_file, "a", encoding="utf-8", newline="") as f:
             with open(person_file, "r", encoding="utf-8") as rf:
                 reader = csv.DictReader(rf)
@@ -379,7 +379,7 @@ class ReferenceValidator:
         if not missing_events:
             return
 
-        event_file = self.data_dir / "Ultimate History | Event.csv"
+        event_file = self.data_dir / "event.csv"
         with open(event_file, "a", encoding="utf-8", newline="") as f:
             with open(event_file, "r", encoding="utf-8") as rf:
                 reader = csv.DictReader(rf)

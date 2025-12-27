@@ -163,10 +163,10 @@ class FormatValidator:
         """Check for duplicate values in specific columns."""
         # Define which columns to check for duplicates in each CSV type
         duplicate_columns = {
-            "Ultimate History | Event.csv": ["name", "summary"],
-            "Ultimate History | Person.csv": ["name", "known for"],
-            "Ultimate History | QA.csv": [],  # No duplicate checks for QA
-            "Ultimate History | Cloze.csv": [],  # No duplicate checks for Cloze
+            "event.csv": ["name", "summary"],
+            "person.csv": ["name", "known for"],
+            "qa.csv": [],  # No duplicate checks for QA
+            "cloze.csv": [],  # No duplicate checks for Cloze
         }
 
         columns_to_check = duplicate_columns.get(csv_name, [])

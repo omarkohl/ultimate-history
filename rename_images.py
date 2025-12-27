@@ -43,7 +43,7 @@ def extract_image_filename(picture_html: str) -> str | None:
 
 
 def main():
-    csv_path = Path("src/data/Ultimate History | Person.csv")
+    csv_path = Path("src/data/person.csv")
     media_path = Path("src/media")
 
     # Read CSV and build rename mapping

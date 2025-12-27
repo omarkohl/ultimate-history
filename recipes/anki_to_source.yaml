@@ -20,13 +20,13 @@
 - generate_csvs:
     notes: deck_notes
     file_mappings:
-    - file: src/data/Ultimate History | Person.csv
+    - file: src/data/person.csv
       note_model: Ultimate History | Person
-    - file: src/data/Ultimate History | Event.csv
+    - file: src/data/event.csv
       note_model: Ultimate History | Event
-    - file: src/data/Ultimate History | QA.csv
+    - file: src/data/qa.csv
       note_model: Ultimate History | QA
-    - file: src/data/Ultimate History | Cloze.csv
+    - file: src/data/cloze.csv
       note_model: Ultimate History | Cloze
     note_model_mappings:
     - note_models:

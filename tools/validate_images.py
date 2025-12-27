@@ -78,7 +78,7 @@ class ImageValidator:
 
     def validate_all(self):
         """Validate all image references in Person CSV."""
-        csv_file = self.data_dir / "Ultimate History | Person.csv"
+        csv_file = self.data_dir / "person.csv"
         if not csv_file.exists():
             print(f"Error: {csv_file} not found")
             return

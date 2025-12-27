@@ -1,6 +1,6 @@
 name: Ultimate History | Cloze
 id: 909dcbb2-d022-11f0-b0c0-bf12fd7e12f7
-css_file: src/note_models/Ultimate History | Cloze/style.css
+css_file: src/note_models/cloze/style.css
 is_cloze: true
 latex_pre: "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\
   \\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\
@@ -49,8 +49,8 @@ fields:
   font_size: 15
 templates:
 - name: Cloze
-  html_file: src/note_models/Ultimate History | Cloze/Cloze.html
-  browser_html_file: src/note_models/Ultimate History | Cloze/Cloze_browser.html
+  html_file: src/note_models/cloze/cloze.html
+  browser_html_file: src/note_models/cloze/cloze_browser.html
 tags:
 - english
 - orthography

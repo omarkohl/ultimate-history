@@ -1,27 +1,24 @@
 - generate_guids_in_csvs:
     source:
-    - src/data/Ultimate History | Person.csv
-    - src/data/Ultimate History | Event.csv
-    - src/data/Ultimate History | QA.csv
-    - src/data/Ultimate History | Cloze.csv
+    - src/data/person.csv
+    - src/data/event.csv
+    - src/data/qa.csv
+    - src/data/cloze.csv
     columns:
     - guid
 - build_parts:
   - note_models_from_yaml_part:
       part_id: Ultimate History | Person
-      file: src/note_models/Ultimate History | Person/Ultimate History |
-        Person.yaml
+      file: src/note_models/person/person.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | Event
-      file: src/note_models/Ultimate History | Event/Ultimate History |
-        Event.yaml
+      file: src/note_models/event/event.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | QA
-      file: src/note_models/Ultimate History | QA/Ultimate History | QA.yaml
+      file: src/note_models/qa/qa.yaml
   - note_models_from_yaml_part:
       part_id: Ultimate History | Cloze
-      file: src/note_models/Ultimate History | Cloze/Ultimate History |
-        Cloze.yaml
+      file: src/note_models/cloze/cloze.yaml
   - headers_from_yaml_part:
       - part_id: deck_headers
         file: src/headers/header1.yaml
@@ -31,13 +28,13 @@
       part_id: deck_notes
       save_to_file: null
       file_mappings:
-      - file: src/data/Ultimate History | Person.csv
+      - file: src/data/person.csv
         note_model: Ultimate History | Person
-      - file: src/data/Ultimate History | Event.csv
+      - file: src/data/event.csv
         note_model: Ultimate History | Event
-      - file: src/data/Ultimate History | QA.csv
+      - file: src/data/qa.csv
         note_model: Ultimate History | QA
-      - file: src/data/Ultimate History | Cloze.csv
+      - file: src/data/cloze.csv
         note_model: Ultimate History | Cloze
       note_model_mappings:
       - note_models:
