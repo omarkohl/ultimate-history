@@ -1,9 +1,10 @@
 """Shared utilities for Ultimate History tools."""
 
+import csv
 import re
 from difflib import SequenceMatcher
 from pathlib import Path
-from typing import Optional
+from typing import Optional, TextIO
 
 
 def parse_reference(
@@ -122,3 +123,36 @@ def get_data_dir() -> Path:
     """Get the data directory path (src/data from project root)."""
     # Assumes utils.py is in tools/
     return Path(__file__).parent.parent / "src" / "data"
+
+
+def make_csv_writer(f: TextIO, fieldnames: list[str]) -> csv.DictWriter:
+    """Create a DictWriter with standard project settings."""
+    return csv.DictWriter(
+        f,
+        fieldnames=fieldnames,
+        lineterminator="\n",
+        quoting=csv.QUOTE_ALL,
+        escapechar=None,
+        doublequote=True,
+    )
+
+
+def sort_row_references(row: dict) -> dict:
+    """Sort related person/event references within a row alphabetically by name."""
+    # Sort related persons
+    person_cols = [f"related person {i}" for i in range(1, 6)]
+    person_refs = [row.get(col, "") for col in person_cols]
+    person_refs = [r for r in person_refs if r.strip()]
+    person_refs.sort(key=lambda r: parse_reference(r)[0].lower())
+    for i, col in enumerate(person_cols):
+        row[col] = person_refs[i] if i < len(person_refs) else ""
+
+    # Sort related events
+    event_cols = [f"related event {i}" for i in range(1, 6)]
+    event_refs = [row.get(col, "") for col in event_cols]
+    event_refs = [r for r in event_refs if r.strip()]
+    event_refs.sort(key=lambda r: parse_reference(r)[0].lower())
+    for i, col in enumerate(event_cols):
+        row[col] = event_refs[i] if i < len(event_refs) else ""
+
+    return row

@@ -6,7 +6,7 @@ import csv
 from collections import defaultdict
 from pathlib import Path
 
-from utils import get_data_dir
+from utils import get_data_dir, make_csv_writer, parse_reference, sort_row_references
 from validation_common import ValidationError
 
 
@@ -40,10 +40,14 @@ class FormatValidator:
         # Check for duplicates in specific columns
         self.check_duplicates(csv_name, rows)
 
+        # Check row ordering (alphabetical by second column)
+        self.check_row_order(csv_name, rows, fieldnames)
+
         # Check each row for formatting issues
         for row_num, row in enumerate(rows, start=2):
             self.check_tags_ordering(csv_name, row_num, row)
             self.check_whitespace(csv_name, row_num, row)
+            self.check_reference_order(csv_name, row_num, row)
 
     def check_quoting(self, csv_file: Path):
         """Check if all fields in the CSV are properly quoted."""
@@ -197,6 +201,71 @@ class FormatValidator:
                             )
                         )
 
+    def check_row_order(self, csv_name: str, rows: list[dict], fieldnames: list[str]):
+        """Check if rows are sorted alphabetically by second column."""
+        if not rows or len(fieldnames) < 2:
+            return
+        sort_key = fieldnames[1]
+        values = [row.get(sort_key, "") for row in rows]
+        sorted_values = sorted(values, key=str.lower)
+
+        for i, (current, expected) in enumerate(zip(values, sorted_values)):
+            if current != expected:
+                row_num = i + 2  # +2 for 1-indexed and header row
+                self.errors.append(
+                    ValidationError(
+                        csv_file=csv_name,
+                        row_num=row_num,
+                        column=sort_key,
+                        error_type="row_order",
+                        message=f"Row out of order: '{current[:30]}' should come after rows starting with '{expected[:20]}...'",
+                        current_value=current,
+                        suggested_fix=None,  # Fix is handled by sorting all rows
+                    )
+                )
+                # Only report first out-of-order row per file
+                break
+
+    def check_reference_order(self, csv_name: str, row_num: int, row: dict):
+        """Check if related persons/events are sorted alphabetically."""
+        # Check related persons
+        person_cols = [f"related person {i}" for i in range(1, 6)]
+        person_refs = [row.get(col, "") for col in person_cols]
+        person_refs_nonempty = [r for r in person_refs if r.strip()]
+        person_names = [parse_reference(r)[0].lower() for r in person_refs_nonempty]
+
+        if person_names != sorted(person_names):
+            self.errors.append(
+                ValidationError(
+                    csv_file=csv_name,
+                    row_num=row_num,
+                    column="related person 1-5",
+                    error_type="reference_order",
+                    message="Related persons not in alphabetical order",
+                    current_value=", ".join(person_names[:3]) + "...",
+                    suggested_fix=None,  # Fix is handled by sort_row_references
+                )
+            )
+
+        # Check related events
+        event_cols = [f"related event {i}" for i in range(1, 6)]
+        event_refs = [row.get(col, "") for col in event_cols]
+        event_refs_nonempty = [r for r in event_refs if r.strip()]
+        event_names = [parse_reference(r)[0].lower() for r in event_refs_nonempty]
+
+        if event_names != sorted(event_names):
+            self.errors.append(
+                ValidationError(
+                    csv_file=csv_name,
+                    row_num=row_num,
+                    column="related event 1-5",
+                    error_type="reference_order",
+                    message="Related events not in alphabetical order",
+                    current_value=", ".join(event_names[:3]) + "...",
+                    suggested_fix=None,  # Fix is handled by sort_row_references
+                )
+            )
+
     def print_errors(self):
         """Print all validation errors grouped by type."""
         if not self.errors:
@@ -244,11 +313,13 @@ class FormatValidator:
             fixes = row_fixes_by_file.get(csv_file, {})
             self.apply_fixes(csv_file, fixes)
 
+        # Count fixable errors (quoting, ordering, and those with suggested fixes)
+        auto_fixable_types = {"quoting", "row_order", "reference_order"}
         fixable_count = len(
             [
                 e
                 for e in self.errors
-                if e.error_type == "quoting" or e.suggested_fix is not None
+                if e.error_type in auto_fixable_types or e.suggested_fix is not None
             ]
         )
         print(f"✓ Auto-fixed {fixable_count} issues")
@@ -257,7 +328,7 @@ class FormatValidator:
         unfixed = [
             e
             for e in self.errors
-            if e.error_type != "quoting" and e.suggested_fix is None
+            if e.error_type not in auto_fixable_types and e.suggested_fix is None
         ]
         if unfixed:
             print(f"⚠ {len(unfixed)} issues require manual review:")
@@ -280,15 +351,15 @@ class FormatValidator:
                         row[column] = fixes[(row_num, column)]
                 rows.append(row)
 
+        for row in rows:
+            sort_row_references(row)
+        # Sort by second column (name, question, text, etc.)
+        if rows and len(fieldnames) > 1:
+            sort_key = fieldnames[1]
+            rows.sort(key=lambda r: r[sort_key].lower())
+
         with open(csv_file, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(
-                f,
-                fieldnames=fieldnames,
-                lineterminator="\n",
-                quoting=csv.QUOTE_ALL,
-                escapechar=None,
-                doublequote=True,
-            )
+            writer = make_csv_writer(f, fieldnames)
             writer.writeheader()
             writer.writerows(rows)
 

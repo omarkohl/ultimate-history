@@ -9,7 +9,14 @@ from pathlib import Path
 from typing import Optional
 
 from model import Event, Person
-from utils import format_reference, fuzzy_match, get_data_dir, parse_reference
+from utils import (
+    format_reference,
+    fuzzy_match,
+    get_data_dir,
+    make_csv_writer,
+    parse_reference,
+    sort_row_references,
+)
 from validation_common import ValidationError
 
 
@@ -322,13 +329,12 @@ class ReferenceValidator:
                         row[column] = fixes[(row_num, column)]
                 rows.append(row)
 
+        for row in rows:
+            sort_row_references(row)
+        rows.sort(key=lambda r: r["name"])
+
         with open(csv_file, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(
-                f,
-                fieldnames=fieldnames,
-                lineterminator="\n",
-                quoting=csv.QUOTE_ALL,
-            )
+            writer = make_csv_writer(f, fieldnames)
             writer.writeheader()
             writer.writerows(rows)
 
@@ -345,25 +351,32 @@ class ReferenceValidator:
             return
 
         person_file = self.data_dir / "person.csv"
-        with open(person_file, "a", encoding="utf-8", newline="") as f:
-            with open(person_file, "r", encoding="utf-8") as rf:
-                reader = csv.DictReader(rf)
-                fieldnames = reader.fieldnames
-                if fieldnames is None:
-                    raise ValueError(f"No fieldnames found in {person_file}")
+        rows = []
+        with open(person_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames
+            if fieldnames is None:
+                raise ValueError(f"No fieldnames found in {person_file}")
+            rows = list(reader)
 
-            writer = csv.DictWriter(
-                f, fieldnames=fieldnames, lineterminator="\n", quoting=csv.QUOTE_ALL
-            )
-            for name, (birth, death) in missing_people.items():
-                row = {field: "" for field in fieldnames}
-                row["guid"] = ""
-                row["name"] = name
-                if birth:
-                    row["date of birth"] = birth
-                if death:
-                    row["date of death"] = death
-                writer.writerow(row)
+        for name, (birth, death) in missing_people.items():
+            row = {field: "" for field in fieldnames}
+            row["guid"] = ""
+            row["name"] = name
+            if birth:
+                row["date of birth"] = birth
+            if death:
+                row["date of death"] = death
+            rows.append(row)
+
+        for row in rows:
+            sort_row_references(row)
+        rows.sort(key=lambda r: r["name"])
+
+        with open(person_file, "w", encoding="utf-8", newline="") as f:
+            writer = make_csv_writer(f, fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
 
         print(f"\nCreated {len(missing_people)} new Person rows")
 
@@ -380,25 +393,32 @@ class ReferenceValidator:
             return
 
         event_file = self.data_dir / "event.csv"
-        with open(event_file, "a", encoding="utf-8", newline="") as f:
-            with open(event_file, "r", encoding="utf-8") as rf:
-                reader = csv.DictReader(rf)
-                fieldnames = reader.fieldnames
-                if fieldnames is None:
-                    raise ValueError(f"No fieldnames found in {event_file}")
+        rows = []
+        with open(event_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames
+            if fieldnames is None:
+                raise ValueError(f"No fieldnames found in {event_file}")
+            rows = list(reader)
 
-            writer = csv.DictWriter(
-                f, fieldnames=fieldnames, lineterminator="\n", quoting=csv.QUOTE_ALL
-            )
-            for name, (start, end) in missing_events.items():
-                row = {field: "" for field in fieldnames}
-                row["guid"] = ""
-                row["name"] = name
-                if start:
-                    row["start date"] = start
-                if end:
-                    row["end date"] = end
-                writer.writerow(row)
+        for name, (start, end) in missing_events.items():
+            row = {field: "" for field in fieldnames}
+            row["guid"] = ""
+            row["name"] = name
+            if start:
+                row["start date"] = start
+            if end:
+                row["end date"] = end
+            rows.append(row)
+
+        for row in rows:
+            sort_row_references(row)
+        rows.sort(key=lambda r: r["name"])
+
+        with open(event_file, "w", encoding="utf-8", newline="") as f:
+            writer = make_csv_writer(f, fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
 
         print(f"\nCreated {len(missing_events)} new Event rows")
 

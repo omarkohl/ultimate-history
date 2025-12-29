@@ -8,7 +8,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 from pathlib import Path
 
-from utils import get_data_dir
+from utils import get_data_dir, make_csv_writer, sort_row_references
 from validation_common import ValidationError
 
 
@@ -225,15 +225,11 @@ class ImageValidator:
                     print(f"  Updated reference: {old_filename} -> {new_filename}")
 
             # Write updated CSV
+            for row in updated_rows:
+                sort_row_references(row)
+            updated_rows.sort(key=lambda r: r["name"])
             with open(csv_file, "w", encoding="utf-8", newline="") as f:
-                writer = csv.DictWriter(
-                    f,
-                    fieldnames=fieldnames,
-                    lineterminator="\n",
-                    quoting=csv.QUOTE_ALL,
-                    escapechar=None,
-                    doublequote=True,
-                )
+                writer = make_csv_writer(f, fieldnames)
                 writer.writeheader()
                 writer.writerows(updated_rows)
 
