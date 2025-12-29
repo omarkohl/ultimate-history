@@ -23,6 +23,10 @@ Use `uv run main.py <command>`:
 - Edit files in `src/`, never modify or read `build/` directly
 - `build/` contains CrowdAnki format decks, only modified by running `uv run main.py source-to-anki`
 
+## Personal Fields
+
+- **Personal fields are always empty**: Columns like `personal related person 1-3`, `personal related event 1-3`, and `personal notes` exist for Anki users to add their own notes locally. They are never used in this project and should be left empty in exports.
+
 ## Python Code Standards
 
 - **Always** run Python scripts with `uv run <script>` (never with plain `python`)
