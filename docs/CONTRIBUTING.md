@@ -33,6 +33,87 @@ Note that this guide refers exclusively to modifying the content of the cards, f
 - Link related people and events
 - Do not use copyrighted content
 
+## Tagging System
+
+Tags allow users to filter the deck for specific topics they want to study. All tags follow the format `UH::<Category>::<Value>` with three categories: **Region**, **Period**, and **Theme**.
+
+### Principles
+
+1. **Every card needs at least one Region and one Period tag** - This ensures users can filter by geography and time
+2. **Theme tags are optional** but helpful for cross-cutting topics
+3. **Use the most specific applicable tag** - A card about Beethoven should use `UH::Region::Europe::Western`, not just `UH::Region::Europe`
+4. **Multiple tags are fine** - Events spanning regions/periods should have multiple tags
+
+### Region Tags (Hierarchical)
+
+Regions use a 2-level hierarchy. Always use the most specific level that applies.
+
+| Level 1 | Level 2 Options |
+|---------|-----------------|
+| `UH::Region::Europe` | `Western`, `Eastern`, `Northern`, `Southern`, `Central` |
+| `UH::Region::Asia` | `East`, `Southeast`, `South`, `Central`, `West` (Middle East) |
+| `UH::Region::Africa` | `North`, `West`, `East`, `Central`, `Southern` |
+| `UH::Region::Americas` | `North`, `Central`, `South`, `Caribbean` |
+| `UH::Region::Oceania` | `Australia`, `Pacific` |
+| `UH::Region::Global` | *(no sub-regions)* - For truly worldwide events |
+
+**Examples:**
+- French Revolution → `UH::Region::Europe::Western`
+- Mongol Empire → `UH::Region::Asia::Central` + `UH::Region::Asia::East` + `UH::Region::Europe::Eastern`
+- World War II → `UH::Region::Global`
+- Meiji Restoration → `UH::Region::Asia::East`
+
+### Period Tags (Centuries)
+
+Use century tags for all content. For ancient history, use "BCE" suffix.
+
+| Tag | Approximate Coverage |
+|-----|---------------------|
+| `UH::Period::Prehistory` | Before 3000 BCE |
+| `UH::Period::4th_Millennium_BCE` | 4000-3001 BCE |
+| `UH::Period::30th_Century_BCE` ... | Individual centuries BCE |
+| `UH::Period::1st_Century` | 1-100 CE |
+| `UH::Period::2nd_Century` ... | Individual centuries CE |
+| `UH::Period::21st_Century` | 2001-2100 |
+
+**Guidelines:**
+- Use the century when the event **primarily occurred**, not when it started
+- For events spanning centuries, use multiple tags
+- For persons, tag based on their **active period**, not just birth/death
+
+**Examples:**
+- Napoleon (1769-1821) → `UH::Period::18th_Century` + `UH::Period::19th_Century`
+- WWI (1914-1918) → `UH::Period::20th_Century`
+- Roman Republic (509-27 BCE) → Multiple century tags as appropriate for specific content
+
+### Theme Tags (Curated List)
+
+Themes categorize content by subject matter. Use the current approved list:
+
+| Tag | Use For |
+|-----|---------|
+| `UH::Theme::War` | Battles, conflicts, military history, conquests |
+| `UH::Theme::Politics` | Governance, diplomacy, revolutions, political movements |
+| `UH::Theme::Economy` | Trade, industry, economic systems, commerce |
+| `UH::Theme::Society` | Social movements, daily life, demographics, social structures |
+| `UH::Theme::Culture` | Art, literature, music, architecture, cultural movements |
+| `UH::Theme::Science` | Technology, medicine, scientific discoveries, inventions |
+| `UH::Theme::Religion` | Faiths, religious movements, theology, religious conflicts |
+
+**Guidelines:**
+- Most cards should have 1-2 themes; avoid over-tagging
+- If a theme doesn't fit, don't force it - Region and Period are sufficient
+- New themes require discussion via GitHub issue before being added
+
+### Tag Examples
+
+| Content | Tags |
+|---------|------|
+| Napoleon Bonaparte | `UH::Region::Europe::Western`, `UH::Period::18th_Century`, `UH::Period::19th_Century`, `UH::Theme::War`, `UH::Theme::Politics` |
+| Industrial Revolution | `UH::Region::Europe::Western`, `UH::Period::18th_Century`, `UH::Period::19th_Century`, `UH::Theme::Economy`, `UH::Theme::Science` |
+| Confucius | `UH::Region::Asia::East`, `UH::Period::6th_Century_BCE`, `UH::Period::5th_Century_BCE`, `UH::Theme::Religion` |
+| Silk Road | `UH::Region::Asia::Central`, `UH::Region::Asia::East`, `UH::Region::Europe`, `UH::Theme::Economy` |
+
 ## Need Help?
 
 - New to GitHub? [First contributions guide](https://github.com/firstcontributions/first-contributions)
