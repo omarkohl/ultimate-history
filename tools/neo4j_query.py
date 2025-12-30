@@ -290,7 +290,7 @@ def find_related(
     with driver.session() as session:
         # Build a query to find entities with overlapping time periods or matching tags
         conditions = []
-        params = {"limit": limit}
+        params: dict[str, int | str | list[str]] = {"limit": limit}
 
         if time_start and time_end:
             # Find entities whose time range overlaps
