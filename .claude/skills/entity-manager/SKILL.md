@@ -1,0 +1,278 @@
+---
+name: entity-manager
+description: Create and edit historical entities (persons, events, QA cards, cloze cards) in the Neo4j database. Use when the user wants to add a new person, event, QA, or cloze, create relationships between entities, or explore existing entities to find related content.
+allowed-tools: Bash, Read, Grep, Glob
+---
+
+# Entity Manager Skill
+
+Manage historical entities (persons, events, QA, cloze) in the Neo4j graph database.
+
+## Prerequisites
+
+Environment variables must be set:
+- `NEO4J_URI` - Database connection URI
+- `NEO4J_PASSWORD` - Database password
+
+**NEVER read the `.env` file** - credentials are loaded from environment.
+
+## CLI Tool
+
+All commands use: `uv run tools/neo4j_query.py <command>`
+
+### Query Commands
+
+```bash
+# List all tags with usage counts
+uv run tools/neo4j_query.py tags
+
+# List entities by type
+uv run tools/neo4j_query.py list person
+uv run tools/neo4j_query.py list event
+uv run tools/neo4j_query.py list qa
+uv run tools/neo4j_query.py list cloze
+
+# Search entities (fuzzy, case-insensitive)
+uv run tools/neo4j_query.py search "napoleon"
+
+# Get all relationships for an entity
+uv run tools/neo4j_query.py relations "Napoleon Bonaparte"
+
+# Find potentially related entities by time period and tags
+uv run tools/neo4j_query.py find-related "New Entity" --start 1789 --end 1815 --tag "UH::Region::Europe"
+```
+
+### Create Commands
+
+```bash
+# Create a person
+uv run tools/neo4j_query.py create-person "Otto von Bismarck" \
+  --known-for "German chancellor who unified Germany" \
+  --birth 1815 --death 1898 \
+  --tag "UH::Region::Europe::Central" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::Politics"
+
+# Create an event
+uv run tools/neo4j_query.py create-event "Franco-Prussian War" \
+  --summary "War between France and Prussia leading to German unification" \
+  --start 1870 --end 1871 \
+  --tag "UH::Region::Europe::Western" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::War"
+
+# Create a QA card
+uv run tools/neo4j_query.py create-qa "What triggered the Franco-Prussian War?" \
+  --answer "The Ems Dispatch, a telegram edited by Bismarck to provoke France" \
+  --tag "UH::Region::Europe" \
+  --tag "UH::Period::19th_Century"
+
+# Create a Cloze card (must have valid {{c1::deletion}} syntax)
+uv run tools/neo4j_query.py create-cloze \
+  "The {{c1::Franco-Prussian War}} (1870-1871) led to {{c2::German unification}}." \
+  --tag "UH::Region::Europe" \
+  --tag "UH::Period::19th_Century"
+
+# Create a new Region or Period tag
+uv run tools/neo4j_query.py create-tag "UH::Region::Europe::Central"
+uv run tools/neo4j_query.py create-tag "UH::Period::19th_Century"
+
+# Add relationship between entities
+uv run tools/neo4j_query.py add-rel "Otto von Bismarck" "Franco-Prussian War" \
+  "orchestrated the war to complete German unification"
+```
+
+## Tagging System
+
+**Every card needs at least one Region and one Period tag.** Theme tags are optional.
+
+### Region Tags (Hierarchical, 2 levels)
+
+Format: `UH::Region::<Continent>` or `UH::Region::<Continent>::<SubRegion>`
+
+| Continent | Sub-regions |
+|-----------|-------------|
+| Europe | Western, Eastern, Northern, Southern, Central |
+| Asia | East, Southeast, South, Central, West (Middle East) |
+| Africa | North, West, East, Central, Southern |
+| Americas | North, Central, South, Caribbean |
+| Oceania | Australia, Pacific |
+| Global | *(no sub-regions - for worldwide events)* |
+
+**Always use the most specific level that applies:**
+- French Revolution → `UH::Region::Europe::Western`
+- Mongol Empire → Multiple tags: `UH::Region::Asia::Central`, `UH::Region::Asia::East`, `UH::Region::Europe::Eastern`
+- World War II → `UH::Region::Global`
+
+### Period Tags (Centuries)
+
+Format: `UH::Period::<Century>`
+
+Examples:
+- `UH::Period::19th_Century`
+- `UH::Period::5th_Century_BCE`
+- `UH::Period::Prehistory`
+
+**Guidelines:**
+- Tag based on when the event **primarily occurred**
+- For events spanning centuries, use multiple period tags
+- For persons, tag based on their **active period**
+
+### Theme Tags (Curated List)
+
+Format: `UH::Theme::<Theme>`
+
+| Theme | Use For |
+|-------|---------|
+| War | Battles, conflicts, military history |
+| Politics | Governance, diplomacy, revolutions |
+| Economy | Trade, industry, economic systems |
+| Society | Social movements, daily life |
+| Culture | Art, literature, music, architecture |
+| Science | Technology, medicine, discoveries |
+| Religion | Faiths, religious movements |
+
+**Theme tags cannot be created directly** - they are auto-created when used. New themes require GitHub discussion.
+
+## Entity Types
+
+### Person
+- `name`: Full name
+- `known_for`: Brief description of significance
+- `birth`/`death`: Years (strings like "1815")
+- `tags`: Required (at least Region + Period)
+- `notes`: Additional context
+- `source`: Attribution
+
+### Event
+- `name`: Event name
+- `summary`: Brief description
+- `start_date`/`end_date`: Years (if same year, only specify start)
+- `tags`, `notes`, `source`: Same as Person
+
+### QA (Question & Answer)
+- `question`: The question to ask
+- `answer`: The expected answer
+- `tags`, `notes`, `source`: Same as above
+
+### Cloze
+- `text`: Text with Anki cloze deletions `{{c1::text}}` or `{{c1::text::hint}}`
+- Must have at least one cloze deletion starting at c1
+- `tags`, `notes`, `source`: Same as above
+
+## Cloze Syntax
+
+Valid cloze formats:
+- `{{c1::answer}}` - Basic cloze
+- `{{c1::answer::hint}}` - Cloze with hint
+- Multiple clozes: `{{c1::first}} and {{c2::second}}`
+
+Examples:
+```
+"{{c1::Napoleon}} was emperor of {{c2::France}}."
+"The {{c1::Treaty of Westphalia::1648}} ended the {{c2::Thirty Years' War}}."
+```
+
+## Workflow for Adding New Entities
+
+### 1. Research and Verify
+
+Before creating, search to avoid duplicates:
+```bash
+uv run tools/neo4j_query.py search "bismarck"
+```
+
+### 2. Find Related Entities
+
+Use time period and tags to discover relationships:
+```bash
+uv run tools/neo4j_query.py find-related "Otto von Bismarck" \
+  --start 1815 --end 1898 \
+  --tag "UH::Region::Europe"
+```
+
+### 3. Review Existing Tags
+
+Check available tags to use consistent naming:
+```bash
+uv run tools/neo4j_query.py tags
+```
+
+### 4. Create the Entity
+
+Use appropriate tags following the hierarchy. The script will warn about invalid tags.
+
+### 5. Add Relationships
+
+Link to related persons and events with descriptive relationships:
+```bash
+uv run tools/neo4j_query.py add-rel "Person A" "Person B" "was mentor to"
+uv run tools/neo4j_query.py add-rel "Person A" "Event X" "led the"
+```
+
+### 6. Verify Creation
+
+```bash
+uv run tools/neo4j_query.py relations "Otto von Bismarck"
+```
+
+## Relationship Guidelines
+
+Relationships should be:
+- **Directional**: Source -> Target with a description
+- **Specific**: "led the revolution" not just "involved in"
+- **Historical**: Focus on significant historical connections
+
+Common patterns:
+- Person -> Person: "was teacher of", "married", "succeeded", "defeated"
+- Person -> Event: "led", "participated in", "caused", "died during"
+- Event -> Person: "resulted in rise of", "led to death of"
+- Event -> Event: "caused", "preceded", "was part of"
+
+## Complete Example
+
+```bash
+# 1. Search for existing content
+uv run tools/neo4j_query.py search "bismarck"
+
+# 2. Find related entities
+uv run tools/neo4j_query.py find-related "Otto von Bismarck" --start 1815 --end 1898
+
+# 3. Create person with proper tags
+uv run tools/neo4j_query.py create-person "Otto von Bismarck" \
+  --known-for "Prussian statesman who unified Germany through diplomacy and war" \
+  --birth 1815 --death 1898 \
+  --tag "UH::Region::Europe::Central" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::Politics"
+
+# 4. Create related event
+uv run tools/neo4j_query.py create-event "Franco-Prussian War" \
+  --summary "War between France and Prussia resulting in German unification" \
+  --start 1870 --end 1871 \
+  --tag "UH::Region::Europe::Western" \
+  --tag "UH::Region::Europe::Central" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::War"
+
+# 5. Add relationship
+uv run tools/neo4j_query.py add-rel "Otto von Bismarck" "Franco-Prussian War" \
+  "orchestrated through the Ems Dispatch"
+
+# 6. Create QA card
+uv run tools/neo4j_query.py create-qa "How did Bismarck provoke France into the Franco-Prussian War?" \
+  --answer "By editing and publishing the Ems Dispatch to make it appear insulting to France" \
+  --tag "UH::Region::Europe" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::Politics"
+
+# 7. Create Cloze card
+uv run tools/neo4j_query.py create-cloze \
+  "{{c1::Otto von Bismarck}} unified Germany through {{c2::three wars}}: against {{c3::Denmark}} (1864), {{c4::Austria}} (1866), and {{c5::France}} (1870-71)." \
+  --tag "UH::Region::Europe::Central" \
+  --tag "UH::Period::19th_Century" \
+  --tag "UH::Theme::War"
+
+# 8. Verify
+uv run tools/neo4j_query.py relations "Otto von Bismarck"
+```
