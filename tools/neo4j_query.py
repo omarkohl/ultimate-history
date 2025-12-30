@@ -23,6 +23,67 @@ from neo4j import GraphDatabase
 load_dotenv()
 
 
+def parse_date(date_str: str) -> tuple[int | None, bool | None]:
+    """Parse a date string into (year, is_approximate).
+
+    Handles formats like:
+    - "1842" -> (1842, False)
+    - "c. 1760" -> (1760, True)
+    - "c. 1,700,000 BCE" -> (-1700000, True)
+    - "" -> (None, None)
+    """
+    if not date_str or not date_str.strip():
+        return None, None
+
+    date_str = date_str.strip()
+    approximate = date_str.startswith("c. ")
+    if approximate:
+        date_str = date_str[3:]
+
+    # Remove thousand separators
+    date_str = date_str.replace(",", "")
+
+    # Check for BCE
+    bce = date_str.endswith(" BCE")
+    if bce:
+        date_str = date_str[:-4]
+
+    year = int(date_str)
+    if bce:
+        year = -year
+
+    return year, approximate
+
+
+def format_date(year: int | None, approximate: bool | None) -> str:
+    """Format year and approximate flag back to display string.
+
+    - (1842, False) -> "1842"
+    - (1760, True) -> "c. 1760"
+    - (-1700000, True) -> "c. 1,700,000 BCE"
+    - (None, None) -> ""
+    """
+    if year is None:
+        return ""
+
+    bce = year < 0
+    abs_year = abs(year)
+
+    # Only use thousand separators for large numbers (5+ digits)
+    if abs_year >= 10000:
+        year_str = f"{abs_year:,}"
+    else:
+        year_str = str(abs_year)
+
+    if bce:
+        year_str = f"{year_str} BCE"
+
+    if approximate:
+        year_str = f"c. {year_str}"
+
+    return year_str
+
+
 def get_driver():
     """Get Neo4j driver from environment variables."""
     uri = os.environ.get("NEO4J_URI")
@@ -78,7 +139,9 @@ def list_entities(driver, entity_type: str, limit: int = 50):
             result = session.run(
                 f"""
                 MATCH (n:{label})
-                RETURN n.name AS name, n.birth AS start, n.death AS end
+                RETURN n.name AS name,
+                       n.birth_year AS start_year, n.birth_approximate AS start_approx,
+                       n.death_year AS end_year, n.death_approximate AS end_approx
                 ORDER BY n.name
                 LIMIT $limit
                 """,
@@ -88,7 +151,9 @@ def list_entities(driver, entity_type: str, limit: int = 50):
             result = session.run(
                 f"""
                 MATCH (n:{label})
-                RETURN n.name AS name, n.start_date AS start, n.end_date AS end
+                RETURN n.name AS name,
+                       n.start_year AS start_year, n.start_approximate AS start_approx,
+                       n.end_year AS end_year, n.end_approximate AS end_approx
                 ORDER BY n.name
                 LIMIT $limit
                 """,
@@ -98,7 +163,9 @@ def list_entities(driver, entity_type: str, limit: int = 50):
             result = session.run(
                 f"""
                 MATCH (n:{label})
-                RETURN n.question AS name, null AS start, null AS end
+                RETURN n.question AS name,
+                       null AS start_year, null AS start_approx,
+                       null AS end_year, null AS end_approx
                 ORDER BY n.question
                 LIMIT $limit
                 """,
@@ -108,7 +175,9 @@ def list_entities(driver, entity_type: str, limit: int = 50):
             result = session.run(
                 f"""
                 MATCH (n:{label})
-                RETURN n.text AS name, null AS start, null AS end
+                RETURN n.text AS name,
+                       null AS start_year, null AS start_approx,
+                       null AS end_year, null AS end_approx
                 ORDER BY n.text
                 LIMIT $limit
                 """,
@@ -125,11 +194,14 @@ def list_entities(driver, entity_type: str, limit: int = 50):
     print("-" * 82)
     for e in entities:
         name = (e["name"] or "")[:58]
-        dates = ""
-        if e["start"] and e["end"]:
-            dates = f"{e['start']}–{e['end']}"
-        elif e["start"]:
-            dates = str(e["start"])
+        start = format_date(e["start_year"], e["start_approx"])
+        end = format_date(e["end_year"], e["end_approx"])
+        if start and end:
+            dates = f"{start}–{end}"
+        elif start:
+            dates = start
+        else:
+            dates = ""
         print(f"{name:<60} {dates:<20}")
 
 
@@ -147,8 +219,10 @@ def search_entities(driver, search_term: str, limit: int = 20):
                 labels(n)[0] AS type,
                 coalesce(n.name, n.question, n.text) AS name,
                 n.guid AS guid,
-                coalesce(n.birth, n.start_date) AS start,
-                coalesce(n.death, n.end_date) AS end
+                coalesce(n.birth_year, n.start_year) AS start_year,
+                coalesce(n.birth_approximate, n.start_approximate) AS start_approx,
+                coalesce(n.death_year, n.end_year) AS end_year,
+                coalesce(n.death_approximate, n.end_approximate) AS end_approx
             ORDER BY name
             LIMIT $limit
             """,
@@ -165,11 +239,14 @@ def search_entities(driver, search_term: str, limit: int = 20):
     print("-" * 85)
     for e in entities:
         name = (e["name"] or "")[:53]
-        dates = ""
-        if e["start"] and e["end"]:
-            dates = f"{e['start']}–{e['end']}"
-        elif e["start"]:
-            dates = str(e["start"])
+        start = format_date(e["start_year"], e["start_approx"])
+        end = format_date(e["end_year"], e["end_approx"])
+        if start and end:
+            dates = f"{start}–{end}"
+        elif start:
+            dates = start
+        else:
+            dates = ""
         print(f"{e['type']:<8} {name:<55} {dates:<20}")
 
 
@@ -197,13 +274,13 @@ def get_relationships(driver, name: str):
         entity_type = record["type"]
         print(f"\n{entity_type}: {node['name']}")
         if entity_type == "Person":
-            print(
-                f"  Birth: {node.get('birth', 'N/A')}, Death: {node.get('death', 'N/A')}"
-            )
+            birth = format_date(node.get("birth_year"), node.get("birth_approximate"))
+            death = format_date(node.get("death_year"), node.get("death_approximate"))
+            print(f"  Birth: {birth or 'N/A'}, Death: {death or 'N/A'}")
         else:
-            print(
-                f"  Start: {node.get('start_date', 'N/A')}, End: {node.get('end_date', 'N/A')}"
-            )
+            start = format_date(node.get("start_year"), node.get("start_approximate"))
+            end = format_date(node.get("end_year"), node.get("end_approximate"))
+            print(f"  Start: {start or 'N/A'}, End: {end or 'N/A'}")
 
         # Get outgoing relationships to persons
         result = session.run(
@@ -211,7 +288,8 @@ def get_relationships(driver, name: str):
             MATCH (n)-[r:RELATED_TO_PERSON]->(p:Person)
             WHERE toLower(n.name) = toLower($name)
             RETURN p.name AS target, r.description AS description,
-                   p.birth AS start, p.death AS end
+                   p.birth_year AS start_year, p.birth_approximate AS start_approx,
+                   p.death_year AS end_year, p.death_approximate AS end_approx
             ORDER BY p.name
             """,
             name=name,
@@ -224,7 +302,8 @@ def get_relationships(driver, name: str):
             MATCH (n)-[r:RELATED_TO_EVENT]->(e:Event)
             WHERE toLower(n.name) = toLower($name)
             RETURN e.name AS target, r.description AS description,
-                   e.start_date AS start, e.end_date AS end
+                   e.start_year AS start_year, e.start_approximate AS start_approx,
+                   e.end_year AS end_year, e.end_approximate AS end_approx
             ORDER BY e.name
             """,
             name=name,
@@ -263,14 +342,18 @@ def get_relationships(driver, name: str):
         if persons:
             print(f"\nRelated Persons ({len(persons)}):")
             for p in persons:
-                dates = f" ({p['start']}–{p['end']})" if p["start"] else ""
+                start = format_date(p["start_year"], p["start_approx"])
+                end = format_date(p["end_year"], p["end_approx"])
+                dates = f" ({start}–{end})" if start else ""
                 desc = f": {p['description']}" if p["description"] else ""
                 print(f"  → {p['target']}{dates}{desc}")
 
         if events:
             print(f"\nRelated Events ({len(events)}):")
             for e in events:
-                dates = f" ({e['start']}–{e['end']})" if e["start"] else ""
+                start = format_date(e["start_year"], e["start_approx"])
+                end = format_date(e["end_year"], e["end_approx"])
+                dates = f" ({start}–{end})" if start else ""
                 desc = f": {e['description']}" if e["description"] else ""
                 print(f"  → {e['target']}{dates}{desc}")
 
@@ -294,25 +377,28 @@ def find_related(
     with driver.session() as session:
         # Build a query to find entities with overlapping time periods or matching tags
         conditions = []
-        params: dict[str, int | str | list[str]] = {"limit": limit}
+        params: dict[str, int | None | list[str]] = {"limit": limit}
 
         if time_start and time_end:
+            # Parse the input dates to get integer years
+            start_year, _ = parse_date(time_start)
+            end_year, _ = parse_date(time_end)
             # Find entities whose time range overlaps
             conditions.append(
                 """
                 (
-                    (n:Person AND n.birth IS NOT NULL AND n.death IS NOT NULL
-                     AND toInteger(n.birth) <= toInteger($time_end)
-                     AND toInteger(n.death) >= toInteger($time_start))
+                    (n:Person AND n.birth_year IS NOT NULL AND n.death_year IS NOT NULL
+                     AND n.birth_year <= $time_end
+                     AND n.death_year >= $time_start)
                     OR
-                    (n:Event AND n.start_date IS NOT NULL AND n.end_date IS NOT NULL
-                     AND toInteger(n.start_date) <= toInteger($time_end)
-                     AND toInteger(n.end_date) >= toInteger($time_start))
+                    (n:Event AND n.start_year IS NOT NULL AND n.end_year IS NOT NULL
+                     AND n.start_year <= $time_end
+                     AND n.end_year >= $time_start)
                 )
                 """
             )
-            params["time_start"] = time_start
-            params["time_end"] = time_end
+            params["time_start"] = start_year
+            params["time_end"] = end_year
 
         if tags:
             conditions.append(
@@ -337,10 +423,12 @@ def find_related(
             WITH n, labels(n)[0] AS type, collect(t.name) AS tags
             RETURN type,
                    n.name AS name,
-                   coalesce(n.birth, n.start_date) AS start,
-                   coalesce(n.death, n.end_date) AS end,
+                   coalesce(n.birth_year, n.start_year) AS start_year,
+                   coalesce(n.birth_approximate, n.start_approximate) AS start_approx,
+                   coalesce(n.death_year, n.end_year) AS end_year,
+                   coalesce(n.death_approximate, n.end_approximate) AS end_approx,
                    tags
-            ORDER BY start, name
+            ORDER BY start_year, name
             LIMIT $limit
             """,
             name=name,
@@ -357,11 +445,14 @@ def find_related(
     print("-" * 100)
     for e in entities:
         ename = (e["name"] or "")[:43]
-        dates = ""
-        if e["start"] and e["end"]:
-            dates = f"{e['start']}–{e['end']}"
-        elif e["start"]:
-            dates = str(e["start"])
+        start = format_date(e["start_year"], e["start_approx"])
+        end = format_date(e["end_year"], e["end_approx"])
+        if start and end:
+            dates = f"{start}–{end}"
+        elif start:
+            dates = start
+        else:
+            dates = ""
         etags = ", ".join(e["tags"][:3]) if e["tags"] else ""
         if len(e["tags"]) > 3:
             etags += "..."
@@ -416,6 +507,10 @@ def create_person(
     validate_entity_tags(tags)
     guid = generate_guid()
 
+    # Parse dates
+    birth_year, birth_approximate = parse_date(birth)
+    death_year, death_approximate = parse_date(death)
+
     with driver.session() as session:
         # Check if person already exists
         result = session.run(
@@ -433,8 +528,10 @@ def create_person(
                 guid: $guid,
                 name: $name,
                 known_for: $known_for,
-                birth: $birth,
-                death: $death,
+                birth_year: $birth_year,
+                birth_approximate: $birth_approximate,
+                death_year: $death_year,
+                death_approximate: $death_approximate,
                 notes: $notes,
                 source_license: $source,
                 picture: ''
@@ -443,8 +540,10 @@ def create_person(
             guid=guid,
             name=name,
             known_for=known_for,
-            birth=birth,
-            death=death,
+            birth_year=birth_year,
+            birth_approximate=birth_approximate,
+            death_year=death_year,
+            death_approximate=death_approximate,
             notes=notes or "",
             source=source or "",
         )
@@ -486,6 +585,10 @@ def create_event(
     validate_entity_tags(tags)
     guid = generate_guid()
 
+    # Parse dates
+    start_year, start_approximate = parse_date(start_date)
+    end_year, end_approximate = parse_date(end_date)
+
     with driver.session() as session:
         # Check if event already exists
         result = session.run(
@@ -503,8 +606,10 @@ def create_event(
                 guid: $guid,
                 name: $name,
                 summary: $summary,
-                start_date: $start_date,
-                end_date: $end_date,
+                start_year: $start_year,
+                start_approximate: $start_approximate,
+                end_year: $end_year,
+                end_approximate: $end_approximate,
                 notes: $notes,
                 source_license: $source
             })
@@ -512,8 +617,10 @@ def create_event(
             guid=guid,
             name=name,
             summary=summary,
-            start_date=start_date,
-            end_date=end_date,
+            start_year=start_year,
+            start_approximate=start_approximate,
+            end_year=end_year,
+            end_approximate=end_approximate,
             notes=notes or "",
             source=source or "",
         )
@@ -893,6 +1000,241 @@ def add_relationship(
     print(f"  Description: {description}")
 
 
+def update_person(
+    driver,
+    name: str,
+    new_name: Optional[str] = None,
+    known_for: Optional[str] = None,
+    birth: Optional[str] = None,
+    death: Optional[str] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Update an existing Person node. Only provided fields are updated."""
+    with driver.session() as session:
+        # Find person
+        result = session.run(
+            "MATCH (p:Person) WHERE toLower(p.name) = toLower($name) RETURN p",
+            name=name,
+        )
+        record = result.single()
+        if not record:
+            print(f"Error: Person '{name}' not found.", file=sys.stderr)
+            sys.exit(1)
+
+        # Build SET clauses for provided fields
+        set_clauses = []
+        params: dict = {"name": name}
+
+        if new_name is not None:
+            set_clauses.append("p.name = $new_name")
+            params["new_name"] = new_name
+        if known_for is not None:
+            set_clauses.append("p.known_for = $known_for")
+            params["known_for"] = known_for
+        if birth is not None:
+            birth_year, birth_approximate = parse_date(birth)
+            set_clauses.append("p.birth_year = $birth_year")
+            set_clauses.append("p.birth_approximate = $birth_approximate")
+            params["birth_year"] = birth_year
+            params["birth_approximate"] = birth_approximate
+        if death is not None:
+            death_year, death_approximate = parse_date(death)
+            set_clauses.append("p.death_year = $death_year")
+            set_clauses.append("p.death_approximate = $death_approximate")
+            params["death_year"] = death_year
+            params["death_approximate"] = death_approximate
+        if notes is not None:
+            set_clauses.append("p.notes = $notes")
+            params["notes"] = notes
+        if source is not None:
+            set_clauses.append("p.source_license = $source")
+            params["source"] = source
+
+        if not set_clauses:
+            print("No fields to update.", file=sys.stderr)
+            sys.exit(1)
+
+        query = f"""
+        MATCH (p:Person) WHERE toLower(p.name) = toLower($name)
+        SET {", ".join(set_clauses)}
+        """
+        session.run(query, **params)
+
+    print(f"Updated Person: {new_name or name}")
+
+
+def update_event(
+    driver,
+    name: str,
+    new_name: Optional[str] = None,
+    summary: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Update an existing Event node. Only provided fields are updated."""
+    with driver.session() as session:
+        # Find event
+        result = session.run(
+            "MATCH (e:Event) WHERE toLower(e.name) = toLower($name) RETURN e",
+            name=name,
+        )
+        record = result.single()
+        if not record:
+            print(f"Error: Event '{name}' not found.", file=sys.stderr)
+            sys.exit(1)
+
+        # Build SET clauses for provided fields
+        set_clauses = []
+        params: dict = {"name": name}
+
+        if new_name is not None:
+            set_clauses.append("e.name = $new_name")
+            params["new_name"] = new_name
+        if summary is not None:
+            set_clauses.append("e.summary = $summary")
+            params["summary"] = summary
+        if start_date is not None:
+            start_year, start_approximate = parse_date(start_date)
+            set_clauses.append("e.start_year = $start_year")
+            set_clauses.append("e.start_approximate = $start_approximate")
+            params["start_year"] = start_year
+            params["start_approximate"] = start_approximate
+        if end_date is not None:
+            end_year, end_approximate = parse_date(end_date)
+            set_clauses.append("e.end_year = $end_year")
+            set_clauses.append("e.end_approximate = $end_approximate")
+            params["end_year"] = end_year
+            params["end_approximate"] = end_approximate
+        if notes is not None:
+            set_clauses.append("e.notes = $notes")
+            params["notes"] = notes
+        if source is not None:
+            set_clauses.append("e.source_license = $source")
+            params["source"] = source
+
+        if not set_clauses:
+            print("No fields to update.", file=sys.stderr)
+            sys.exit(1)
+
+        query = f"""
+        MATCH (e:Event) WHERE toLower(e.name) = toLower($name)
+        SET {", ".join(set_clauses)}
+        """
+        session.run(query, **params)
+
+    print(f"Updated Event: {new_name or name}")
+
+
+def update_qa(
+    driver,
+    question: str,
+    new_question: Optional[str] = None,
+    answer: Optional[str] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Update an existing QA node. Only provided fields are updated."""
+    with driver.session() as session:
+        # Find QA
+        result = session.run(
+            "MATCH (q:QA) WHERE toLower(q.question) = toLower($question) RETURN q",
+            question=question,
+        )
+        record = result.single()
+        if not record:
+            print(
+                f"Error: QA with question '{question[:50]}...' not found.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+        # Build SET clauses for provided fields
+        set_clauses = []
+        params: dict = {"question": question}
+
+        if new_question is not None:
+            set_clauses.append("q.question = $new_question")
+            params["new_question"] = new_question
+        if answer is not None:
+            set_clauses.append("q.answer = $answer")
+            params["answer"] = answer
+        if notes is not None:
+            set_clauses.append("q.notes = $notes")
+            params["notes"] = notes
+        if source is not None:
+            set_clauses.append("q.source_license = $source")
+            params["source"] = source
+
+        if not set_clauses:
+            print("No fields to update.", file=sys.stderr)
+            sys.exit(1)
+
+        query = f"""
+        MATCH (q:QA) WHERE toLower(q.question) = toLower($question)
+        SET {", ".join(set_clauses)}
+        """
+        session.run(query, **params)
+
+    print(f"Updated QA: {(new_question or question)[:60]}...")
+
+
+def update_cloze(
+    driver,
+    text: str,
+    new_text: Optional[str] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Update an existing Cloze node. Only provided fields are updated."""
+    with driver.session() as session:
+        # Find Cloze
+        result = session.run(
+            "MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text) RETURN c",
+            text=text,
+        )
+        record = result.single()
+        if not record:
+            print(
+                f"Error: Cloze with text '{text[:50]}...' not found.", file=sys.stderr
+            )
+            sys.exit(1)
+
+        # Build SET clauses for provided fields
+        set_clauses = []
+        params: dict = {"text": text}
+
+        if new_text is not None:
+            # Validate new cloze text
+            is_valid, error_msg = validate_cloze_text(new_text)
+            if not is_valid:
+                print(f"Error: Invalid cloze text. {error_msg}", file=sys.stderr)
+                sys.exit(1)
+            set_clauses.append("c.text = $new_text")
+            params["new_text"] = new_text
+        if notes is not None:
+            set_clauses.append("c.notes = $notes")
+            params["notes"] = notes
+        if source is not None:
+            set_clauses.append("c.source_license = $source")
+            params["source"] = source
+
+        if not set_clauses:
+            print("No fields to update.", file=sys.stderr)
+            sys.exit(1)
+
+        query = f"""
+        MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text)
+        SET {", ".join(set_clauses)}
+        """
+        session.run(query, **params)
+
+    preview = (new_text or text)[:60].replace("\n", " ")
+    print(f"Updated Cloze: {preview}...")
+
+
 def delete_entity(driver, name: str):
     """Delete an entity by name."""
     with driver.session() as session:
@@ -955,6 +1297,12 @@ Examples:
   %(prog)s create-tag "UH::Period::19th_Century"
   %(prog)s add-rel "Otto von Bismarck" "Franco-Prussian War" "orchestrated the war to unify Germany"
   %(prog)s delete "Some Entity"
+
+  # Update commands (only specified fields are updated)
+  %(prog)s update-person "Otto von Bismarck" --known-for "Unified Germany" --death 1898
+  %(prog)s update-event "Franco-Prussian War" --summary "War that unified Germany" --end 1871
+  %(prog)s update-qa "What triggered the Franco-Prussian War?" --answer "The Ems Dispatch provoked France"
+  %(prog)s update-cloze "The {{c1::Franco-Prussian War}} led to..." --notes "Updated note"
 """,
     )
 
@@ -1071,6 +1419,49 @@ Examples:
     add_rel_parser.add_argument("target", help="Target entity name")
     add_rel_parser.add_argument("description", help="Relationship description")
 
+    # update-person command
+    update_person_parser = subparsers.add_parser(
+        "update-person", help="Update an existing Person"
+    )
+    update_person_parser.add_argument("name", help="Current person name")
+    update_person_parser.add_argument("--new-name", help="New name")
+    update_person_parser.add_argument("--known-for", help="What they're known for")
+    update_person_parser.add_argument(
+        "--birth", help="Birth year (e.g., 1815, c. 500 BCE)"
+    )
+    update_person_parser.add_argument("--death", help="Death year")
+    update_person_parser.add_argument("--notes", help="Additional notes")
+    update_person_parser.add_argument("--source", help="Source & license info")
+
+    # update-event command
+    update_event_parser = subparsers.add_parser(
+        "update-event", help="Update an existing Event"
+    )
+    update_event_parser.add_argument("name", help="Current event name")
+    update_event_parser.add_argument("--new-name", help="New name")
+    update_event_parser.add_argument("--summary", help="Event summary")
+    update_event_parser.add_argument("--start", help="Start year")
+    update_event_parser.add_argument("--end", help="End year")
+    update_event_parser.add_argument("--notes", help="Additional notes")
+    update_event_parser.add_argument("--source", help="Source & license info")
+
+    # update-qa command
+    update_qa_parser = subparsers.add_parser("update-qa", help="Update an existing QA")
+    update_qa_parser.add_argument("question", help="Current question text")
+    update_qa_parser.add_argument("--new-question", help="New question text")
+    update_qa_parser.add_argument("--answer", help="New answer")
+    update_qa_parser.add_argument("--notes", help="Additional notes")
+    update_qa_parser.add_argument("--source", help="Source & license info")
+
+    # update-cloze command
+    update_cloze_parser = subparsers.add_parser(
+        "update-cloze", help="Update an existing Cloze"
+    )
+    update_cloze_parser.add_argument("text", help="Current cloze text")
+    update_cloze_parser.add_argument("--new-text", help="New cloze text")
+    update_cloze_parser.add_argument("--notes", help="Additional notes")
+    update_cloze_parser.add_argument("--source", help="Source & license info")
+
     # delete command
     delete_parser = subparsers.add_parser("delete", help="Delete an entity")
     delete_parser.add_argument("name", help="Entity name to delete")
@@ -1139,6 +1530,45 @@ Examples:
             create_tag(driver, args.name)
         elif args.command == "add-rel":
             add_relationship(driver, args.source, args.target, args.description)
+        elif args.command == "update-person":
+            update_person(
+                driver,
+                args.name,
+                args.new_name,
+                args.known_for,
+                args.birth,
+                args.death,
+                args.notes,
+                args.source,
+            )
+        elif args.command == "update-event":
+            update_event(
+                driver,
+                args.name,
+                args.new_name,
+                args.summary,
+                args.start,
+                args.end,
+                args.notes,
+                args.source,
+            )
+        elif args.command == "update-qa":
+            update_qa(
+                driver,
+                args.question,
+                args.new_question,
+                args.answer,
+                args.notes,
+                args.source,
+            )
+        elif args.command == "update-cloze":
+            update_cloze(
+                driver,
+                args.text,
+                args.new_text,
+                args.notes,
+                args.source,
+            )
         elif args.command == "delete":
             delete_entity(driver, args.name)
     finally:

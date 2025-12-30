@@ -80,6 +80,37 @@ uv run tools/neo4j_query.py create-tag "UH::Period::19th_Century"
 # Add relationship between entities
 uv run tools/neo4j_query.py add-rel "Otto von Bismarck" "Franco-Prussian War" \
   "orchestrated the war to complete German unification"
+
+# Delete an entity
+uv run tools/neo4j_query.py delete "Some Entity"
+```
+
+### Update Commands
+
+Update existing entities (only specified fields are modified):
+
+```bash
+# Update a person
+uv run tools/neo4j_query.py update-person "Otto von Bismarck" \
+  --known-for "Unified Germany through diplomacy and war" \
+  --death 1898
+
+# Update an event
+uv run tools/neo4j_query.py update-event "Franco-Prussian War" \
+  --summary "War that unified Germany" \
+  --end 1871
+
+# Update a QA card
+uv run tools/neo4j_query.py update-qa "What triggered the Franco-Prussian War?" \
+  --answer "The Ems Dispatch provoked France into declaring war"
+
+# Update a Cloze card
+uv run tools/neo4j_query.py update-cloze "The {{c1::Franco-Prussian War}}..." \
+  --notes "Updated context"
+
+# Rename an entity
+uv run tools/neo4j_query.py update-person "Old Name" --new-name "New Name"
+uv run tools/neo4j_query.py update-event "Old Event" --new-name "New Event Name"
 ```
 
 ## Tagging System
@@ -136,10 +167,23 @@ Format: `UH::Theme::<Theme>`
 
 ## Entity Types
 
+### Date Format
+
+Dates support:
+- Plain years: `1815`, `500`
+- Approximate dates: `c. 1760` (prefix with "c. ")
+- BCE dates: `500 BCE`, `c. 1,700,000 BCE`
+- Empty for unknown
+
+Examples:
+- `--birth 1815` → stored as year 1815, not approximate
+- `--birth "c. 500 BCE"` → stored as year -500, approximate
+- `--start "c. 1760"` → stored as year 1760, approximate
+
 ### Person
 - `name`: Full name
 - `known_for`: Brief description of significance
-- `birth`/`death`: Years (strings like "1815")
+- `birth`/`death`: Years (see Date Format above)
 - `tags`: Required (at least Region + Period)
 - `notes`: Additional context
 - `source`: Attribution
@@ -147,7 +191,7 @@ Format: `UH::Theme::<Theme>`
 ### Event
 - `name`: Event name
 - `summary`: Brief description
-- `start_date`/`end_date`: Years (if same year, only specify start)
+- `start_date`/`end_date`: Years (see Date Format; if same year, only specify start)
 - `tags`, `notes`, `source`: Same as Person
 
 ### QA (Question & Answer)
