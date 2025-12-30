@@ -9,6 +9,37 @@ from neo4j import GraphDatabase
 
 from utils import format_reference, get_data_dir, make_csv_writer
 
+
+def format_date(year: int | None, approximate: bool | None) -> str:
+    """Format year and approximate flag back to CSV date string.
+
+    Inverse of parse_date():
+    - (1842, False) -> "1842"
+    - (1760, True) -> "c. 1760"
+    - (-1700000, True) -> "c. 1,700,000 BCE"
+    - (None, None) -> ""
+    """
+    if year is None:
+        return ""
+
+    bce = year < 0
+    abs_year = abs(year)
+
+    # Only use thousand separators for large numbers (5+ digits)
+    if abs_year >= 10000:
+        year_str = f"{abs_year:,}"
+    else:
+        year_str = str(abs_year)
+
+    if bce:
+        year_str = f"{year_str} BCE"
+
+    if approximate:
+        year_str = f"c. {year_str}"
+
+    return year_str
+
+
 PERSON_FIELDNAMES = [
     "guid",
     "name",
@@ -115,8 +146,8 @@ def get_persons(session) -> list[dict]:
         OPTIONAL MATCH (p)-[re:RELATED_TO_EVENT]->(target_e:Event)
         OPTIONAL MATCH (p)-[:HAS_TAG]->(t:Tag)
         RETURN p,
-               collect(DISTINCT {name: target_p.name, birth: target_p.birth, death: target_p.death, description: rp.description}) as related_persons,
-               collect(DISTINCT {name: target_e.name, start: target_e.start_date, end: target_e.end_date, description: re.description}) as related_events,
+               collect(DISTINCT {name: target_p.name, birth_year: target_p.birth_year, birth_approximate: target_p.birth_approximate, death_year: target_p.death_year, death_approximate: target_p.death_approximate, description: rp.description}) as related_persons,
+               collect(DISTINCT {name: target_e.name, start_year: target_e.start_year, start_approximate: target_e.start_approximate, end_year: target_e.end_year, end_approximate: target_e.end_approximate, description: re.description}) as related_events,
                collect(DISTINCT t.name) as tags
         ORDER BY LOWER(p.name) ASC;
         """
@@ -139,8 +170,8 @@ def get_persons(session) -> list[dict]:
             "guid": p["guid"],
             "name": p["name"],
             "known for": p["known_for"],
-            "date of birth": p["birth"],
-            "date of death": p["death"],
+            "date of birth": format_date(p["birth_year"], p["birth_approximate"]),
+            "date of death": format_date(p["death_year"], p["death_approximate"]),
             "picture": p["picture"],
             "notes": p["notes"],
             "personal notes": "",
@@ -153,7 +184,10 @@ def get_persons(session) -> list[dict]:
             if i < len(related_persons):
                 rp = related_persons[i]
                 row[f"related person {i + 1}"] = format_reference(
-                    rp["name"], rp["birth"], rp["death"], rp["description"]
+                    rp["name"],
+                    format_date(rp["birth_year"], rp["birth_approximate"]),
+                    format_date(rp["death_year"], rp["death_approximate"]),
+                    rp["description"],
                 )
             else:
                 row[f"related person {i + 1}"] = ""
@@ -167,7 +201,10 @@ def get_persons(session) -> list[dict]:
             if i < len(related_events):
                 re = related_events[i]
                 row[f"related event {i + 1}"] = format_reference(
-                    re["name"], re["start"], re["end"], re["description"]
+                    re["name"],
+                    format_date(re["start_year"], re["start_approximate"]),
+                    format_date(re["end_year"], re["end_approximate"]),
+                    re["description"],
                 )
             else:
                 row[f"related event {i + 1}"] = ""
@@ -190,8 +227,8 @@ def get_events(session) -> list[dict]:
         OPTIONAL MATCH (e)-[re:RELATED_TO_EVENT]->(target_e:Event)
         OPTIONAL MATCH (e)-[:HAS_TAG]->(t:Tag)
         RETURN e,
-               collect(DISTINCT {name: target_p.name, birth: target_p.birth, death: target_p.death, description: rp.description}) as related_persons,
-               collect(DISTINCT {name: target_e.name, start: target_e.start_date, end: target_e.end_date, description: re.description}) as related_events,
+               collect(DISTINCT {name: target_p.name, birth_year: target_p.birth_year, birth_approximate: target_p.birth_approximate, death_year: target_p.death_year, death_approximate: target_p.death_approximate, description: rp.description}) as related_persons,
+               collect(DISTINCT {name: target_e.name, start_year: target_e.start_year, start_approximate: target_e.start_approximate, end_year: target_e.end_year, end_approximate: target_e.end_approximate, description: re.description}) as related_events,
                collect(DISTINCT t.name) as tags
         ORDER BY LOWER(e.name) ASC;
         """
@@ -214,8 +251,8 @@ def get_events(session) -> list[dict]:
             "guid": e["guid"],
             "name": e["name"],
             "summary": e["summary"],
-            "start date": e["start_date"],
-            "end date": e["end_date"],
+            "start date": format_date(e["start_year"], e["start_approximate"]),
+            "end date": format_date(e["end_year"], e["end_approximate"]),
             "notes": e["notes"],
             "personal notes": "",
             "source & license": e["source_license"],
@@ -227,7 +264,10 @@ def get_events(session) -> list[dict]:
             if i < len(related_persons):
                 rp = related_persons[i]
                 row[f"related person {i + 1}"] = format_reference(
-                    rp["name"], rp["birth"], rp["death"], rp["description"]
+                    rp["name"],
+                    format_date(rp["birth_year"], rp["birth_approximate"]),
+                    format_date(rp["death_year"], rp["death_approximate"]),
+                    rp["description"],
                 )
             else:
                 row[f"related person {i + 1}"] = ""
@@ -241,7 +281,10 @@ def get_events(session) -> list[dict]:
             if i < len(related_events):
                 re = related_events[i]
                 row[f"related event {i + 1}"] = format_reference(
-                    re["name"], re["start"], re["end"], re["description"]
+                    re["name"],
+                    format_date(re["start_year"], re["start_approximate"]),
+                    format_date(re["end_year"], re["end_approximate"]),
+                    re["description"],
                 )
             else:
                 row[f"related event {i + 1}"] = ""
@@ -264,8 +307,8 @@ def get_qas(session) -> list[dict]:
         OPTIONAL MATCH (q)-[re:RELATED_TO_EVENT]->(target_e:Event)
         OPTIONAL MATCH (q)-[:HAS_TAG]->(t:Tag)
         RETURN q,
-               collect(DISTINCT {name: target_p.name, birth: target_p.birth, death: target_p.death, description: rp.description}) as related_persons,
-               collect(DISTINCT {name: target_e.name, start: target_e.start_date, end: target_e.end_date, description: re.description}) as related_events,
+               collect(DISTINCT {name: target_p.name, birth_year: target_p.birth_year, birth_approximate: target_p.birth_approximate, death_year: target_p.death_year, death_approximate: target_p.death_approximate, description: rp.description}) as related_persons,
+               collect(DISTINCT {name: target_e.name, start_year: target_e.start_year, start_approximate: target_e.start_approximate, end_year: target_e.end_year, end_approximate: target_e.end_approximate, description: re.description}) as related_events,
                collect(DISTINCT t.name) as tags
         ORDER BY LOWER(q.question) ASC;
         """
@@ -299,7 +342,10 @@ def get_qas(session) -> list[dict]:
             if i < len(related_persons):
                 rp = related_persons[i]
                 row[f"related person {i + 1}"] = format_reference(
-                    rp["name"], rp["birth"], rp["death"], rp["description"]
+                    rp["name"],
+                    format_date(rp["birth_year"], rp["birth_approximate"]),
+                    format_date(rp["death_year"], rp["death_approximate"]),
+                    rp["description"],
                 )
             else:
                 row[f"related person {i + 1}"] = ""
@@ -309,7 +355,10 @@ def get_qas(session) -> list[dict]:
             if i < len(related_events):
                 re = related_events[i]
                 row[f"related event {i + 1}"] = format_reference(
-                    re["name"], re["start"], re["end"], re["description"]
+                    re["name"],
+                    format_date(re["start_year"], re["start_approximate"]),
+                    format_date(re["end_year"], re["end_approximate"]),
+                    re["description"],
                 )
             else:
                 row[f"related event {i + 1}"] = ""
@@ -328,8 +377,8 @@ def get_clozes(session) -> list[dict]:
         OPTIONAL MATCH (c)-[re:RELATED_TO_EVENT]->(target_e:Event)
         OPTIONAL MATCH (c)-[:HAS_TAG]->(t:Tag)
         RETURN c,
-               collect(DISTINCT {name: target_p.name, birth: target_p.birth, death: target_p.death, description: rp.description}) as related_persons,
-               collect(DISTINCT {name: target_e.name, start: target_e.start_date, end: target_e.end_date, description: re.description}) as related_events,
+               collect(DISTINCT {name: target_p.name, birth_year: target_p.birth_year, birth_approximate: target_p.birth_approximate, death_year: target_p.death_year, death_approximate: target_p.death_approximate, description: rp.description}) as related_persons,
+               collect(DISTINCT {name: target_e.name, start_year: target_e.start_year, start_approximate: target_e.start_approximate, end_year: target_e.end_year, end_approximate: target_e.end_approximate, description: re.description}) as related_events,
                collect(DISTINCT t.name) as tags
         ORDER BY LOWER(c.text) ASC;
         """
@@ -362,7 +411,10 @@ def get_clozes(session) -> list[dict]:
             if i < len(related_persons):
                 rp = related_persons[i]
                 row[f"related person {i + 1}"] = format_reference(
-                    rp["name"], rp["birth"], rp["death"], rp["description"]
+                    rp["name"],
+                    format_date(rp["birth_year"], rp["birth_approximate"]),
+                    format_date(rp["death_year"], rp["death_approximate"]),
+                    rp["description"],
                 )
             else:
                 row[f"related person {i + 1}"] = ""
@@ -372,7 +424,10 @@ def get_clozes(session) -> list[dict]:
             if i < len(related_events):
                 re = related_events[i]
                 row[f"related event {i + 1}"] = format_reference(
-                    re["name"], re["start"], re["end"], re["description"]
+                    re["name"],
+                    format_date(re["start_year"], re["start_approximate"]),
+                    format_date(re["end_year"], re["end_approximate"]),
+                    re["description"],
                 )
             else:
                 row[f"related event {i + 1}"] = ""

@@ -12,6 +12,38 @@ from neo4j import GraphDatabase
 from utils import get_data_dir, parse_reference
 
 
+def parse_date(date_str: str) -> tuple[int | None, bool | None]:
+    """Parse a date string into (year, is_approximate).
+
+    Handles formats like:
+    - "1842" -> (1842, False)
+    - "c. 1760" -> (1760, True)
+    - "c. 1,700,000 BCE" -> (-1700000, True)
+    - "" -> (None, None)
+    """
+    if not date_str or not date_str.strip():
+        return None, None
+
+    date_str = date_str.strip()
+    approximate = date_str.startswith("c. ")
+    if approximate:
+        date_str = date_str[3:]
+
+    # Remove thousand separators
+    date_str = date_str.replace(",", "")
+
+    # Check for BCE
+    bce = date_str.endswith(" BCE")
+    if bce:
+        date_str = date_str[:-4]
+
+    year = int(date_str)
+    if bce:
+        year = -year
+
+    return year, approximate
+
+
 def load_csv(path: Path) -> list[dict]:
     """Load a CSV file and return list of row dicts."""
     with open(path, encoding="utf-8") as f:
@@ -59,13 +91,17 @@ def create_constraints(tx):
 def create_persons(tx, persons: list[dict], person_lookup: dict):
     """Create Person nodes."""
     for row in persons:
+        birth_year, birth_approximate = parse_date(row["date of birth"])
+        death_year, death_approximate = parse_date(row["date of death"])
         tx.run(
             """
             CREATE (p:Person {
                 name: $name,
                 known_for: $known_for,
-                birth: $birth,
-                death: $death,
+                birth_year: $birth_year,
+                birth_approximate: $birth_approximate,
+                death_year: $death_year,
+                death_approximate: $death_approximate,
                 picture: $picture,
                 notes: $notes,
                 source_license: $source_license,
@@ -75,8 +111,10 @@ def create_persons(tx, persons: list[dict], person_lookup: dict):
             guid=row["guid"],
             name=row["name"],
             known_for=row["known for"],
-            birth=row["date of birth"],
-            death=row["date of death"],
+            birth_year=birth_year,
+            birth_approximate=birth_approximate,
+            death_year=death_year,
+            death_approximate=death_approximate,
             picture=row["picture"],
             notes=row["notes"],
             source_license=row["source & license"],
@@ -87,13 +125,17 @@ def create_persons(tx, persons: list[dict], person_lookup: dict):
 def create_events(tx, events: list[dict], event_lookup: dict):
     """Create Event nodes."""
     for row in events:
+        start_year, start_approximate = parse_date(row["start date"])
+        end_year, end_approximate = parse_date(row["end date"])
         tx.run(
             """
             CREATE (e:Event {
                 name: $name,
                 summary: $summary,
-                start_date: $start_date,
-                end_date: $end_date,
+                start_year: $start_year,
+                start_approximate: $start_approximate,
+                end_year: $end_year,
+                end_approximate: $end_approximate,
                 notes: $notes,
                 source_license: $source_license,
                 guid: $guid
@@ -102,8 +144,10 @@ def create_events(tx, events: list[dict], event_lookup: dict):
             guid=row["guid"],
             name=row["name"],
             summary=row["summary"],
-            start_date=row["start date"],
-            end_date=row["end date"],
+            start_year=start_year,
+            start_approximate=start_approximate,
+            end_year=end_year,
+            end_approximate=end_approximate,
             notes=row["notes"],
             source_license=row["source & license"],
         )
