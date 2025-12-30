@@ -17,10 +17,14 @@
 
 .info {
   margin-top: 1em;
-  max-width: 30em;
   color: #333;
   font-size: 90%;
   font-style: italic;
+}
+
+.info--small {
+  margin-top: 0.5em;
+  font-size: 70%;
 }
 
 .value {

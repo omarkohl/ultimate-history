@@ -21,7 +21,7 @@
 <div class="value"><b>Known for:</b> {{Known For}}</div>
 {{/Known For}}
 {{#Date of Birth}}
-<div class="value"><b>Life:</b> {{Date of Birth}} - {{Date of Death}}</div>
+<div class="value"><b>Life:</b> {{Date of Birth}}{{#Date of Death}} - {{Date of Death}}{{/Date of Death}}</div>
 {{/Date of Birth}}
 {{#Related Person 1}}
 <div class="value">
@@ -53,4 +53,16 @@
   </ul>
 </div>
 {{/Related Event 1}}
-<div class="info">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>
+{{#Personal Notes}}
+<div class="info"><b>Personal Notes:</b> {{Personal Notes}}</div>
+{{/Personal Notes}}
+{{#Notes}}
+<div class="info"><b>Notes:</b> {{Notes}}</div>
+{{/Notes}}
+{{#Source & License}}
+<div class="info info--small">
+<b>Source & License:</b><br>
+{{Source & License}}
+</div>
+{{/Source & License}}
+<div class="info info--small"><b>Tags:</b> {{Tags}}</div>

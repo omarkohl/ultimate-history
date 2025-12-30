@@ -6,4 +6,16 @@
 <div class="type">History | Cloze</div>
 <div class="value value--top">{{cloze:Text}}</div>
 
-<div class="info">{{Notes}}{{#Personal Notes}}<br>{{Personal Notes}}{{/Personal Notes}}</div>
+{{#Personal Notes}}
+<div class="info"><b>Personal Notes:</b> {{Personal Notes}}</div>
+{{/Personal Notes}}
+{{#Notes}}
+<div class="info"><b>Notes:</b> {{Notes}}</div>
+{{/Notes}}
+{{#Source & License}}
+<div class="info info--small">
+<b>Source & License:</b><br>
+{{Source & License}}
+</div>
+{{/Source & License}}
+<div class="info info--small"><b>Tags:</b> {{Tags}}</div>
