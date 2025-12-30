@@ -3,20 +3,24 @@
 
 This script provides a CLI for the Neo4j graph database to:
 - List all tags
-- List all persons/events
+- List all persons/events/qa/cloze
 - Find entities by name (fuzzy search)
 - Get relationships for an entity
 - Find potential relationships for a new entity
-- Create new persons, events, and relationships
+- Create new persons, events, QA, cloze, and relationships
 """
 
 import argparse
 import os
+import re
 import sys
 import uuid
 from typing import Optional
 
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
+
+load_dotenv()
 
 
 def get_driver():
@@ -409,6 +413,7 @@ def create_person(
     source: Optional[str] = None,
 ):
     """Create a new Person node."""
+    validate_entity_tags(tags)
     guid = generate_guid()
 
     with driver.session() as session:
@@ -478,6 +483,7 @@ def create_event(
     source: Optional[str] = None,
 ):
     """Create a new Event node."""
+    validate_entity_tags(tags)
     guid = generate_guid()
 
     with driver.session() as session:
@@ -528,6 +534,289 @@ def create_event(
     print(f"Created Event: {name} (guid: {guid})")
     if tags:
         print(f"  Tags: {', '.join(tags)}")
+
+
+def validate_cloze_text(text: str) -> tuple[bool, str]:
+    """Validate that cloze text contains valid Anki cloze deletions.
+
+    Returns (is_valid, error_message).
+    """
+    # Find all cloze patterns like {{c1::text}} or {{c1::text::hint}}
+    pattern = r"\{\{c(\d+)::([^}]+)\}\}"
+    matches = re.findall(pattern, text)
+
+    if not matches:
+        return False, "No cloze deletions found. Use {{c1::text}} format."
+
+    # Check that cloze numbers start at 1 and are sequential (with gaps allowed)
+    cloze_numbers = sorted(set(int(m[0]) for m in matches))
+
+    if cloze_numbers[0] != 1:
+        return False, f"Cloze numbers must start at 1, found: {cloze_numbers[0]}"
+
+    # Check for empty cloze content
+    for num, content in matches:
+        # Content might have hint like "text::hint", extract just the text
+        actual_text = content.split("::")[0].strip()
+        if not actual_text:
+            return False, f"Cloze {{{{c{num}::}}}} has empty content."
+
+    return True, ""
+
+
+def create_qa(
+    driver,
+    question: str,
+    answer: str,
+    tags: Optional[list[str]] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Create a new QA node."""
+    validate_entity_tags(tags)
+    guid = generate_guid()
+
+    with driver.session() as session:
+        # Check if QA already exists with same question
+        result = session.run(
+            "MATCH (q:QA) WHERE toLower(q.question) = toLower($question) RETURN q.question",
+            question=question,
+        )
+        if result.single():
+            print("Error: QA with this question already exists.", file=sys.stderr)
+            sys.exit(1)
+
+        # Create QA
+        session.run(
+            """
+            CREATE (q:QA {
+                guid: $guid,
+                question: $question,
+                answer: $answer,
+                notes: $notes,
+                source_license: $source
+            })
+            """,
+            guid=guid,
+            question=question,
+            answer=answer,
+            notes=notes or "",
+            source=source or "",
+        )
+
+        # Create tags
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (q:QA {guid: $guid}), (t:Tag {name: $tag})
+                    CREATE (q)-[:HAS_TAG]->(t)
+                    """,
+                    guid=guid,
+                    tag=tag,
+                )
+
+    print(f"Created QA: {question[:60]}... (guid: {guid})")
+    if tags:
+        print(f"  Tags: {', '.join(tags)}")
+
+
+def create_cloze(
+    driver,
+    text: str,
+    tags: Optional[list[str]] = None,
+    notes: Optional[str] = None,
+    source: Optional[str] = None,
+):
+    """Create a new Cloze node."""
+    validate_entity_tags(tags)
+
+    # Validate cloze text
+    is_valid, error_msg = validate_cloze_text(text)
+    if not is_valid:
+        print(f"Error: Invalid cloze text. {error_msg}", file=sys.stderr)
+        sys.exit(1)
+
+    guid = generate_guid()
+
+    with driver.session() as session:
+        # Check if Cloze already exists with same text
+        result = session.run(
+            "MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text) RETURN c.text",
+            text=text,
+        )
+        if result.single():
+            print("Error: Cloze with this text already exists.", file=sys.stderr)
+            sys.exit(1)
+
+        # Create Cloze
+        session.run(
+            """
+            CREATE (c:Cloze {
+                guid: $guid,
+                text: $text,
+                notes: $notes,
+                source_license: $source
+            })
+            """,
+            guid=guid,
+            text=text,
+            notes=notes or "",
+            source=source or "",
+        )
+
+        # Create tags
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (c:Cloze {guid: $guid}), (t:Tag {name: $tag})
+                    CREATE (c)-[:HAS_TAG]->(t)
+                    """,
+                    guid=guid,
+                    tag=tag,
+                )
+
+    # Show preview of cloze (first 60 chars)
+    preview = text[:60].replace("\n", " ")
+    print(f"Created Cloze: {preview}... (guid: {guid})")
+    if tags:
+        print(f"  Tags: {', '.join(tags)}")
+
+
+# Valid tag structure
+# Regions: 2-level hierarchy (continent::sub-region)
+VALID_REGIONS = {
+    "Europe": ["Western", "Eastern", "Northern", "Southern", "Central"],
+    "Asia": ["East", "Southeast", "South", "Central", "West"],
+    "Africa": ["North", "West", "East", "Central", "Southern"],
+    "Americas": ["North", "Central", "South", "Caribbean"],
+    "Oceania": ["Australia", "Pacific"],
+    "Global": [],  # No sub-regions
+}
+
+# Themes: curated list (new themes require discussion)
+VALID_THEMES = [
+    "War",
+    "Politics",
+    "Economy",
+    "Society",
+    "Culture",
+    "Science",
+    "Religion",
+]
+
+
+def validate_tag(tag_name: str) -> tuple[bool, str]:
+    """Validate a tag against the allowed structure.
+
+    Returns (is_valid, error_message).
+    """
+    if not tag_name.startswith("UH::"):
+        return False, "Tag must start with 'UH::'"
+
+    parts = tag_name.split("::")
+    if len(parts) < 3:
+        return False, "Tag must have at least 3 parts (e.g., UH::Region::Europe)"
+
+    category = parts[1]
+
+    if category == "Region":
+        if len(parts) < 3 or len(parts) > 4:
+            return (
+                False,
+                "Region tags must be UH::Region::<continent> or UH::Region::<continent>::<sub-region>",
+            )
+        continent = parts[2]
+        if continent not in VALID_REGIONS:
+            return (
+                False,
+                f"Unknown continent '{continent}'. Valid: {', '.join(VALID_REGIONS.keys())}",
+            )
+        if len(parts) == 4:
+            sub_region = parts[3]
+            valid_subs = VALID_REGIONS[continent]
+            if not valid_subs:
+                return False, f"'{continent}' has no sub-regions"
+            if sub_region not in valid_subs:
+                return (
+                    False,
+                    f"Unknown sub-region '{sub_region}' for {continent}. Valid: {', '.join(valid_subs)}",
+                )
+        return True, ""
+
+    elif category == "Period":
+        if len(parts) != 3:
+            return False, "Period tags must be UH::Period::<period>"
+        period = parts[2]
+        # Allow: Prehistory, centuries (1st_Century, 19th_Century, 5th_Century_BCE), millennia
+        if period == "Prehistory":
+            return True, ""
+        if "_Millennium_BCE" in period or "_Century" in period:
+            return True, ""
+        return (
+            False,
+            f"Invalid period '{period}'. Use format like '19th_Century', '5th_Century_BCE', or 'Prehistory'",
+        )
+
+    elif category == "Theme":
+        if len(parts) != 3:
+            return False, "Theme tags must be UH::Theme::<theme>"
+        theme = parts[2]
+        if theme not in VALID_THEMES:
+            return (
+                False,
+                f"Unknown theme '{theme}'. Valid: {', '.join(VALID_THEMES)}. New themes require discussion.",
+            )
+        return True, ""
+
+    else:
+        return False, f"Unknown category '{category}'. Valid: Region, Period, Theme"
+
+
+def validate_entity_tags(tags: Optional[list[str]]) -> None:
+    """Validate tags for an entity, warning about invalid ones."""
+    if not tags:
+        return
+    for tag in tags:
+        is_valid, error_msg = validate_tag(tag)
+        if not is_valid:
+            print(f"Warning: Invalid tag '{tag}'. {error_msg}", file=sys.stderr)
+
+
+def create_tag(driver, tag_name: str):
+    """Create a new tag (only Region and Period tags allowed via CLI)."""
+    # Theme tags cannot be created directly - they're auto-created when used
+    if tag_name.startswith("UH::Theme::"):
+        print(
+            "Error: Theme tags cannot be created directly. They are auto-created when "
+            "used on entities. To propose a new theme, open a GitHub issue.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    # Validate tag format
+    is_valid, error_msg = validate_tag(tag_name)
+    if not is_valid:
+        print(f"Error: Invalid tag. {error_msg}", file=sys.stderr)
+        sys.exit(1)
+
+    with driver.session() as session:
+        # Check if tag already exists
+        result = session.run(
+            "MATCH (t:Tag {name: $name}) RETURN t.name",
+            name=tag_name,
+        )
+        if result.single():
+            print(f"Error: Tag '{tag_name}' already exists.", file=sys.stderr)
+            sys.exit(1)
+
+        # Create tag
+        session.run("CREATE (t:Tag {name: $name})", name=tag_name)
+
+    print(f"Created Tag: {tag_name}")
 
 
 def add_relationship(
@@ -653,9 +942,17 @@ Examples:
   %(prog)s find-related "New Entity" --start 1789 --end 1815 --tag UH::Region::Europe
   %(prog)s cypher "MATCH (n:Person) RETURN n.name LIMIT 5"
 
-  # Create commands
-  %(prog)s create-person "Otto von Bismarck" --known-for "German chancellor" --birth 1815 --death 1898 --tag UH::Region::Europe
-  %(prog)s create-event "Franco-Prussian War" --summary "War between France and Prussia" --start 1870 --end 1871
+  # Create commands (tags: UH::Region::<continent>::<sub>, UH::Period::<century>, UH::Theme::<theme>)
+  %(prog)s create-person "Otto von Bismarck" --known-for "German chancellor" --birth 1815 --death 1898 \\
+      --tag UH::Region::Europe::Central --tag UH::Period::19th_Century --tag UH::Theme::Politics
+  %(prog)s create-event "Franco-Prussian War" --summary "War between France and Prussia" --start 1870 --end 1871 \\
+      --tag UH::Region::Europe::Western --tag UH::Period::19th_Century --tag UH::Theme::War
+  %(prog)s create-qa "What triggered the Franco-Prussian War?" --answer "The Ems Dispatch" \\
+      --tag UH::Region::Europe --tag UH::Period::19th_Century
+  %(prog)s create-cloze "The {{c1::Franco-Prussian War}} led to {{c2::German unification}}." \\
+      --tag UH::Region::Europe --tag UH::Period::19th_Century
+  %(prog)s create-tag "UH::Region::Europe::Central"  # Only Region and Period tags can be created
+  %(prog)s create-tag "UH::Period::19th_Century"
   %(prog)s add-rel "Otto von Bismarck" "Franco-Prussian War" "orchestrated the war to unify Germany"
   %(prog)s delete "Some Entity"
 """,
@@ -737,6 +1034,35 @@ Examples:
     create_event_parser.add_argument("--notes", help="Additional notes")
     create_event_parser.add_argument("--source", help="Source & license info")
 
+    # create-qa command
+    create_qa_parser = subparsers.add_parser("create-qa", help="Create a new QA card")
+    create_qa_parser.add_argument("question", help="The question")
+    create_qa_parser.add_argument("--answer", required=True, help="The answer")
+    create_qa_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag (can repeat)"
+    )
+    create_qa_parser.add_argument("--notes", help="Additional notes")
+    create_qa_parser.add_argument("--source", help="Source & license info")
+
+    # create-cloze command
+    create_cloze_parser = subparsers.add_parser(
+        "create-cloze", help="Create a new Cloze card"
+    )
+    create_cloze_parser.add_argument("text", help="Cloze text with {{c1::deletions}}")
+    create_cloze_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag (can repeat)"
+    )
+    create_cloze_parser.add_argument("--notes", help="Additional notes")
+    create_cloze_parser.add_argument("--source", help="Source & license info")
+
+    # create-tag command
+    create_tag_parser = subparsers.add_parser(
+        "create-tag", help="Create a new tag (Region or Period only)"
+    )
+    create_tag_parser.add_argument(
+        "name", help="Tag name (must start with UH::Region:: or UH::Period::)"
+    )
+
     # add-rel command
     add_rel_parser = subparsers.add_parser(
         "add-rel", help="Add a relationship between entities"
@@ -792,6 +1118,25 @@ Examples:
                 args.notes,
                 args.source,
             )
+        elif args.command == "create-qa":
+            create_qa(
+                driver,
+                args.question,
+                args.answer,
+                args.tags,
+                args.notes,
+                args.source,
+            )
+        elif args.command == "create-cloze":
+            create_cloze(
+                driver,
+                args.text,
+                args.tags,
+                args.notes,
+                args.source,
+            )
+        elif args.command == "create-tag":
+            create_tag(driver, args.name)
         elif args.command == "add-rel":
             add_relationship(driver, args.source, args.target, args.description)
         elif args.command == "delete":
