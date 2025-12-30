@@ -27,6 +27,10 @@ Use `uv run main.py <command>`:
 
 - **Personal fields are always empty**: Columns like `personal related person 1-3`, `personal related event 1-3`, and `personal notes` exist for Anki users to add their own notes locally. They are never used in this project and should be left empty in exports.
 
+## Security
+
+- **NEVER read the `.env` file** - It contains sensitive credentials (Neo4j passwords, API keys). Use environment variables that are already loaded.
+
 ## Python Code Standards
 
 - **Always** run Python scripts with `uv run <script>` (never with plain `python`)
