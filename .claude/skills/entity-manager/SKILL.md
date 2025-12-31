@@ -16,6 +16,8 @@ Environment variables must be set:
 
 **NEVER read the `.env` file** - credentials are loaded from environment.
 
+**NEVER read the CSV files in `src/data/`** - always use Neo4j queries to look up entity data.
+
 ## CLI Tool
 
 All commands use: `uv run tools/neo4j_query.py <command>`
@@ -263,7 +265,7 @@ uv run tools/neo4j_query.py relations "Otto von Bismarck"
 ## Relationship Guidelines
 
 Relationships should be:
-- **Directional**: Source -> Target with a description
+- **Directional**: Source -> Target with a description. Consider the direction carefully—adding both directions (A -> B and B -> A) can be appropriate but is not always necessary.
 - **Specific**: "led the revolution" not just "involved in"
 - **Historical**: Focus on significant historical connections
 
