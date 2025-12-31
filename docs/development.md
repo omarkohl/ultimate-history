@@ -39,24 +39,28 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
 
 2. Update [CHANGELOG.md](../CHANGELOG.md) with the release notes and commit the changes
 
-3. Tag the release:
+3. Run `uv run main.py sync`
+
+4. Tag the release:
    ```bash
    jj tag set v0.99.0 -r @-
    ```
 
-4. Start Anki with the release account:
+5. Start Anki with the release account:
    ```bash
    anki -b anki_release_dir
    ```
 
-5. Import the latest version via CrowdAnki plugin
+6. Import the latest version via CrowdAnki plugin
 
-6. Run maintenance tasks in Anki:
+7. Run maintenance tasks in Anki:
    - Tools → Check Media
    - Tools → Empty Cards
 
-7. Sync with AnkiWeb
+8. Sync with AnkiWeb
 
-8. Export the deck as `.apkg` file
+9. Export the deck as `.apkg` file
 
-9. Publish a new release on GitHub and upload the `.apkg` file
+10. Publish a new release on GitHub and upload the `.apkg` file
+
+11. Bump the version to the next `-dev` by repeating steps 1-3.
