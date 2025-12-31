@@ -61,6 +61,10 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
 
 9. Export the deck as `.apkg` file
 
-10. Publish a new release on GitHub and upload the `.apkg` file
+10. Publish a new release on GitHub and upload the `.apkg` file. Rename it to
+    `Ultimate_History.apkg`. Copy the relevant changelog parts from
+    [CHANGELOG.md](../CHANGELOG.md).
 
-11. Bump the version to the next `-dev` by repeating steps 1-3.
+11. Go to https://ankiweb.net/decks and share the deck. Update the version number in the description.
+
+12. Bump the version to the next `-dev` by repeating steps 1-3.
