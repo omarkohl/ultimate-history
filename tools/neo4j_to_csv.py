@@ -5,9 +5,13 @@ import os
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 from utils import format_reference, get_data_dir, make_csv_writer
+
+
+load_dotenv()
 
 
 def format_date(year: int | None, approximate: bool | None) -> str:

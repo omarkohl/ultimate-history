@@ -7,9 +7,13 @@ import os
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 from utils import get_data_dir, parse_reference
+
+
+load_dotenv()
 
 
 def parse_date(date_str: str) -> tuple[int | None, bool | None]:
