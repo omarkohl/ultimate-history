@@ -250,6 +250,74 @@ def search_entities(driver, search_term: str, limit: int = 20):
         print(f"{e['type']:<8} {name:<55} {dates:<20}")
 
 
+def show_entity(driver, name: str):
+    """Show all properties of an entity by name."""
+    with driver.session() as session:
+        # Find the entity (Person, Event, QA, or Cloze)
+        result = session.run(
+            """
+            MATCH (n)
+            WHERE (n:Person OR n:Event OR n:QA OR n:Cloze)
+              AND (toLower(n.name) = toLower($name)
+                   OR toLower(n.question) = toLower($name)
+                   OR toLower(n.text) = toLower($name))
+            RETURN n, labels(n)[0] AS type
+            LIMIT 1
+            """,
+            name=name,
+        )
+        record = result.single()
+
+        if not record:
+            print(f"Entity '{name}' not found.", file=sys.stderr)
+            return
+
+        node = record["n"]
+        entity_type = record["type"]
+
+        # Get tags
+        result = session.run(
+            """
+            MATCH (n)-[:HAS_TAG]->(t:Tag)
+            WHERE (n:Person OR n:Event OR n:QA OR n:Cloze)
+              AND (toLower(n.name) = toLower($name)
+                   OR toLower(n.question) = toLower($name)
+                   OR toLower(n.text) = toLower($name))
+            RETURN t.name AS tag
+            ORDER BY tag
+            """,
+            name=name,
+        )
+        tags = [r["tag"] for r in result.data()]
+
+        print(
+            f"\n{entity_type}: {node.get('name') or node.get('question') or node.get('text')}"
+        )
+        print(f"  GUID: {node.get('guid', 'N/A')}")
+
+        if entity_type == "Person":
+            birth = format_date(node.get("birth_year"), node.get("birth_approximate"))
+            death = format_date(node.get("death_year"), node.get("death_approximate"))
+            print(f"  Birth: {birth or 'N/A'}")
+            print(f"  Death: {death or 'N/A'}")
+            print(f"  Known for: {node.get('known_for') or 'N/A'}")
+        elif entity_type == "Event":
+            start = format_date(node.get("start_year"), node.get("start_approximate"))
+            end = format_date(node.get("end_year"), node.get("end_approximate"))
+            print(f"  Start: {start or 'N/A'}")
+            print(f"  End: {end or 'N/A'}")
+            print(f"  Summary: {node.get('summary') or 'N/A'}")
+        elif entity_type == "QA":
+            print(f"  Question: {node.get('question') or 'N/A'}")
+            print(f"  Answer: {node.get('answer') or 'N/A'}")
+        elif entity_type == "Cloze":
+            print(f"  Text: {node.get('text') or 'N/A'}")
+
+        print(f"  Notes: {node.get('notes') or 'N/A'}")
+        print(f"  Source: {node.get('source_license') or 'N/A'}")
+        print(f"  Tags: {', '.join(tags) if tags else 'None'}")
+
+
 def get_relationships(driver, name: str):
     """Get all relationships for an entity by name."""
     with driver.session() as session:
@@ -475,7 +543,7 @@ def run_cypher(driver, query: str):
         print(" | ".join(keys))
         print("-" * (len(" | ".join(keys)) + 10))
         for r in records[:50]:  # Limit output
-            values = [str(r.get(k, ""))[:50] for k in keys]
+            values = [str(r.get(k, ""))[:200] for k in keys]
             print(" | ".join(values))
         if len(records) > 50:
             print(f"... and {len(records) - 50} more rows")
@@ -1000,6 +1068,80 @@ def add_relationship(
     print(f"  Description: {description}")
 
 
+def delete_relationship(
+    driver,
+    source_name: str,
+    target_name: str,
+):
+    """Delete a relationship between two entities (Person or Event)."""
+    with driver.session() as session:
+        # Find source entity
+        result = session.run(
+            """
+            MATCH (n)
+            WHERE (n:Person OR n:Event) AND toLower(n.name) = toLower($name)
+            RETURN n, labels(n)[0] AS type
+            """,
+            name=source_name,
+        )
+        source = result.single()
+        if not source:
+            print(f"Error: Source entity '{source_name}' not found.", file=sys.stderr)
+            sys.exit(1)
+
+        # Find target entity
+        result = session.run(
+            """
+            MATCH (n)
+            WHERE (n:Person OR n:Event) AND toLower(n.name) = toLower($name)
+            RETURN n, labels(n)[0] AS type
+            """,
+            name=target_name,
+        )
+        target = result.single()
+        if not target:
+            print(f"Error: Target entity '{target_name}' not found.", file=sys.stderr)
+            sys.exit(1)
+
+        source_type = source["type"]
+        target_type = target["type"]
+        rel_type = f"RELATED_TO_{target_type.upper()}"
+
+        # Check if relationship exists
+        result = session.run(
+            f"""
+            MATCH (s:{source_type})-[r:{rel_type}]->(t:{target_type})
+            WHERE toLower(s.name) = toLower($source) AND toLower(t.name) = toLower($target)
+            RETURN r.description AS description
+            """,
+            source=source_name,
+            target=target_name,
+        )
+        record = result.single()
+        if not record:
+            print(
+                f"Error: No relationship found from '{source_name}' to '{target_name}'.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+        description = record["description"]
+
+        # Delete relationship
+        session.run(
+            f"""
+            MATCH (s:{source_type})-[r:{rel_type}]->(t:{target_type})
+            WHERE toLower(s.name) = toLower($source) AND toLower(t.name) = toLower($target)
+            DELETE r
+            """,
+            source=source_name,
+            target=target_name,
+        )
+
+    print(f"Deleted relationship: {source_name} -> {target_name}")
+    print(f"  Was: {description}")
+
+
 def update_person(
     driver,
     name: str,
@@ -1280,6 +1422,7 @@ Examples:
   %(prog)s list person                  # List all persons
   %(prog)s list event --limit 100       # List 100 events
   %(prog)s search "napoleon"            # Search for entities containing "napoleon"
+  %(prog)s show "Napoleon Bonaparte"    # Show all properties of an entity
   %(prog)s relations "Napoleon Bonaparte"  # Get relationships for Napoleon
   %(prog)s find-related "New Entity" --start 1789 --end 1815 --tag UH::Region::Europe
   %(prog)s cypher "MATCH (n:Person) RETURN n.name LIMIT 5"
@@ -1296,6 +1439,7 @@ Examples:
   %(prog)s create-tag "UH::Region::Europe::Central"  # Only Region and Period tags can be created
   %(prog)s create-tag "UH::Period::19th_Century"
   %(prog)s add-rel "Otto von Bismarck" "Franco-Prussian War" "orchestrated the war to unify Germany"
+  %(prog)s delete-rel "Otto von Bismarck" "Franco-Prussian War"  # Delete a relationship
   %(prog)s delete "Some Entity"
 
   # Update commands (only specified fields are updated)
@@ -1327,6 +1471,10 @@ Examples:
     search_parser.add_argument(
         "--limit", type=int, default=20, help="Max results to show"
     )
+
+    # show command
+    show_parser = subparsers.add_parser("show", help="Show all properties of an entity")
+    show_parser.add_argument("name", help="Entity name (exact match)")
 
     # relations command
     rel_parser = subparsers.add_parser(
@@ -1419,6 +1567,13 @@ Examples:
     add_rel_parser.add_argument("target", help="Target entity name")
     add_rel_parser.add_argument("description", help="Relationship description")
 
+    # delete-rel command
+    delete_rel_parser = subparsers.add_parser(
+        "delete-rel", help="Delete a relationship between entities"
+    )
+    delete_rel_parser.add_argument("source", help="Source entity name")
+    delete_rel_parser.add_argument("target", help="Target entity name")
+
     # update-person command
     update_person_parser = subparsers.add_parser(
         "update-person", help="Update an existing Person"
@@ -1481,6 +1636,8 @@ Examples:
             list_entities(driver, args.type, args.limit)
         elif args.command == "search":
             search_entities(driver, args.query, args.limit)
+        elif args.command == "show":
+            show_entity(driver, args.name)
         elif args.command == "relations":
             get_relationships(driver, args.name)
         elif args.command == "find-related":
@@ -1530,6 +1687,8 @@ Examples:
             create_tag(driver, args.name)
         elif args.command == "add-rel":
             add_relationship(driver, args.source, args.target, args.description)
+        elif args.command == "delete-rel":
+            delete_relationship(driver, args.source, args.target)
         elif args.command == "update-person":
             update_person(
                 driver,

@@ -37,6 +37,9 @@ uv run tools/neo4j_query.py list cloze
 # Search entities (fuzzy, case-insensitive)
 uv run tools/neo4j_query.py search "napoleon"
 
+# Show all properties of an entity (name, dates, known_for/summary, notes, source, tags)
+uv run tools/neo4j_query.py show "Napoleon Bonaparte"
+
 # Get all relationships for an entity
 uv run tools/neo4j_query.py relations "Napoleon Bonaparte"
 
@@ -82,6 +85,9 @@ uv run tools/neo4j_query.py create-tag "UH::Period::19th_Century"
 # Add relationship between entities
 uv run tools/neo4j_query.py add-rel "Otto von Bismarck" "Franco-Prussian War" \
   "orchestrated the war to complete German unification"
+
+# Delete a relationship between entities
+uv run tools/neo4j_query.py delete-rel "Otto von Bismarck" "Franco-Prussian War"
 
 # Delete an entity
 uv run tools/neo4j_query.py delete "Some Entity"
