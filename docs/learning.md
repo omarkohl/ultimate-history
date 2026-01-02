@@ -10,9 +10,13 @@ What you CAN do is adding new cards (notes) using the existing UH note types, ev
 
 ## Settings
 
-It is strongly recommended that you enable **Burying** in the deck options. Otherwise the initial learning is too easy because you remember too much from a sibling card. A few weeks later you are then more likely to fail those cards.
+We strongly recommended that you enable **Burying** in the deck options. Otherwise the initial learning is too easy because you remember too much from a sibling card. A few weeks later you are then more likely to fail those cards.
 
 !["Deck options / Burying"](imgs/options-burying.png)
+
+We also recommend, albeit less strongly, that you randomize as much as possible to ensure that successful recall is due to strong memory connections and not due to overlap between cards from the same note. For example these are some suitable settings:
+
+!["Deck options / Display Order"](imgs/options-display-order.png)
 
 ## Rating Cards
 
