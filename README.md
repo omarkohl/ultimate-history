@@ -2,7 +2,7 @@
 
 The aim of this project is collaborating in the creation of high quality, free and open source Anki decks on the topic of human history.
 
-[Anki](https://apps.ankiweb.net/) is open-source [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) software available for Windows, macOS, Linux, Android and iOS. Check the [installations instructions](https://apps.ankiweb.net/#downloads). Spaced repetition is an improvement over classic _flashcards_ that allows for more flexible and efficient learning.
+[Anki](https://apps.ankiweb.net/) is open-source [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) software available for Windows, macOS, Linux, Android and iOS. Check the [Anki installations instructions](https://apps.ankiweb.net/#downloads). Spaced repetition is an improvement over classic _flashcards_ that allows for more flexible and efficient learning.
 
 The underlying idea of this project is to view history as a **graph of events and people** who are connected. The Anki cards not only query you about individual events and people but also about the **relationships** between them.
 
@@ -19,7 +19,7 @@ The underlying idea of this project is to view history as a **graph of events an
 
 [View all screenshots](docs/screenshots.md)
 
-## Installation
+## Deck Installation & Update
 
 See [docs/installation.md](docs/installation.md) for instructions on how to install and update the deck.
 
