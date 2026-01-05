@@ -301,6 +301,8 @@ def show_entity(driver, name: str):
             print(f"  Birth: {birth or 'N/A'}")
             print(f"  Death: {death or 'N/A'}")
             print(f"  Known for: {node.get('known_for') or 'N/A'}")
+            if node.get("picture"):
+                print(f"  Picture: {node.get('picture')}")
         elif entity_type == "Event":
             start = format_date(node.get("start_year"), node.get("start_approximate"))
             end = format_date(node.get("end_year"), node.get("end_approximate"))
@@ -570,6 +572,7 @@ def create_person(
     tags: Optional[list[str]] = None,
     notes: Optional[str] = None,
     source: Optional[str] = None,
+    picture: Optional[str] = None,
 ):
     """Create a new Person node."""
     validate_entity_tags(tags)
@@ -602,7 +605,7 @@ def create_person(
                 death_approximate: $death_approximate,
                 notes: $notes,
                 source_license: $source,
-                picture: ''
+                picture: $picture
             })
             """,
             guid=guid,
@@ -614,6 +617,7 @@ def create_person(
             death_approximate=death_approximate,
             notes=notes or "",
             source=source or "",
+            picture=picture or "",
         )
 
         # Create tags
@@ -1151,6 +1155,7 @@ def update_person(
     death: Optional[str] = None,
     notes: Optional[str] = None,
     source: Optional[str] = None,
+    picture: Optional[str] = None,
 ):
     """Update an existing Person node. Only provided fields are updated."""
     with driver.session() as session:
@@ -1192,6 +1197,9 @@ def update_person(
         if source is not None:
             set_clauses.append("p.source_license = $source")
             params["source"] = source
+        if picture is not None:
+            set_clauses.append("p.picture = $picture")
+            params["picture"] = picture
 
         if not set_clauses:
             print("No fields to update.", file=sys.stderr)
@@ -1515,6 +1523,9 @@ Examples:
     )
     create_person_parser.add_argument("--notes", help="Additional notes")
     create_person_parser.add_argument("--source", help="Source & license info")
+    create_person_parser.add_argument(
+        "--picture", help='Picture HTML (e.g., <img src="uh_name.jpg">)'
+    )
 
     # create-event command
     create_event_parser = subparsers.add_parser(
@@ -1587,6 +1598,9 @@ Examples:
     update_person_parser.add_argument("--death", help="Death year")
     update_person_parser.add_argument("--notes", help="Additional notes")
     update_person_parser.add_argument("--source", help="Source & license info")
+    update_person_parser.add_argument(
+        "--picture", help='Picture HTML (e.g., <img src="uh_name.jpg">)'
+    )
 
     # update-event command
     update_event_parser = subparsers.add_parser(
@@ -1654,6 +1668,7 @@ Examples:
                 args.tags,
                 args.notes,
                 args.source,
+                args.picture,
             )
         elif args.command == "create-event":
             create_event(
@@ -1699,6 +1714,7 @@ Examples:
                 args.death,
                 args.notes,
                 args.source,
+                args.picture,
             )
         elif args.command == "update-event":
             update_event(
