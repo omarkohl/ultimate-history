@@ -193,7 +193,7 @@ Examples:
 - `known_for`: Brief description of significance
 - `birth`/`death`: Years (see Date Format above)
 - `tags`: Required (at least Region + Period)
-- `notes`: Additional context
+- `notes`: Additional context (see Notes Field below)
 - `source`: Attribution
 
 ### Event
@@ -201,6 +201,40 @@ Examples:
 - `summary`: Brief description
 - `start_date`/`end_date`: Years (see Date Format; if same year, only specify start)
 - `tags`, `notes`, `source`: Same as Person
+
+### Notes Field
+
+The `notes` field is valuable for adding historical context that doesn't fit elsewhere. Use it to include:
+- Interesting historical details and trivia
+- Context that helps understand the person/event's significance
+- Explanations of unusual names, terms, or dating systems
+- Key dates and specific facts worth remembering
+
+Examples:
+- For "Thermidorian Reaction": "Named after 9 Thermidor Year II in the French Republican Calendar (July 27, 1794). The Republican Calendar was adopted in 1793, replacing the Gregorian calendar with 12 months of 30 days each, named after natural phenomena."
+- For "Otto von Bismarck": "Bismarck began as an outspoken conservative firebrand but became famous for his pragmatic 'Realpolitik,' often outmaneuvering rivals through alliances, timing, and controlled crises."
+
+**Always consider adding notes** when creating or updating persons and events—they enrich the learning experience.
+
+### Picture and Source Fields (Persons only)
+
+Images, source URLs, and licenses are provided by the user. Do not add these fields unless the user provides the information.
+
+When the user provides an image:
+- Images are stored in `src/media/` with naming convention `uh_<name-in-lowercase-kebab-case>.jpg`
+- The `--picture` field takes an HTML `<img>` tag:
+  ```bash
+  --picture '<img src="uh_otto-von-bismarck.jpg">'
+  ```
+
+When the user provides source/license info, use this format for the `--source` field:
+```bash
+--source 'Claude Sonnet 4.5<br><br>Image: <a href="https://en.wikipedia.org/wiki/...">Wikipedia</a> (Public domain)'
+```
+
+The source field has two parts separated by `<br><br>`:
+1. **Data source**: Who created/verified the entity data (e.g., "Claude Sonnet 4.5")
+2. **Image attribution**: Link to source and license provided by user
 
 ### QA (Question & Answer)
 - `question`: The question to ask
@@ -272,8 +306,23 @@ uv run tools/neo4j_query.py relations "Otto von Bismarck"
 
 Relationships should be:
 - **Directional**: Source -> Target with a description. Consider the direction carefully—adding both directions (A -> B and B -> A) can be appropriate but is not always necessary.
-- **Specific**: "led the revolution" not just "involved in"
+- **Verbose and contextual**: Describe the relationship's historical significance, not just the connection type
 - **Historical**: Focus on significant historical connections
+
+**IMPORTANT: Write detailed, contextual relationship descriptions.** Short descriptions like "led" or "participated in" are insufficient. Instead, explain the nature and significance of the relationship.
+
+Examples of good relationship descriptions:
+- ❌ Bad: "was advisor to"
+- ✅ Good: "conservative advisor who guided Alexander III's autocratic governance"
+
+- ❌ Bad: "fought against"
+- ✅ Good: "rival-turned-ally-turned-opponent whose conflicts with Russia shaped Alexander's reign"
+
+- ❌ Bad: "participated in"
+- ✅ Good: "promoted Russian industrialization through protective tariffs and initiated the Trans-Siberian Railway in 1891"
+
+- ❌ Bad: "was father of"
+- ✅ Good: "father whose assassination brought Alexander III to power and shaped his reactionary policies"
 
 Common patterns:
 - Person -> Person: "was teacher of", "married", "succeeded", "defeated"
