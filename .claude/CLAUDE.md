@@ -2,6 +2,13 @@
 
 Anki deck for learning human history, collaboratively edited.
 
+## Historical Accuracy
+
+**Accuracy is absolutely fundamental.** When adding or editing any historical data:
+- Never invent or hallucinate facts, dates, relationships, or details
+- If in doubt, search Wikipedia or ask the user to research
+- Prefer leaving a field empty over guessing
+
 ## Project Structure
 
 - `main.py` - Task runner for common commands
