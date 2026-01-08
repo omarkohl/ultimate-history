@@ -209,10 +209,29 @@ The `notes` field is valuable for adding historical context that doesn't fit els
 - Context that helps understand the person/event's significance
 - Explanations of unusual names, terms, or dating systems
 - Key dates and specific facts worth remembering
+- **Pronunciation guides** for names not intuitive to English speakers
+
+#### Pronunciation Guidelines
+
+For names whose pronunciation is not intuitive for English speakers, add the IPA pronunciation at the end of the notes field. Format: `Language: [IPA transcription]`
 
 Examples:
-- For "Thermidorian Reaction": "Named after 9 Thermidor Year II in the French Republican Calendar (July 27, 1794). The Republican Calendar was adopted in 1793, replacing the Gregorian calendar with 12 months of 30 days each, named after natural phenomena."
-- For "Otto von Bismarck": "Bismarck began as an outspoken conservative firebrand but became famous for his pragmatic 'Realpolitik,' often outmaneuvering rivals through alliances, timing, and controlled crises."
+- Giuseppe Mazzini: `Italian: [dʒuˈzɛppe matˈtsiːni]`
+- Klemens von Metternich: `German: [ˈkleːmɛns fɔn ˈmɛtɐnɪç]`
+- Maximilien Robespierre: `French: [maksimiljɛ̃ ʁɔbɛspjɛʁ]`
+
+**When to add pronunciation:**
+- Non-English names with unintuitive spelling (Italian, German, French, Hungarian, Russian, etc.)
+- Names with silent letters or unusual letter combinations
+- Names where English speakers commonly mispronounce
+
+**When NOT to add pronunciation:**
+- Common English names or anglicized versions
+- Names that are pronounced as they are spelled in English
+
+Examples of notes with context and pronunciation:
+- For "Thermidorian Reaction": "Named after 9 Thermidor Year II in the French Republican Calendar (July 27, 1794). The Republican Calendar was adopted in 1793, replacing the Gregorian calendar with 12 months of 30 days each, named after natural phenomena. French: [teʁmidɔʁjɛ̃]"
+- For "Otto von Bismarck": "Bismarck began as an outspoken conservative firebrand but became famous for his pragmatic 'Realpolitik,' often outmaneuvering rivals through alliances, timing, and controlled crises. German: [ˈɔto fɔn ˈbɪsmaʁk]"
 
 **Always consider adding notes** when creating or updating persons and events—they enrich the learning experience.
 
