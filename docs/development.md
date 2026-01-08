@@ -71,6 +71,8 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
 
 ## Neo4j Graph Database
 
+See [ADR 001](adr/001-neo4j-for-graph-storage.md) for why Neo4j was chosen over alternatives.
+
 The project uses Neo4j AuraDB as a graph database to store and query entities and their relationships. This provides a more powerful way to explore connections between historical figures and events compared to flat CSV files. **This is entirely optional and working with CSV files only is fine!**
 
 You need to create your own Neo4j AuraDB instance. There is a free tier available. See [here](https://console-preview.neo4j.io/).
