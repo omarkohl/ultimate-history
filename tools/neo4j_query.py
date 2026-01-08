@@ -1156,8 +1156,12 @@ def update_person(
     notes: Optional[str] = None,
     source: Optional[str] = None,
     picture: Optional[str] = None,
+    tags: Optional[list[str]] = None,
 ):
     """Update an existing Person node. Only provided fields are updated."""
+    if tags:
+        validate_entity_tags(tags)
+
     with driver.session() as session:
         # Find person
         result = session.run(
@@ -1201,17 +1205,34 @@ def update_person(
             set_clauses.append("p.picture = $picture")
             params["picture"] = picture
 
-        if not set_clauses:
+        if not set_clauses and not tags:
             print("No fields to update.", file=sys.stderr)
             sys.exit(1)
 
-        query = f"""
-        MATCH (p:Person) WHERE toLower(p.name) = toLower($name)
-        SET {", ".join(set_clauses)}
-        """
-        session.run(query, **params)
+        if set_clauses:
+            query = f"""
+            MATCH (p:Person) WHERE toLower(p.name) = toLower($name)
+            SET {", ".join(set_clauses)}
+            """
+            session.run(query, **params)
+
+        # Add new tags (existing tags are preserved)
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (p:Person) WHERE toLower(p.name) = toLower($name)
+                    MATCH (t:Tag {name: $tag})
+                    MERGE (p)-[:HAS_TAG]->(t)
+                    """,
+                    name=name,
+                    tag=tag,
+                )
 
     print(f"Updated Person: {new_name or name}")
+    if tags:
+        print(f"  Added tags: {', '.join(tags)}")
 
 
 def update_event(
@@ -1223,8 +1244,12 @@ def update_event(
     end_date: Optional[str] = None,
     notes: Optional[str] = None,
     source: Optional[str] = None,
+    tags: Optional[list[str]] = None,
 ):
     """Update an existing Event node. Only provided fields are updated."""
+    if tags:
+        validate_entity_tags(tags)
+
     with driver.session() as session:
         # Find event
         result = session.run(
@@ -1265,17 +1290,34 @@ def update_event(
             set_clauses.append("e.source_license = $source")
             params["source"] = source
 
-        if not set_clauses:
+        if not set_clauses and not tags:
             print("No fields to update.", file=sys.stderr)
             sys.exit(1)
 
-        query = f"""
-        MATCH (e:Event) WHERE toLower(e.name) = toLower($name)
-        SET {", ".join(set_clauses)}
-        """
-        session.run(query, **params)
+        if set_clauses:
+            query = f"""
+            MATCH (e:Event) WHERE toLower(e.name) = toLower($name)
+            SET {", ".join(set_clauses)}
+            """
+            session.run(query, **params)
+
+        # Add new tags (existing tags are preserved)
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (e:Event) WHERE toLower(e.name) = toLower($name)
+                    MATCH (t:Tag {name: $tag})
+                    MERGE (e)-[:HAS_TAG]->(t)
+                    """,
+                    name=name,
+                    tag=tag,
+                )
 
     print(f"Updated Event: {new_name or name}")
+    if tags:
+        print(f"  Added tags: {', '.join(tags)}")
 
 
 def update_qa(
@@ -1285,8 +1327,12 @@ def update_qa(
     answer: Optional[str] = None,
     notes: Optional[str] = None,
     source: Optional[str] = None,
+    tags: Optional[list[str]] = None,
 ):
     """Update an existing QA node. Only provided fields are updated."""
+    if tags:
+        validate_entity_tags(tags)
+
     with driver.session() as session:
         # Find QA
         result = session.run(
@@ -1318,17 +1364,34 @@ def update_qa(
             set_clauses.append("q.source_license = $source")
             params["source"] = source
 
-        if not set_clauses:
+        if not set_clauses and not tags:
             print("No fields to update.", file=sys.stderr)
             sys.exit(1)
 
-        query = f"""
-        MATCH (q:QA) WHERE toLower(q.question) = toLower($question)
-        SET {", ".join(set_clauses)}
-        """
-        session.run(query, **params)
+        if set_clauses:
+            query = f"""
+            MATCH (q:QA) WHERE toLower(q.question) = toLower($question)
+            SET {", ".join(set_clauses)}
+            """
+            session.run(query, **params)
+
+        # Add new tags (existing tags are preserved)
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (q:QA) WHERE toLower(q.question) = toLower($question)
+                    MATCH (t:Tag {name: $tag})
+                    MERGE (q)-[:HAS_TAG]->(t)
+                    """,
+                    question=question,
+                    tag=tag,
+                )
 
     print(f"Updated QA: {(new_question or question)[:60]}...")
+    if tags:
+        print(f"  Added tags: {', '.join(tags)}")
 
 
 def update_cloze(
@@ -1337,8 +1400,12 @@ def update_cloze(
     new_text: Optional[str] = None,
     notes: Optional[str] = None,
     source: Optional[str] = None,
+    tags: Optional[list[str]] = None,
 ):
     """Update an existing Cloze node. Only provided fields are updated."""
+    if tags:
+        validate_entity_tags(tags)
+
     with driver.session() as session:
         # Find Cloze
         result = session.run(
@@ -1371,18 +1438,35 @@ def update_cloze(
             set_clauses.append("c.source_license = $source")
             params["source"] = source
 
-        if not set_clauses:
+        if not set_clauses and not tags:
             print("No fields to update.", file=sys.stderr)
             sys.exit(1)
 
-        query = f"""
-        MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text)
-        SET {", ".join(set_clauses)}
-        """
-        session.run(query, **params)
+        if set_clauses:
+            query = f"""
+            MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text)
+            SET {", ".join(set_clauses)}
+            """
+            session.run(query, **params)
+
+        # Add new tags (existing tags are preserved)
+        if tags:
+            for tag in tags:
+                session.run("MERGE (t:Tag {name: $tag})", tag=tag)
+                session.run(
+                    """
+                    MATCH (c:Cloze) WHERE toLower(c.text) = toLower($text)
+                    MATCH (t:Tag {name: $tag})
+                    MERGE (c)-[:HAS_TAG]->(t)
+                    """,
+                    text=text,
+                    tag=tag,
+                )
 
     preview = (new_text or text)[:60].replace("\n", " ")
     print(f"Updated Cloze: {preview}...")
+    if tags:
+        print(f"  Added tags: {', '.join(tags)}")
 
 
 def delete_entity(driver, name: str):
@@ -1601,6 +1685,9 @@ Examples:
     update_person_parser.add_argument(
         "--picture", help='Picture HTML (e.g., <img src="uh_name.jpg">)'
     )
+    update_person_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag to add (can repeat)"
+    )
 
     # update-event command
     update_event_parser = subparsers.add_parser(
@@ -1613,6 +1700,9 @@ Examples:
     update_event_parser.add_argument("--end", help="End year")
     update_event_parser.add_argument("--notes", help="Additional notes")
     update_event_parser.add_argument("--source", help="Source & license info")
+    update_event_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag to add (can repeat)"
+    )
 
     # update-qa command
     update_qa_parser = subparsers.add_parser("update-qa", help="Update an existing QA")
@@ -1621,6 +1711,9 @@ Examples:
     update_qa_parser.add_argument("--answer", help="New answer")
     update_qa_parser.add_argument("--notes", help="Additional notes")
     update_qa_parser.add_argument("--source", help="Source & license info")
+    update_qa_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag to add (can repeat)"
+    )
 
     # update-cloze command
     update_cloze_parser = subparsers.add_parser(
@@ -1630,6 +1723,9 @@ Examples:
     update_cloze_parser.add_argument("--new-text", help="New cloze text")
     update_cloze_parser.add_argument("--notes", help="Additional notes")
     update_cloze_parser.add_argument("--source", help="Source & license info")
+    update_cloze_parser.add_argument(
+        "--tag", action="append", dest="tags", help="Tag to add (can repeat)"
+    )
 
     # delete command
     delete_parser = subparsers.add_parser("delete", help="Delete an entity")
@@ -1715,6 +1811,7 @@ Examples:
                 args.notes,
                 args.source,
                 args.picture,
+                args.tags,
             )
         elif args.command == "update-event":
             update_event(
@@ -1726,6 +1823,7 @@ Examples:
                 args.end,
                 args.notes,
                 args.source,
+                args.tags,
             )
         elif args.command == "update-qa":
             update_qa(
@@ -1735,6 +1833,7 @@ Examples:
                 args.answer,
                 args.notes,
                 args.source,
+                args.tags,
             )
         elif args.command == "update-cloze":
             update_cloze(
@@ -1743,6 +1842,7 @@ Examples:
                 args.new_text,
                 args.notes,
                 args.source,
+                args.tags,
             )
         elif args.command == "delete":
             delete_entity(driver, args.name)
