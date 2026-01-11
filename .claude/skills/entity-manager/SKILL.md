@@ -183,29 +183,41 @@ Dates support:
 - BCE dates: `500 BCE`, `c. 1,700,000 BCE`
 - Empty for unknown
 
+**IMPORTANT: If start and end years are the same, ONLY specify the start year (birth/start), not the end year (death/end).**
+
 Examples:
 - `--birth 1815` → stored as year 1815, not approximate
 - `--birth "c. 500 BCE"` → stored as year -500, approximate
 - `--start "c. 1760"` → stored as year 1760, approximate
+- `--start 1914 --end 1914` → ❌ Wrong! Use `--start 1914` only
+- `--birth 1889 --death 1889` → ❌ Wrong! Use `--birth 1889` only
 
 ### Person
 - `name`: Full name
-- `known_for`: Brief description of significance
+- `known_for`: Brief description of significance (used in isolation for quiz questions - must be distinctive and informative without being verbose)
 - `birth`/`death`: Years (see Date Format above)
 - `tags`: Required (at least Region + Period)
-- `notes`: Additional context (see Notes Field below)
+- `notes`: Additional context (see Notes Field below) - **avoid duplicating information from `known_for` or relationships**
 - `source`: Attribution
 
 ### Event
 - `name`: Event name
-- `summary`: Brief description
-- `start_date`/`end_date`: Years (see Date Format; if same year, only specify start)
+- `summary`: Brief description (used in isolation for quiz questions - must be distinctive and informative without being verbose)
+- `start_date`/`end_date`: Years (see Date Format above - remember: if same year, only specify start)
 - `tags`, `notes`, `source`: Same as Person
+- `notes`: **Avoid duplicating information from `summary` or relationships**
 
 ### Notes Field
 
-The `notes` field is valuable for adding historical context that doesn't fit elsewhere. Use it to include:
-- Interesting historical details and trivia
+The `notes` field is valuable for adding historical context that doesn't fit elsewhere.
+
+**IMPORTANT: Avoid duplication.** Don't repeat information already in:
+- `known_for` or `summary` fields
+- Relationship descriptions
+- Other notes
+
+Use notes to include:
+- Interesting historical details and trivia not mentioned elsewhere
 - Context that helps understand the person/event's significance
 - Explanations of unusual names, terms, or dating systems
 - Key dates and specific facts worth remembering
@@ -230,7 +242,7 @@ Examples:
 - Names that are pronounced as they are spelled in English
 
 Examples of notes with context and pronunciation:
-- For "Thermidorian Reaction": "Named after 9 Thermidor Year II in the French Republican Calendar (July 27, 1794). The Republican Calendar was adopted in 1793, replacing the Gregorian calendar with 12 months of 30 days each, named after natural phenomena. French: [teʁmidɔʁjɛ̃]"
+- For "Thermidorian Reaction": "Named after 9 Thermidor Year II in the French Republican Calendar (July 27, 1794). The Republican Calendar was adopted in 1793, replacing the Gregorian calendar with 12 months of 30 days each, named after natural phenomena. French: [teʁmidɔʁ]"
 - For "Otto von Bismarck": "Bismarck began as an outspoken conservative firebrand but became famous for his pragmatic 'Realpolitik,' often outmaneuvering rivals through alliances, timing, and controlled crises. German: [ˈɔto fɔn ˈbɪsmaʁk]"
 
 **Always consider adding notes** when creating or updating persons and events—they enrich the learning experience.
@@ -324,9 +336,43 @@ uv run tools/neo4j_query.py relations "Otto von Bismarck"
 ## Relationship Guidelines
 
 Relationships should be:
-- **Directional**: Source -> Target with a description. Consider the direction carefully—adding both directions (A -> B and B -> A) can be appropriate but is not always necessary.
+- **Directional**: Source -> Target with a description
 - **Verbose and contextual**: Describe the relationship's historical significance, not just the connection type
 - **Historical**: Focus on significant historical connections
+- **Non-duplicative**: Don't repeat information already in "known_for"/"summary" or vice versa
+
+### When to Add Reverse Relationships
+
+**IMPORTANT: In most cases, add BOTH directions (A → B and B → A) with distinct contextual descriptions.**
+
+**General rule: Add the reverse relationship unless the relationship is insignificant from one perspective.**
+
+Since each entity is limited to 5 related people and 5 related events, prioritize historically significant relationships. Sometimes a relationship is crucial from one entity's perspective but minor from the other's.
+
+**Example of asymmetric significance:**
+```bash
+# Franz Ferdinand's assassination was THE defining event of his life
+add-rel "Archduke Franz Ferdinand" "Assassination of Archduke Franz Ferdinand" "was killed in this event that triggered World War I"
+
+# But World War I had many more significant causes and events than just this assassination
+# From WWI's perspective, you might prioritize:
+# - Treaty of Versailles, Battle of Verdun, Russian Revolution, etc.
+# So you might SKIP the reverse relationship to save space for more significant events
+```
+
+**Another example:**
+```bash
+# For a minor composer who studied with Beethoven:
+add-rel "Johann Minor Composer" "Ludwig van Beethoven" "studied composition with in Vienna (1815-1820)"
+
+# But Beethoven had many more significant students and relationships
+# You might NOT add the reverse to preserve space for:
+# - Beethoven -> Archduke Rudolph (major patron)
+# - Beethoven -> Ninth Symphony (masterwork)
+# - etc.
+```
+
+**Default approach: Add both directions unless you have a specific reason not to** (like the 5-item limit forcing prioritization).
 
 **IMPORTANT: Write detailed, contextual relationship descriptions.** Short descriptions like "led" or "participated in" are insufficient. Instead, explain the nature and significance of the relationship.
 
