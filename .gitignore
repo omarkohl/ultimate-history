@@ -1,3 +1,4 @@
 __pycache__
 .~lock.*#
 .env
+.claude/settings.json
