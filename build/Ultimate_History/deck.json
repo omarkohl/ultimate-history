@@ -154,6 +154,7 @@
         "uh_alexandre-auguste-ledru-rollin.png",
         "uh_alexandre-dumas.jpg",
         "uh_alfred-russel-wallace.jpg",
+        "uh_alfred-von-tirpitz.jpg",
         "uh_alphonse-de-lamartine.png",
         "uh_andrew-johnson.jpg",
         "uh_angela-burdett-coutts.jpg",
@@ -170,23 +171,31 @@
         "uh_charles-lyell.jpg",
         "uh_christian-ix.jpg",
         "uh_commodus.jpg",
+        "uh_david-lloyd-george.jpg",
+        "uh_douglas-haig.jpg",
+        "uh_edward-vii.jpg",
         "uh_empress-elisabeth-of-austria.jpg",
         "uh_epictetus.jpg",
+        "uh_erich-ludendorff.jpg",
         "uh_faustina-the-younger.jpg",
+        "uh_ferdinand-foch.jpg",
         "uh_ferenc-deák.jpg",
         "uh_francisco-de-paula-santander.jpg",
         "uh_franz-joseph-i-of-austria.jpg",
         "uh_franz-schubert.jpg",
         "uh_frederick-douglass.jpg",
         "uh_friedrich-engels.jpg",
+        "uh_gavrilo-princip.jpg",
         "uh_gebhard-leberecht-von-blücher.jpg",
         "uh_george-stephenson.jpg",
+        "uh_georges-clemenceau.jpg",
         "uh_georges-danton.jpg",
         "uh_giuseppe-garibaldi.jpg",
         "uh_giuseppe-mazzini.jpg",
         "uh_giuseppe-verdi.jpg",
         "uh_gyula-andrássy.jpg",
         "uh_helmuth-von-moltke-the-elder.jpg",
+        "uh_helmuth-von-moltke-the-younger.jpg",
         "uh_homo-habilis.jpg",
         "uh_horatio-nelson-1st-viscount-nelson.jpg",
         "uh_isambard-kingdom-brunel.jpg",
@@ -194,6 +203,7 @@
         "uh_jean-paul-marat.jpg",
         "uh_jefferson-davis.jpg",
         "uh_johann-wolfgang-von-goethe.jpg",
+        "uh_john-j-pershing.jpg",
         "uh_joseph-black.jpg",
         "uh_joseph-dalton-hooker.jpg",
         "uh_joseph-haydn.jpg",
@@ -202,6 +212,7 @@
         "uh_klemens-von-metternich.jpeg",
         "uh_konstantin-pobedonostsev.jpg",
         "uh_lajos-kossuth.jpg",
+        "uh_leon-trotsky.jpg",
         "uh_louis-blanc.jpg",
         "uh_louis-xvi.jpg",
         "uh_lucilla.jpg",
@@ -216,12 +227,15 @@
         "uh_mikhail-bakunin.jpg",
         "uh_mikhail-kutuzov.jpg",
         "uh_mrs-ples.jpg",
+        "uh_mustafa-kemal-atatürk.jpg",
         "uh_napoleon-bonaparte.jpg",
         "uh_napoleon-iii.jpg",
         "uh_nicholas-i-of-russia.jpg",
         "uh_nicholas-ii-of-russia.jpg",
         "uh_nikolai-milyutin.jpg",
         "uh_otto-von-bismarck.jpg",
+        "uh_paul-von-hindenburg.jpg",
+        "uh_philippe-pétain.jpg",
         "uh_prince-albert-of-saxe-coburg-and-gotha.png",
         "uh_queen-victoria.jpg",
         "uh_rani-of-jhansi.jpg",
@@ -233,19 +247,23 @@
         "uh_stephen-a-douglas.png",
         "uh_stonewall-jackson.jpg",
         "uh_taung-child.jpg",
+        "uh_theobald-von-bethmann-hollweg.jpg",
         "uh_thomas-henry-huxley.jpg",
         "uh_toumaï.jpg",
         "uh_turkana-boy.jpg",
         "uh_ulysses-s-grant.jpg",
         "uh_victor-emmanuel-ii.jpg",
         "uh_victor-hugo.jpg",
+        "uh_vladimir-lenin.jpg",
         "uh_wilhelm-i.jpg",
+        "uh_wilhelm-ii.jpg",
         "uh_wilhelm-liebknecht.jpg",
         "uh_william-ewart-gladstone.jpg",
         "uh_william-h-seward.jpg",
         "uh_william-lamb-2nd-viscount-melbourne.jpg",
         "uh_william-tecumseh-sherman.jpg",
         "uh_wolfgang-amadeus-mozart.jpg",
+        "uh_woodrow-wilson.jpg",
         "uh_zinj.jpg"
     ],
     "name": "Ultimate History",
@@ -1337,7 +1355,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -1566,6 +1584,45 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Alfred von Tirpitz",
+                "German Grand Admiral who built the Imperial Navy and initiated the naval arms race with Britain",
+                "1849",
+                "1930",
+                "<img src=\"uh_alfred-von-tirpitz.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Dismissal of Bismarck (1890): Wilhelm II's dismissal of Bismarck enabled Tirpitz to pursue his aggressive naval expansion policy, replacing Bismarck's cautious continental strategy",
+                "World War I (1914–1918): built the Imperial German Navy that challenged British naval supremacy, triggering an arms race that poisoned Anglo-German relations and ensured British entry into the war",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born March 19, 1849, in Küstrin, Prussia. Joined the navy in 1865 and rose rapidly. Appointed State Secretary of the Imperial Naval Office in 1897. Transformed the modest Imperial Navy into a world-class force that could threaten Britain's Royal Navy. Introduced the First Fleet Act (1898) beginning naval expansion. The Second Navy Bill (1900) initiated the naval race that poisoned Anglo-German relations and ensured British membership in the Entente. Despite massive investment, the German High Seas Fleet failed to break British naval supremacy—the Battle of Jutland (1916) was a tactical victory but strategic failure. Lost influence during the war and resigned in March 1916. Co-founded the German Fatherland Party (1917). Served as a nationalist deputy in the Reichstag (1924–1928). Died March 6, 1930. German: [ˈʔalfʁeːt fɔn ˈtɪʁpɪts]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Bundesarchiv_Bild_134-C1743,_Alfred_von_Tirpitz.jpg\">Wikipedia</a> (CC BY-SA 3.0 DE)"
+            ],
+            "flags": 0,
+            "guid": "ev}Ati@auS",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Alphonse de Lamartine",
                 "French Romantic poet and statesman; leading figure in the 1848 Revolution; head of provisional government; defended the tricolor flag.",
                 "1790",
@@ -1633,7 +1690,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -1745,7 +1802,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -2162,6 +2219,123 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "David Lloyd George",
+                "British Prime Minister who led Britain through the latter half of WWI and was key figure at the Paris Peace Conference",
+                "1863",
+                "1945",
+                "<img src=\"uh_david-lloyd-george.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Paris Peace Conference (1919–1919): represented Britain at the conference, balancing between French demands for security and American idealism while protecting British imperial interests",
+                "Treaty of Versailles (1919): sought a middle ground between Wilson's idealism and Clemenceau's severity, fearing that overly harsh terms would destabilize Europe",
+                "World War I (1914–1918): served as British Prime Minister from December 1916, replacing Asquith to provide more energetic war leadership",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born January 17, 1863, in Manchester but raised in Wales. Liberal MP for Carnarvon Boroughs for 55 years (1890–1945). As Chancellor of the Exchequer (1908–1915), introduced the 'People's Budget' of 1909 and laid foundations for the British welfare state. Minister of Munitions (1915–1916), then Prime Minister from December 1916 to 1922. One of the 'Big Four' at the Paris Peace Conference alongside Clemenceau, Wilson, and Orlando. Took a middle position between Wilson's idealism and Clemenceau's desire to punish Germany. Created Earl Lloyd-George of Dwyfor shortly before his death on March 26, 1945.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:David_Lloyd_George_LCCN2014698950_(cropped).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "wl>9oz]gBE",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Douglas Haig",
+                "British Field Marshal and Commander-in-Chief of the BEF, controversial for Somme and Passchendaele casualties",
+                "1861",
+                "1928",
+                "<img src=\"uh_douglas-haig.jpg\">",
+                "Philippe Pétain (1856–1951): coordinated British and French operations as commanders on the Western Front, including joint offensives and mutual support",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Battle of the Somme (1916): commanded British forces in the offensive that cost 420,000 British casualties including 19,240 killed on the first day alone—the bloodiest day in British military history",
+                "World War I (1914–1918): commanded British forces on the Western Front from December 1915, leading costly offensives including the Somme but ultimately achieving victory",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born June 19, 1861, in Edinburgh, into a wealthy whisky-distilling family of ancient Scottish lineage. Graduate of the Royal Military College at Sandhurst. Served in Sudan (1898) and the South African War (1899–1902). Became Commander of the British Expeditionary Force (BEF) in France in December 1915. Directed the Battle of the Somme (July–November 1916), which cost 420,000 British casualties; the first day alone saw nearly 57,500 casualties including 19,240 killed—the bloodiest day in British military history. Also commanded at Passchendaele (1917). Nicknamed 'Butcher Haig' for the two million British casualties under his command. Led the successful final Allied offensive of 1918. His reputation remains controversial. After the war, helped establish the Royal British Legion. American General Pershing called him 'the man who won the war.' Vast numbers attended his funeral in 1928.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Sir_Douglas_Haig.jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "a8H3Vm{btd",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Edward VII",
+                "King of the United Kingdom who cultivated the Entente Cordiale with France",
+                "1841",
+                "1910",
+                "<img src=\"uh_edward-vii.jpg\">",
+                "Wilhelm II (1859–1941): uncle-nephew relationship (Edward was Wilhelm's mother's brother); Edward's diplomatic efforts to build the Entente Cordiale and Triple Entente countered German influence",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Dismissal of Bismarck (1890): Wilhelm II's dismissal of Bismarck occurred while Edward was still Prince of Wales; Edward's subsequent reign would build the alliances Bismarck had worked to prevent",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born November 9, 1841, as Albert Edward, eldest son of Queen Victoria and Prince Albert. Waited 59 years to become king. Known for his charm, love of pleasure, and social skills. Became King Edward VII in 1901 on his mother's death. Made a triumphant visit to Paris in 1903, winning over initially hostile French crowds with his personal charm—a critical step toward the Entente Cordiale. The detailed negotiations were conducted by Lord Lansdowne and Théophile Delcassé, but Edward's influence and tireless efforts were essential. The Entente Cordiale, signed April 8, 1904, settled colonial disputes with France and laid the foundation for the Allied powers of WWI. Also cultivated good relations with Russia, contributing to the Triple Entente (1907). His reign saw a significant shift in British foreign policy from isolation to continental alliances. Died May 6, 1910.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:King-Edward-VII_(cropped)_(b).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "u^8s$U$LQ}",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Empress Elisabeth of Austria",
                 "Empress of Austria and Queen of Hungary; unconventional royal known for beauty, restlessness, and tragic life.",
                 "1837",
@@ -2238,6 +2412,45 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Erich Ludendorff",
+                "German general who partnered with Hindenburg and masterminded the 1918 Spring Offensive",
+                "1865",
+                "1937",
+                "<img src=\"uh_erich-ludendorff.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Armistice of 11 November 1918 (1918): demanded an immediate armistice on September 29, 1918, after the German Spring Offensive failed and Allied advances threatened German collapse",
+                "Battle of Tannenberg (1914): co-commanded with Hindenburg as chief tactician, exploiting Russian unencrypted radio communications to achieve encirclement",
+                "German Spring Offensive (1918): masterminded Germany's final attempt to win the war before American strength became decisive, using innovative stormtrooper tactics",
+                "World War I (1914–1918): as Quartermaster General alongside Hindenburg from 1916, effectively directed Germany's military strategy until demanding an armistice in September 1918",
+                "",
+                "",
+                "",
+                "",
+                "Born April 9, 1865, in Kruszewnia, near Posen. Gained fame for capturing the Belgian fortress of Liège in August 1914. Partnered with Hindenburg on the Eastern Front, achieving major victories including Tannenberg. Became Quartermaster General in 1916, effectively second-in-command of the German Army. The Hindenburg-Ludendorff duo wielded enormous political power during the war's latter half. Demanded an armistice on September 29, 1918, when defeat became inevitable. Fled to Sweden after Germany's defeat. Participated in the Kapp Putsch (1920) and Hitler's Beer Hall Putsch (1923). Later broke with Hitler and became involved in mystical movements. Died December 20, 1937, in Tutzing, Bavaria. German: [ˈeːʁɪç ˈluːdn̩dɔʁf]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Erich_Ludendorff_1924_Portrait_(3x4_cropped)(2).jpg\">Wikipedia</a> (CC BY-SA 4.0)"
+            ],
+            "flags": 0,
+            "guid": "P[b9(F*D*E",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Faustina the Younger",
                 "Roman empress; wife of Marcus Aurelius; mother of Commodus and Lucilla",
                 "130",
@@ -2270,6 +2483,45 @@
                 "UH::Period::2nd_Century",
                 "UH::Region::Europe::Southern",
                 "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Ferdinand Foch",
+                "French Marshal and Supreme Commander of Allied Forces who led the final offensive to victory in WWI",
+                "1851",
+                "1929",
+                "<img src=\"uh_ferdinand-foch.jpg\">",
+                "Douglas Haig (1861–1928): coordinated Allied operations as Supreme Commander, overseeing Haig's British forces in the final offensives of 1918",
+                "John J. Pershing (1860–1948): oversaw American forces as Supreme Allied Commander, though Pershing successfully maintained independent US command structure",
+                "Philippe Pétain (1856–1951): French military colleagues who both became commanders during WWI; Foch became Supreme Allied Commander while Pétain commanded French forces",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Armistice of 11 November 1918 (1918): accepted the German surrender as Supreme Allied Commander, presiding over the armistice negotiations at Compiègne",
+                "German Spring Offensive (1918): appointed Supreme Allied Commander during the crisis to coordinate the Allied response to Germany's last major offensive",
+                "World War I (1914–1918): appointed Supreme Allied Commander in March 1918 during the German Spring Offensive, coordinating the final Allied offensives that won the war",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born October 2, 1851, in Tarbes, France. Became a professor and commandant of the École Supérieure de Guerre, developing influential military theories. Commanded the XX Corps at the outbreak of WWI and played a crucial role in the First Battle of the Marne (1914). Appointed Supreme Commander of Allied Forces on the Western Front in March 1918 during the German Spring Offensive—the first unified Allied command. Coordinated the final Allied offensive that led to Germany's defeat. Promoted to Marshal of France in August 1918; also made a Field Marshal of Great Britain and Marshal of Poland. Represented France at the Armistice negotiations. Critical of the Treaty of Versailles, famously stating: 'This is not a peace. It is an armistice for twenty years.' Died March 20, 1929, in Paris. Buried at Les Invalides alongside Napoleon. French: [fɛʁdinɑ̃ fɔʃ]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Maarschalk_Ferdinand_Foch_(1851-1929),_Bestanddeelnr_158-1095_(cropped).jpg\">Wikipedia</a> (CC0 1.0)"
+            ],
+            "flags": 0,
+            "guid": "[0g!~(>CC=",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
             ]
         },
         {
@@ -2343,7 +2595,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -2455,7 +2707,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -2493,6 +2745,45 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Gavrilo Princip",
+                "Bosnian Serb nationalist who assassinated Archduke Franz Ferdinand, triggering WWI",
+                "1894",
+                "1918",
+                "<img src=\"uh_gavrilo-princip.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Assassination of Archduke Franz Ferdinand (1914): assassinated the Archduke and his wife Sophie in Sarajevo on June 28, 1914, firing at point-blank range when their driver made a wrong turn",
+                "July Crisis (1914): assassinated Archduke Franz Ferdinand on June 28, 1914, triggering the diplomatic crisis that led to WWI within one month",
+                "World War I (1914–1918): his assassination of Archduke Franz Ferdinand triggered the July Crisis that led to the outbreak of World War I within one month",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born July 25, 1894, in western Bosnia to a poor Serb family. One of nine children, six of whom died in infancy. Suffered from tuberculosis from an early age. Joined Young Bosnia in 1911, a secret society aiming to free Bosnia from Austrian rule and unify the South Slavs. Recruited by the Black Hand, a Serbian nationalist organization led by Dragutin Dimitrijević. On June 28, 1914, in Sarajevo, he assassinated Archduke Franz Ferdinand and his wife Sophie after a series of failed attempts by other conspirators. When the Archduke's driver made a wrong turn and stopped to reverse, Princip seized the opportunity and fired at point-blank range. Too young for the death penalty under Austro-Hungarian law (under 20), he was sentenced to 20 years in prison. Died April 28, 1918, of tuberculosis worsened by harsh prison conditions; weighed only 40 kg (88 lb) at death, and his right arm had been amputated. His legacy is contested: a hero to many Serbs, a terrorist to many Bosniaks and Croats. Serbo-Croatian: [ɡǎʋrilo prǐntsip]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Gavrilo_Princip,_cell,_headshot,_bw_(cropped).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "FM]Klo^9wX",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Southern",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -2568,6 +2859,45 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Georges Clemenceau",
+                "French Prime Minister who led France to victory in WWI and was key architect of the Treaty of Versailles",
+                "1841",
+                "1929",
+                "<img src=\"uh_georges-clemenceau.jpg\">",
+                "David Lloyd George (1863–1945): co-architects of the Treaty of Versailles who worked together at the Paris Peace Conference, with Lloyd George attempting to moderate Clemenceau's demands",
+                "Woodrow Wilson (1856–1924): clashed over the severity of peace terms at Paris; Clemenceau sought harsh punishment of Germany while Wilson advocated for a more lenient, idealistic settlement",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Paris Peace Conference (1919–1919): chaired the conference as French Prime Minister, demanding harsh terms to ensure Germany could never threaten France again",
+                "Treaty of Versailles (1919): major architect who insisted on German war guilt, massive reparations, territorial losses, and return of Alsace-Lorraine to France",
+                "World War I (1914–1918): served as French Prime Minister from November 1917 to 1920, rallying France through the war's final year and leading France to victory",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born September 28, 1841, in Mouilleron-en-Pareds. A physician turned journalist and politician, he earned the nickname 'Le Tigre' (The Tiger) for his fierce debating style. Prime Minister 1906–1909 and again 1917–1920. Took office in 1917 at a critical moment when French morale was low. Rallied France and pushed for total victory over Germany. Chaired the Paris Peace Conference (1919) and was a major framer of the Treaty of Versailles. Demanded harsh terms for Germany including reparations and return of Alsace-Lorraine. Earned the title 'Le Père la Victoire' (Father of Victory). Lost the 1920 election due to criticism that he hadn't secured enough from Germany. Predicted 1940 would bring France's gravest danger from Germany. Died November 24, 1929. French: [ʒɔʁʒ klemɑ̃so]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Georges_Clemenceau_par_Nadar.jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "8<<KxP$xys",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -2797,6 +3127,45 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Helmuth von Moltke the Younger",
+                "German Chief of the General Staff at WWI's outbreak who modified the Schlieffen Plan and was replaced after the Marne",
+                "1848",
+                "1916",
+                "<img src=\"uh_helmuth-von-moltke-the-younger.jpg\">",
+                "Paul von Hindenburg (1847–1934): replaced as Chief of Staff by Falkenhayn after the Marne; Hindenburg and Ludendorff would later succeed Falkenhayn in 1916",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "First Battle of the Marne (1914): whose modified Schlieffen Plan and inability to control rapidly advancing armies led to failure and his replacement by Falkenhayn",
+                "World War I (1914–1918): served as German Chief of Staff at the war's outbreak, implementing his modified Schlieffen Plan until his failure at the Marne led to his replacement",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born May 25, 1848, in Gersdorff. Nephew of Generalfeldmarschall Helmuth von Moltke the Elder. Became Chief of the German General Staff in 1906 on the retirement of Alfred von Schlieffen. His appointment was controversial—critics charged he gained the position on his name and friendship with the Kaiser. Modified the Schlieffen Plan, weakening the right wing to strengthen the left flank defending Alsace-Lorraine. Also transferred troops east before the Battle of Tannenberg. His modifications and inability to control rapidly advancing armies contributed to the failure at the First Battle of the Marne (September 1914). Replaced by Erich von Falkenhayn on September 14, 1914. Later made a scapegoat for Germany's 'squandered victory.' Died June 18, 1916. German: [ˈhɛlmuːt fɔn ˈmɔltkə]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Generalleutnant_von_Moltke,_der_neue_Chef_des_Generalstabs,_1906_(cropped).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "{ounuZ(OE8",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Homo habilis",
                 "Early Homo species; first hominin with significantly more advanced tool use",
                 "c. 1,700,000 BCE",
@@ -3015,7 +3384,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -3054,6 +3423,46 @@
                 "UH::Period::18th_Century",
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "John J. Pershing",
+                "Commander of the American Expeditionary Forces in WWI who insisted on unified US command",
+                "1860",
+                "1948",
+                "<img src=\"uh_john-j-pershing.jpg\">",
+                "Woodrow Wilson (1856–1924): appointed by Wilson to command the American Expeditionary Forces, implementing Wilson's policy of maintaining independent American command",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): commanded the American Expeditionary Forces, successfully resisting Allied pressure to integrate US troops as replacement units and maintaining unified American command",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born September 13, 1860, near Laclede, Missouri. Graduated from West Point in 1886 as First Captain. Served in the Indian Wars, Spanish-American War, and the Philippines. Roosevelt promoted him from captain to brigadier general in 1906, jumping 862 senior officers. Led the Punitive Expedition into Mexico (1916–1917) pursuing Pancho Villa. Appointed commander of the American Expeditionary Force (AEF) in May 1917. Resisted British and French demands that American forces be integrated as replacement units, insisting the AEF operate as a unified force under his command. Led successful offensives at Saint-Mihiel and the Meuse-Argonne (September–November 1918). Mentored a generation of WWII generals including Marshall, Eisenhower, Bradley, Patton, and MacArthur. Chief of Staff of the US Army (1921–1924). His memoirs, My Experiences in the World War, won the Pulitzer Prize (1932). Died July 15, 1948; buried at Arlington National Cemetery.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:General_John_Joseph_Pershing_head_on_shoulders.jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "iVrq}E*7[x",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Americas::North",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
             ]
         },
         {
@@ -3239,7 +3648,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -3389,6 +3798,46 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Leon Trotsky",
+                "Bolshevik revolutionary who was key leader of the October Revolution and founder of the Red Army",
+                "1879",
+                "1940",
+                "<img src=\"uh_leon-trotsky.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Execution of the Romanovs (1918): as a leading Bolshevik, supported the decision to execute the Romanovs to prevent their rescue and use as a rallying point for White forces",
+                "February Revolution (1917): returned from exile to Petrograd in May 1917, joining the Bolsheviks and becoming chairman of the Petrograd Soviet",
+                "October Revolution (1917): organized the Military Revolutionary Committee as chairman of the Petrograd Soviet, planning and executing the seizure of power",
+                "Russian Civil War (1917–1922): founded and commanded the Red Army, transforming it from a disorganized force into an effective military that defeated the Whites and foreign intervention",
+                "Russian Revolution of 1905 (1905): served as chairman of the St. Petersburg Soviet during the revolution, gaining crucial experience in revolutionary leadership",
+                "",
+                "",
+                "",
+                "Born Lev Davidovich Bronstein on November 7, 1879, in Yanovka, Ukraine. Joined revolutionary movements as a teenager and was exiled to Siberia twice. Initially aligned with the Mensheviks but joined the Bolsheviks in 1917. Elected chairman of the Petrograd Soviet in September 1917. Played a crucial role in organizing the October Revolution alongside Lenin. Served as People's Commissar for Foreign Affairs (1917–1918), negotiating the Treaty of Brest-Litovsk. Founded and commanded the Red Army (1918–1924), leading it to victory in the Russian Civil War. After Lenin's death, lost the power struggle to Stalin. Expelled from the Communist Party (1927) and exiled from the Soviet Union (1929). Assassinated by Soviet agent Ramón Mercader with an ice axe in Mexico City on August 21, 1940.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Leon_Trotsky_1918_(3x4_rotated_cropped_b).jpg\">Wikipedia</a> (CC0 1.0)"
+            ],
+            "flags": 0,
+            "guid": "1zLw[}}f)5",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
             ]
         },
         {
@@ -3926,6 +4375,47 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Mustafa Kemal Atatürk",
+                "Turkish military leader and hero of Gallipoli who founded and became first president of the Republic of Turkey",
+                "1881",
+                "1938",
+                "<img src=\"uh_mustafa-kemal-atatürk.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Gallipoli Campaign (1915–1916): emerged as a hero defending Ottoman positions at Anzac Cove and other crucial points, launching his military and political career",
+                "World War I (1914–1918): fought as an Ottoman officer at Gallipoli and other fronts, gaining military experience and reputation that enabled his later leadership",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born c. 1881 in Salonika (now Thessaloniki, Greece), then part of the Ottoman Empire. Given the name 'Kemal' ('perfection') by a mathematics teacher. Distinguished himself at the Gallipoli Campaign (1915), becoming a national hero as the 'Saviour of Istanbul.' Promoted to colonel after a piece of shrapnel was stopped by the watch in his breast pocket. Led the Turkish War of Independence (1919–1923) against the partitioning of Anatolia. Proclaimed the Republic of Turkey on October 29, 1923, and became its first president. Implemented sweeping secularizing and westernizing reforms: abolished the sultanate and caliphate, introduced Latin alphabet, granted women equal rights, separated religion from state. The Turkish Parliament granted him the surname 'Atatürk' (Father of the Turks) in 1934. Died November 10, 1938, at Dolmabahçe Palace, Istanbul. Turkish: [mustaˈfa ceˈmal ataˈtyɾc]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Ataturk1930s.jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "@$UayL&d}x",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Asia::West",
+                "UH::Region::Europe::Southern",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Napoleon Bonaparte",
                 "French military leader; Emperor of the French; reshaped Europe during the Napoleonic Wars.",
                 "1769",
@@ -4053,8 +4543,8 @@
                 "",
                 "",
                 "Assassination of Archduke Franz Ferdinand (1914): event that drew Russia into World War I, which precipitated the collapse of Nicholas's regime",
-                "",
-                "",
+                "Execution of the Romanovs (1918): executed along with his wife Alexandra, five children, and four servants on July 17, 1918, by Bolsheviks at Yekaterinburg",
+                "February Revolution (1917): overthrown and forced to abdicate on March 15, 1917, ending the 300-year Romanov dynasty after massive protests and military mutinies",
                 "",
                 "",
                 "",
@@ -4144,6 +4634,85 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Paul von Hindenburg",
+                "German field marshal and hero of Tannenberg who became Chief of the General Staff and later President of the Weimar Republic",
+                "1847",
+                "1934",
+                "<img src=\"uh_paul-von-hindenburg.jpg\">",
+                "Erich Ludendorff (1865–1937): inseparable military partnership that dominated the German war effort; Hindenburg provided prestige and leadership while Ludendorff handled strategy and tactics",
+                "Wilhelm II (1859–1941): forced his abdication in November 1918, informing the Kaiser that the army would no longer support him",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Battle of Tannenberg (1914): commanded German forces to a crushing victory over Russia, becoming a national hero and establishing his legendary status",
+                "World War I (1914–1918): commanded German forces on the Eastern Front alongside Ludendorff, becoming a legendary figure after Tannenberg and later dominating German war strategy",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born October 2, 1847, in Posen, Prussia (now Poznań, Poland). Served in the Austro-Prussian War (1866) and Franco-Prussian War (1870–71). Retired in 1911 but recalled to active duty in August 1914. With Ludendorff, achieved a crushing victory over Russia at the Battle of Tannenberg (August 1914). Named the battle after the site of a 1410 Teutonic defeat for propaganda purposes. Appointed Chief of the General Staff in 1916, effectively becoming supreme commander of German forces. The Hindenburg-Ludendorff duo dominated German military and political affairs. Elected President of the Weimar Republic in 1925 and re-elected in 1932. Despite opposing the Nazis, appointed Hitler as Chancellor in January 1933. Died August 2, 1934. German: [paʊl fɔn ˈhɪndənbʊʁk]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Bundesarchiv_Bild_183-C06886,_Paul_v._Hindenburg_(cropped)(2).jpg\">Wikipedia</a> (CC BY-SA 3.0 DE)"
+            ],
+            "flags": 0,
+            "guid": "#sTrBz(J[W",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Philippe Pétain",
+                "French Marshal and hero of Verdun who rallied France with 'They shall not pass'; later led Vichy France",
+                "1856",
+                "1951",
+                "<img src=\"uh_philippe-pétain.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Battle of Verdun (1916–1916): organized the defense with his rallying cry 'Ils ne passeront pas' (They shall not pass), maintaining French morale and supply through the 10-month battle",
+                "World War I (1914–1918): defended Verdun in 1916, becoming a French national hero; later served as Commander-in-Chief and suppressed the 1917 mutinies with reforms",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born April 24, 1856, in Cauchy-à-la-Tour. Rose to prominence as commander of French forces at the Battle of Verdun (1916), one of history's longest and bloodiest battles. His rallying cry 'Ils ne passeront pas' ('They shall not pass') became a symbol of French resistance. Helped maintain French army morale during the mutinies of 1917. Made Marshal of France in 1918 and celebrated as a national hero. His later career was disastrous: at age 84, he became head of the Vichy regime (1940–1944), collaborating with Nazi Germany. After WWII, tried for treason and sentenced to death, commuted to life imprisonment by de Gaulle due to his age and WWI service. Died in prison on Île d'Yeu on July 23, 1951. His legacy remains deeply controversial in France. French: [filip petɛ̃]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Philippe_P%C3%A9tain_1941_Portrait_photograph.jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "9/gDf%)1Cr",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
             ]
         },
         {
@@ -4291,7 +4860,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -4440,7 +5009,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -4477,7 +5046,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -4514,7 +5083,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -4552,6 +5121,45 @@
             "tags": [
                 "UH::Period::Prehistory",
                 "UH::Region::Africa"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Theobald von Bethmann Hollweg",
+                "German Imperial Chancellor who issued the 'blank check' to Austria-Hungary and called Belgian neutrality a 'scrap of paper'",
+                "1856",
+                "1921",
+                "<img src=\"uh_theobald-von-bethmann-hollweg.jpg\">",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "July Crisis (1914): issued the 'blank check' assuring Germany's unconditional support for Austria-Hungary's action against Serbia, making war nearly inevitable",
+                "World War I (1914–1918): served as German Chancellor at the war's outbreak, issuing the 'blank check' to Austria-Hungary and later lamenting Belgium's violation as a 'scrap of paper'",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born November 29, 1856, into a successful commercial and agrarian family. Rose through the Prussian administration to become the youngest Landrat in Brandenburg (1886) and youngest Oberpräsident (1899). Appointed Chancellor by Wilhelm II in 1909 for his conciliatory political style. Initiated the July Crisis of 1914 with the 'blank check' to Austria-Hungary, assuring German support for action against Serbia. His description of Belgian neutrality as a 'scrap of paper' became notorious, especially in the United States. Opposed unrestricted submarine warfare but ultimately yielded to military pressure. Tried to secure US mediation in 1916, understanding that American entry would be decisive. Forced to resign on July 13, 1917, under pressure from Hindenburg and Ludendorff. Died of acute pneumonia on January 1, 1921, at his estate at Hohenfinow. German: [ˈteːobalt fɔn ˈbeːtman ˈhɔlveːk]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Theobald_von_Bethmann_Hollweg(cropped).jpg\">Wikipedia</a> (CC BY-SA 3.0)"
+            ],
+            "flags": 0,
+            "guid": "2BQ4F!^J+)",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -4699,7 +5307,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -4780,6 +5388,46 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Vladimir Lenin",
+                "Bolshevik revolutionary leader who led the October Revolution and founded the Soviet state",
+                "1870",
+                "1924",
+                "<img src=\"uh_vladimir-lenin.jpg\">",
+                "Leon Trotsky (1879–1940): revolutionary partners who led the Bolshevik seizure of power; Trotsky organized the military aspects of the October Revolution while Lenin provided political leadership",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Execution of the Romanovs (1918): led the Bolshevik government that ordered the execution in July 1918 to prevent the imperial family's rescue by the advancing White Army",
+                "February Revolution (1917): returned to Russia in April 1917 after the revolution via a sealed train provided by Germany, delivering the April Theses that called for soviet power",
+                "October Revolution (1917): led the Bolshevik seizure of power in Petrograd, establishing the world's first communist state",
+                "Russian Civil War (1917–1922): led the Bolshevik government throughout the civil war against White forces and foreign intervention",
+                "Treaty of Brest-Litovsk (1918): negotiated Russia's exit from WWI, accepting harsh German terms including loss of one-third of Russia's European population to consolidate Bolshevik power",
+                "",
+                "",
+                "",
+                "Born Vladimir Ilyich Ulyanov on April 22, 1870, in Simbirsk. Embraced revolutionary socialism after his older brother Aleksandr was executed in 1887 for plotting to assassinate Tsar Alexander III. Exiled to Siberia 1897–1900, then moved to Western Europe. Founded the Bolshevik faction after the 1903 party split. Returned to Russia in April 1917 via a sealed train provided by Germany. Signed the Treaty of Brest-Litovsk (1918) to exit WWI. Suffered strokes 1922–1923; died January 21, 1924. His embalmed body remains on display in Moscow's Red Square.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Lenin_in_1920_(cropped).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "M=7i/9[y5O",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Wilhelm I",
                 "King of Prussia and first German Emperor",
                 "1797",
@@ -4811,6 +5459,45 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Wilhelm II",
+                "Last German Kaiser who dismissed Bismarck, pursued Weltpolitik, and led Germany into WWI",
+                "1859",
+                "1941",
+                "<img src=\"uh_wilhelm-ii.jpg\">",
+                "Alfred von Tirpitz (1849–1930): appointed Tirpitz to build the Imperial Navy, supporting the massive naval expansion that triggered the arms race with Britain",
+                "Edward VII (1841–1910): nephew of Edward VII; Wilhelm's mother Victoria was Edward's sister; their strained relationship reflected growing Anglo-German rivalry",
+                "Otto von Bismarck (1815–1898): dismissed him in 1890, ending Bismarck's careful alliance diplomacy and ushering in the aggressive Weltpolitik that contributed to war tensions",
+                "Paul von Hindenburg (1847–1934): relied on Hindenburg and Ludendorff to run Germany's war effort from 1916, effectively sidelining himself from military decision-making",
+                "Theobald von Bethmann Hollweg (1856–1921): appointed him Chancellor in 1909 to replace Bülow; Bethmann Hollweg served until 1917, implementing the Kaiser's policies during the July Crisis",
+                "",
+                "",
+                "",
+                "Dismissal of Bismarck (1890): dismissed Bismarck in 1890, fundamentally changing German foreign policy from careful alliance diplomacy to aggressive Weltpolitik",
+                "July Crisis (1914): issued the 'blank check' through Chancellor Bethmann Hollweg, assuring Austria-Hungary of German support and making war nearly inevitable",
+                "World War I (1914–1918): led Germany into the war as Kaiser, bearing responsibility for its conduct through his erratic diplomacy and support for Austria-Hungary's ultimatum to Serbia",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born January 27, 1859, in Berlin. Eldest grandchild of Britain's Queen Victoria. Born with a withered left arm, which affected him psychologically. Became Kaiser in 1888 (the 'Year of Three Emperors'). Dismissed Bismarck in 1890 and pursued Weltpolitik ('world policy'), seeking to transform Germany into a global power. Oversaw massive naval expansion under Tirpitz, triggering an arms race with Britain. His erratic personality and diplomatic blunders contributed to pre-war tensions. Abdicated November 9, 1918, and fled to the Netherlands, where he lived in exile until his death. The Dutch refused to extradite him for war crimes trials. German: [ˈvɪlhɛlm]",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:Kaiser_Wilhelm_II_of_Germany_-_1902_(cropped).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "mSRhtY]GGd",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -4921,7 +5608,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -4995,7 +5682,7 @@
             "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -5034,6 +5721,45 @@
                 "UH::Period::18th_Century",
                 "UH::Region::Europe::Central",
                 "UH::Theme::Culture"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Woodrow Wilson",
+                "28th US President who led America into WWI and proposed the Fourteen Points and League of Nations",
+                "1856",
+                "1924",
+                "<img src=\"uh_woodrow-wilson.jpg\">",
+                "David Lloyd George (1863–1945): worked together at the Paris Peace Conference, with Wilson championing the League of Nations while Lloyd George balanced competing demands",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Paris Peace Conference (1919–1919): attended as US President, championing his Fourteen Points and the League of Nations, though facing resistance from European leaders",
+                "Treaty of Versailles (1919): advocated for the League of Nations and Fourteen Points at the Paris Peace Conference, though the US Senate ultimately refused to ratify the treaty",
+                "World War I (1914–1918): kept the US neutral until 1917, then brought American forces into the war, providing decisive resources and manpower for Allied victory",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Born December 28, 1856, in Staunton, Virginia. President of Princeton University before entering politics. Governor of New Jersey 1911–1913. Elected President in 1912. Re-elected in 1916 on the slogan 'He kept us out of war.' Asked Congress to declare war on Germany in April 1917 after unrestricted submarine warfare resumed. Presented the Fourteen Points to Congress in January 1918, outlining principles for a just peace including self-determination and the League of Nations. Won the Nobel Peace Prize (1919). The US Senate refused to ratify the Treaty of Versailles, and America never joined the League. Suffered a massive stroke in October 1919, leaving him incapacitated. Died February 3, 1924. Buried at Washington National Cathedral, the only president interred in the capital.",
+                "",
+                "Claude Sonnet 4.5<br><br>Image: <a href=\"https://en.wikipedia.org/wiki/File:President_Woodrow_Wilson_Harris_%26_Ewing_(3x4_cropped_b).jpg\">Wikipedia</a> (Public domain)"
+            ],
+            "flags": 0,
+            "guid": "N+XYdW{+]B",
+            "note_model_uuid": "61d8a7c6-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Period::20th_Century",
+                "UH::Region::Americas::North",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -5143,7 +5869,45 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Anglo-Russian Entente",
+                "Agreement between Britain and Russia settling colonial disputes and completing the Triple Entente with France",
+                "1907",
+                "1907",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Signed August 31, 1907. Settled long-standing colonial rivalries over Persia (divided into spheres of influence), Afghanistan (recognized as British sphere), and Tibet (both to respect Chinese sovereignty). Combined with the Franco-Russian Alliance (1894) and the Entente Cordiale (1904), it completed the Triple Entente, aligning Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy. The agreement reflected shared concerns about German power.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "5CY9pl$ryu",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -5216,7 +5980,45 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Armistice of 11 November 1918",
+                "Armistice ending WWI, signed at 5 am and taking effect at 11 am on the 11th day of the 11th month",
+                "1918",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Paris Peace Conference (1919–1919): ended hostilities and began the peace negotiations that would reshape Europe and establish the League of Nations",
+                "World War I (1914–1918): 00 on November 11, 1918, concluding four years of unprecedented carnage",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Signed at 5:00 am on November 11, 1918, in a railroad car in the Forest of Compiègne, France. Came into effect at 11:00 am—the 11th hour of the 11th day of the 11th month. Germany agreed to: cease hostilities, withdraw from invaded countries, surrender arms and military equipment, hand over submarines and naval vessels, evacuate the Rhineland. Fighting continued until 11:00 am; soldiers died in the final minutes. The armistice was effectively a German surrender, though not technically a capitulation. The war formally ended with the Treaty of Versailles (June 28, 1919). November 11 is commemorated annually as Armistice Day, Remembrance Day, or Veterans Day in many countries. Services include a moment of silence at 11:00 am.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "X=9Iwc<W3j",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe",
+                "UH::Region::Global",
+                "UH::Theme::War"
             ]
         },
         {
@@ -5272,10 +6074,10 @@
                 "",
                 "",
                 "Austro-Hungarian Compromise (1867): Established the dual monarchy that Franz Ferdinand would have inherited.",
+                "July Crisis (1914): triggered the diplomatic crisis when Austria-Hungary used the assassination to present an ultimatum to Serbia designed to be unacceptable",
                 "Scramble for Africa (1881–1914): Period of imperial competition that contributed to European tensions.",
                 "Victorian Era (1837–1901): Late Victorian era context of European power politics.",
-                "",
-                "",
+                "World War I (1914–1918): the immediate trigger for WWI; Austria-Hungary used the assassination to issue an ultimatum to Serbia that led to war declarations",
                 "",
                 "",
                 "",
@@ -5367,6 +6169,81 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Balkan Wars",
+                "Two wars that expelled the Ottoman Empire from European territory, enlarged Serbia, and increased tensions with Austria-Hungary",
+                "1912",
+                "1913",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): destabilized the region and significantly enlarged Serbia, alarming Austria-Hungary and creating the conditions for the assassination of Franz Ferdinand",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "The First Balkan War (October 1912–May 1913) pitted the Balkan League (Greece, Serbia, Montenegro, Bulgaria) against the Ottoman Empire. The Ottomans suffered catastrophic defeat, losing 83% of their European territories. The Treaty of London (May 1913) ended the war and created independent Albania. The Second Balkan War (June–August 1913) erupted when Bulgaria attacked its former allies, dissatisfied with its territorial gains. Bulgaria was defeated by Serbia, Greece, Romania, and the Ottoman Empire. The Treaty of Bucharest (August 1913) significantly enlarged Serbia. Austria-Hungary, alarmed by Serbia's growth, became increasingly determined to crush it. The wars were a direct prelude to WWI—as one historian noted, 'The First World War was not the Third Balkan War; rather the Balkan Wars were the beginning of the First World War.'",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "j~s^W6]k2D",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Southern",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Battle of Tannenberg",
+                "Decisive German victory over Russia in East Prussia that established Hindenburg as a national hero and destroyed the Russian Second Army",
+                "1914",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): early German victory on the Eastern Front that established Hindenburg and Ludendorff's reputations, though it couldn't prevent Russia's eventual mobilization",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fought August 26–30, 1914, in East Prussia (now Poland). The Russian Second Army under General Aleksandr Samsonov invaded East Prussia but was encircled by the German Eighth Army under Hindenburg and Ludendorff. Key to German success was Russian carelessness in sending orders unencrypted by radio, allowing the Germans to read Russian plans. Over 30,000 Russians were killed and 92,000 captured; Germans lost 13,000. Samsonov committed suicide. Hindenburg named the battle after Tannenberg to avenge the 1410 defeat of the Teutonic Order at nearby Grunwald. No Russian army entered German territory again until 1945.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "d<2Li}]^1K",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Battle of Trafalgar",
                 "Decisive British naval victory over combined French-Spanish fleet; established British naval supremacy for over a century but resulted in Admiral Nelson's death.",
                 "1805",
@@ -5403,6 +6280,43 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Battle of Verdun",
+                "One of WWI's longest and bloodiest battles; symbol of French determination with rallying cry 'They shall not pass'",
+                "1916",
+                "1916",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): longest battle of the war; Germany's attempt to 'bleed France white' failed but inflicted massive casualties on both sides",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fought February 21–December 18, 1916, near Verdun, France. German Chief of Staff Erich von Falkenhayn intended to 'bleed France white' by attacking a position the French would defend at all costs. The battle became an apocalyptic struggle of attrition. Philippe Pétain organized the defense and maintained supply via the 'Voie Sacrée' (Sacred Way). His rallying cry 'Ils ne passeront pas' ('They shall not pass') became legendary. Combined casualties exceeded 700,000 (approximately 377,000 French, 337,000 German). The battle ended essentially in a stalemate with minimal territorial changes but became a symbol of French determination and the war's senseless carnage.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "oLTdQ%$A*+",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Battle of Waterloo",
                 "Napoleon's final defeat by Wellington and Blücher; ended the Hundred Days and the Napoleonic Wars.",
                 "1815",
@@ -5433,6 +6347,81 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Battle of the Somme",
+                "Massive Anglo-French offensive; first day was bloodiest in British military history; introduced tanks to warfare",
+                "1916",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Battle of Verdun (1916–1916): launched partly to relieve German pressure on Verdun; the two battles ran concurrently in 1916, draining both sides' resources",
+                "World War I (1914–1918): massive Anglo-French offensive that exemplified the war's industrial slaughter with over one million casualties for minimal territorial gains",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fought July 1–November 18, 1916, along the Somme River in France. The initial artillery bombardment failed to destroy German defenses or barbed wire. The first day (July 1, 1916) saw nearly 57,500 British casualties including approximately 19,240 killed—the bloodiest single day in British military history. By the battle's end: British casualties approximately 420,000, French approximately 200,000, German approximately 450,000–600,000. Gains were minimal—about 6 miles at the deepest point. Tanks were introduced to warfare on September 15, 1916. The battle exemplifies WWI's industrial slaughter and remains synonymous with futile carnage. Commander Douglas Haig's reputation never recovered in the public eye, though historians continue to debate whether the casualties were avoidable.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "kT26UC^yC&",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Bosnian Crisis",
+                "Crisis triggered by Austria-Hungary's annexation of Bosnia that humiliated Russia and Serbia, poisoning Balkan relations",
+                "1908",
+                "1909",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "July Crisis (1914): created deep tensions and humiliation for Russia and Serbia that made them determined not to back down in 1914, directly contributing to the outbreak of war",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "On October 5, 1908, Austria-Hungary announced the annexation of Bosnia and Herzegovina, which it had administered since 1878. Serbia, with close ethnic ties to Bosnia's Serbs, was outraged and mobilized its army. Russia supported Serbia but was forced to back down when Germany issued an ultimatum in March 1909. The crisis was a major humiliation for Russia and Serbia, fueling pan-Slavic nationalism and resentment toward Austria-Hungary. It directly contributed to the tensions that would explode in 1914.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "7w2J8>&En3",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Region::Europe::Southern",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -5541,7 +6530,7 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -5657,6 +6646,79 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Dismissal of Bismarck",
+                "Kaiser Wilhelm II forced Chancellor Bismarck to resign, ending his alliance system and initiating Weltpolitik",
+                "1890",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "July Crisis (1914): ended Bismarck's alliance system two decades earlier, allowing the rigid alliance blocs that made the July Crisis spiral into world war",
+                "World War I (1914–1918): ended the alliance system that had preserved European peace, allowing the Reinsurance Treaty with Russia to lapse and contributing to the alliance tensions that led to war",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "On March 18, 1890, Wilhelm II compelled Bismarck to resign after conflicts over domestic and foreign policy. Bismarck had maintained European peace through a complex alliance system, including the secret Reinsurance Treaty with Russia. Wilhelm's government allowed the treaty to lapse, pushing Russia toward France. The new 'Weltpolitik' sought to make Germany a world power through colonial expansion and naval buildup, leading to conflicts with Britain and contributing to the alliance system that would lead to WWI.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": ")&ssh0)0^6",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Emancipation Proclamation (Proclamation 95)",
+                "Presidential proclamation issued by Lincoln declaring freedom for enslaved people in Confederate states; transformed the Civil War into a war to end slavery and enabled Black soldiers to join Union forces.",
+                "1863",
+                "",
+                "Abraham Lincoln (1809–1865): President who issued the proclamation as a war measure.",
+                "Frederick Douglass (1818–1895): Leading abolitionist who advocated for the proclamation and Black military service.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "American Civil War (1861–1865): Issued during the war, transformed its purpose to include ending slavery.",
+                "Thirteenth Amendment to the US Constitution (1865): Completed the work by permanently abolishing slavery.",
+                "Victorian Era (1837–1901): Contemporary period.",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Issued January 1, 1863. Declared free all enslaved people in rebellious states. Did not apply to border states or areas under Union control. Enabled nearly 200,000 Black soldiers and sailors to fight for the Union. Prevented European intervention on behalf of Confederacy by making the war about ending slavery.",
+                "",
+                "Claude Sonnet 4.5"
+            ],
+            "flags": 0,
+            "guid": "lPQ-3ml4$7",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::19th_Century",
+                "UH::Region::Americas::North"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Emancipation of the Serfs",
                 "Alexander II freed over 23 million Russian serfs, granting them rights of free citizens; major modernization reform prompted by Crimean War defeat.",
                 "1861",
@@ -5693,36 +6755,38 @@
             "__type__": "Note",
             "data": "",
             "fields": [
-                "Emancipation Proclamation (Proclamation 95)",
-                "Presidential proclamation issued by Lincoln declaring freedom for enslaved people in Confederate states; transformed the Civil War into a war to end slavery and enabled Black soldiers to join Union forces.",
-                "1863",
-                "",
-                "Abraham Lincoln (1809–1865): President who issued the proclamation as a war measure.",
-                "Frederick Douglass (1818–1895): Leading abolitionist who advocated for the proclamation and Black military service.",
+                "Execution of the Romanovs",
+                "Tsar Nicholas II and his family were executed by Bolsheviks at Yekaterinburg",
+                "1918",
                 "",
                 "",
                 "",
                 "",
                 "",
                 "",
-                "American Civil War (1861–1865): Issued during the war, transformed its purpose to include ending slavery.",
-                "Thirteenth Amendment to the US Constitution (1865): Completed the work by permanently abolishing slavery.",
-                "Victorian Era (1837–1901): Contemporary period.",
+                "",
+                "",
+                "",
+                "February Revolution (1917): Nicholas II's overthrow in the revolution led to his family's imprisonment, setting the stage for their eventual execution",
+                "October Revolution (1917): the Bolshevik seizure of power placed the Romanovs under increasingly harsh Bolshevik control, culminating in their execution",
+                "Russian Civil War (1917–1922): occurred during the civil war when Bolsheviks feared the advancing White Army might rescue the imperial family and use them as a rallying symbol",
                 "",
                 "",
                 "",
                 "",
                 "",
-                "Issued January 1, 1863. Declared free all enslaved people in rebellious states. Did not apply to border states or areas under Union control. Enabled nearly 200,000 Black soldiers and sailors to fight for the Union. Prevented European intervention on behalf of Confederacy by making the war about ending slavery.",
+                "On July 17, 1918, Nicholas II, his wife Alexandra, their five children (Olga, Tatiana, Maria, Anastasia, and Alexei), and four servants were shot in the basement of the Ipatiev House in Yekaterinburg. The execution was ordered by the Ural Soviet amid fears that the advancing White Army might rescue them. Bodies were mutilated and hidden. The execution ended the Romanov dynasty. For decades, rumors persisted that some family members had escaped (especially Anastasia). In 1991, most remains were found and identified by DNA testing; the final two bodies (Alexei and Maria) were found in 2007. The Romanovs were canonized as martyrs by the Russian Orthodox Church in 2000.",
                 "",
-                "Claude Sonnet 4.5"
+                ""
             ],
             "flags": 0,
-            "guid": "lPQ-3ml4$7",
+            "guid": "x]{xMb>^xe",
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
-                "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -5801,6 +6865,81 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "February Revolution",
+                "Russian revolution that overthrew Tsar Nicholas II and established the Provisional Government",
+                "1917",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "October Revolution (1917): created unstable conditions with dual power between the Provisional Government and Petrograd Soviet that the Bolsheviks exploited to seize control",
+                "World War I (1914–1918): Russia's military failures and war exhaustion triggered mass protests that overthrew the tsar and destabilized the Eastern Front",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Began March 8, 1917 (February 23 Old Style), in Petrograd with demonstrations by workers and women demanding bread. Soldiers refused to fire on crowds and joined the protesters. The Duma defied the tsar's order to dissolve. Nicholas II abdicated on March 15, ending the 300-year Romanov dynasty. A Provisional Government was formed under Prince Lvov (later Kerensky), sharing power uneasily with the Petrograd Soviet. The Provisional Government's decision to continue the war proved fatally unpopular. Lenin returned from exile in April. Russia's war effort collapsed amid desertion and mutiny, setting the stage for the October Revolution.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "qq4$3V(yDT",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "First Battle of the Marne",
+                "Allied victory that halted the German advance on Paris, ended hopes of quick German victory, and led to trench warfare",
+                "1914",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): ended German hopes of quick victory through the Schlieffen Plan, leading to four years of static trench warfare on the Western Front",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fought September 5–12, 1914, along the Marne River east of Paris. The German armies, following a modified Schlieffen Plan, had advanced rapidly through Belgium and into France. The French and British counterattacked, exploiting a gap between two German armies. Famously, Paris taxi cabs ferried troops to the front. The German retreat ended hopes of a quick victory through the Schlieffen Plan. Both sides dug trenches, beginning four years of trench warfare on the Western Front. The failure led to Moltke the Younger's replacement as Chief of Staff.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "4Te+tu>2N>",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "First International",
                 "First international organization uniting socialist and labor movements; founded by Marx and others, dissolved after splits between communists and anarchists.",
                 "1864",
@@ -5831,6 +6970,44 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "First Moroccan Crisis",
+                "Crisis triggered by Kaiser Wilhelm II's Tangier visit that strengthened the Anglo-French Entente",
+                "1905",
+                "1906",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "On March 31, 1905, Kaiser Wilhelm II landed at Tangier and declared support for Moroccan independence, challenging French influence. Germany's real aim was to break the new Anglo-French Entente. The crisis backfired: the Algeciras Conference (1906) upheld French claims and diplomatically isolated Germany. The crisis strengthened rather than weakened Anglo-French ties and demonstrated the dangers of German provocations.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "}A^>X<}HrO",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Africa::North",
+                "UH::Region::Europe::Western",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -5984,6 +7161,81 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Gallipoli Campaign",
+                "Failed Allied attempt to capture Constantinople by forcing the Dardanelles; Ottoman victory that launched Mustafa Kemal's career",
+                "1915",
+                "1916",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): failed Allied attempt to open a southern route to Russia and knock the Ottoman Empire out of the war, resulting in costly stalemate and evacuation",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "The campaign began with a naval attack on February 19, 1915, and land invasions on April 25, 1915. The Allies (primarily Britain, France, Australia, and New Zealand) sought to knock the Ottoman Empire out of the war and open a supply route to Russia. The campaign was a disaster: Allied forces were pinned down on beaches facing determined Ottoman defenders. Mustafa Kemal (later Atatürk) emerged as a hero, helping repulse the landings at Anzac Cove and later commanding at crucial points. Allied casualties exceeded 250,000; Ottoman losses were similar. The evacuation was completed by January 9, 1916—ironically, the most successful part of the operation. April 25 is commemorated as Anzac Day in Australia and New Zealand.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "7u]jK{*OQJ",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia::West",
+                "UH::Region::Europe::Southern",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "German Spring Offensive",
+                "Germany's last major offensive on the Western Front; initial successes but ultimate failure led to armistice",
+                "1918",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Armistice of 11 November 1918 (1918): its failure exhausted German reserves and made defeat inevitable, leading Ludendorff to demand an armistice on September 29, 1918",
+                "World War I (1914–1918): Germany's last major offensive used troops freed from the Eastern Front but ultimately failed, leading to the Allied Hundred Days Offensive and German defeat",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Series of German attacks from March 21–July 18, 1918. With Russia out of the war (Treaty of Brest-Litovsk) and American forces arriving, Ludendorff launched a final attempt to win before US strength became decisive. Using new stormtrooper tactics, Germans made their largest territorial gains since 1914, advancing 40 miles in places. Paris was shelled by long-range artillery. But Germany lacked reserves to exploit breakthroughs, and each offensive weakened their exhausted army. The crisis led to the appointment of Foch as Supreme Allied Commander. By July, the offensive had failed at enormous cost, and the Hundred Days Offensive began the Allied advance to victory. On September 29, 1918, Ludendorff demanded an armistice.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "#}zjr={bHt",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Western",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Great Exhibition",
                 "First world's fair showcasing industrial and cultural achievements; held in the Crystal Palace and attracted 6 million visitors.",
                 "1851",
@@ -6129,6 +7381,44 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "July Crisis",
+                "Diplomatic crisis following Franz Ferdinand's assassination that led to WWI outbreak within one month",
+                "1914",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Assassination of Archduke Franz Ferdinand (1914): the diplomatic crisis directly triggered by the assassination as Austria-Hungary sought to punish Serbia",
+                "World War I (1914–1918): alliance obligations transformed the assassination of Franz Ferdinand into a continental war as Russia mobilized for Serbia, Germany for Austria, and France for Russia",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Following the assassination of Archduke Franz Ferdinand on June 28, 1914, Austria-Hungary presented Serbia with an ultimatum on July 23, designed to be unacceptable. Germany provided a 'blank check' of support. Serbia accepted most demands but Austria-Hungary declared war on July 28. Russia mobilized in defense of Serbia. Germany declared war on Russia (August 1) and France (August 3), then invaded Belgium. Britain declared war on Germany (August 4) when Belgian neutrality was violated. Within weeks, Europe's alliance system had transformed a Balkan assassination into a world war.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "q(X7gZ]C(&",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Marcomannic Wars",
                 "Series of wars fought by Marcus Aurelius against Germanic tribes along the Danube frontier",
                 "166",
@@ -6203,6 +7493,44 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "October Revolution",
+                "Bolshevik seizure of power in Russia that established the world's first communist state under Lenin",
+                "1917",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Russian Civil War (1917–1922): sparked the struggle between Bolshevik Red forces and anti-Bolshevik White forces backed by foreign intervention",
+                "Treaty of Brest-Litovsk (1918): Bolshevik need to consolidate power and end the war led Lenin to accept harsh German terms, surrendering vast territories",
+                "World War I (1914–1918): took Russia out of the war through the Treaty of Brest-Litovsk, freeing German forces to transfer west for the Spring Offensive",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Occurred October 25–26, 1917 (November 7–8, New Style) in Petrograd. Lenin and the Bolsheviks had been preparing since September, when they gained a majority in the Petrograd Soviet (Trotsky became chairman). The Military Revolutionary Committee organized the seizure of key points. Red Guards and revolutionary soldiers and sailors took control of government buildings, the telegraph office, bridges, and train stations in a largely bloodless coup. The Winter Palace was stormed that night, and the Provisional Government ministers were arrested (Kerensky escaped). Power was transferred to the soviets with Lenin as chairman of the new government. The revolution led to the Russian Civil War (1917–1922), establishment of the Soviet Union, withdrawal from WWI via the Treaty of Brest-Litovsk, and decades of communist rule.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "+EkS[2&}Le",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Paris Commune",
                 "Radical socialist government that briefly ruled Paris.",
                 "1871",
@@ -6233,6 +7561,44 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Paris Peace Conference",
+                "Conference of Allied powers that produced the Treaty of Versailles and redrew the map of Europe",
+                "1919",
+                "1919",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Treaty of Versailles (1919): produced the final peace treaty with Germany, imposing harsh terms including war guilt, reparations, and territorial losses",
+                "World War I (1914–1918): gathered victorious Allied powers to establish peace terms and reshape the post-war world order",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Opened January 18, 1919, at the Palace of Versailles, exactly 48 years after the German Empire was proclaimed in the same Hall of Mirrors. Dominated by the 'Big Four': Clemenceau (France), Lloyd George (Britain), Wilson (USA), and Orlando (Italy). Germany and the other Central Powers were excluded from negotiations. Wilson pushed for his Fourteen Points and League of Nations; Clemenceau demanded security guarantees and punishment of Germany; Lloyd George sought a middle path. The conference produced treaties with all Central Powers, created the League of Nations, and established new nations including Poland, Czechoslovakia, and Yugoslavia. The conference's decisions—especially the harsh treatment of Germany—sowed seeds for future conflicts.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "KitPcK$NQC",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe",
+                "UH::Region::Global",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -6343,7 +7709,7 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -6453,6 +7819,121 @@
             "tags": [
                 "UH::Period::19th_Century",
                 "UH::Region::Europe"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Russian Civil War",
+                "War between the Bolshevik Red Army and anti-Bolshevik White forces; Red victory established Soviet rule",
+                "1917",
+                "1922",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Treaty of Brest-Litovsk (1918): Germany's defeat in WWI nullified the treaty, but the civil war prevented Russia from reclaiming all lost territories",
+                "World War I (1914–1918): emerged from Russia's withdrawal from WWI and the Bolshevik Revolution, with Allied powers intervening against the Reds",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Began in late 1917 following the October Revolution. The Red Army (Bolsheviks, led by Trotsky) fought the White Army (a loose coalition of monarchists, liberals, moderate socialists, and nationalists). Foreign powers (Britain, France, USA, Japan, and others) intervened on the White side, providing money, arms, and troops. The war was fought across the vast territory of the former Russian Empire. Both sides committed atrocities; famine and disease killed millions of civilians. Trotsky organized the Red Army into an effective fighting force. The Red victory was complete by 1922; the Soviet Union was formally established in December 1922. The war caused an estimated 7–12 million deaths (mostly civilians from famine and disease) and devastated the Russian economy.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "{>U@]C&+@h",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Russian Revolution of 1905",
+                "Revolutionary wave triggered by Bloody Sunday that forced Tsar Nicholas II to grant constitutional reforms including the Duma",
+                "1905",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "February Revolution (1917): first warning of the regime's fragility, establishing patterns of worker soviets and military mutiny that would culminate in the 1917 revolutions",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Began with Bloody Sunday (January 22, 1905), when troops fired on peaceful demonstrators led by Father Georgy Gapon at the Winter Palace, killing over 100 (estimates vary widely). The massacre destroyed the image of the tsar as the people's protector. Strikes spread throughout Russia; the battleship Potemkin mutinied in June. The St. Petersburg Soviet was formed in October with Trotsky eventually becoming chairman. On October 17, the tsar issued the October Manifesto, promising civil liberties and an elected legislature (Duma). By early 1906, the government regained control—15,000 were executed or shot, 45,000 exiled. Though the revolution failed, it was a crucial precursor to 1917.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "iF&Fqh^0A@",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics",
+                "UH::Theme::Society"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Russo-Japanese War",
+                "War between Russia and Japan over Manchuria and Korea; first modern defeat of a European power by an Asian nation",
+                "1904",
+                "1905",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Russian Revolution of 1905 (1905): military defeat exposed the regime's weakness and incompetence, sparking revolutionary unrest that forced the tsar to grant constitutional concessions",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Fought from February 8, 1904, to September 5, 1905. Japan initiated the war with a surprise attack on Port Arthur. Major battles included the siege of Port Arthur, the Battle of Mukden (the largest land battle before WWI), and the naval Battle of Tsushima, where Japan destroyed almost the entire Russian Baltic Fleet. Ended by the Treaty of Portsmouth, brokered by President Theodore Roosevelt (who won the Nobel Peace Prize for this). Japan gained recognition of its interests in Korea, the southern half of Sakhalin, and leases in Manchuria. Russia's defeat exposed the regime's weakness, contributing to the 1905 Revolution and ultimately the revolutions of 1917.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "WvK8sD*EkO",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Asia::East",
+                "UH::Theme::War"
             ]
         },
         {
@@ -6677,6 +8158,45 @@
             "__type__": "Note",
             "data": "",
             "fields": [
+                "Second Moroccan Crisis",
+                "Crisis when Germany sent the gunboat Panther to Agadir; resolved with France gaining Morocco and Germany receiving Congo territory",
+                "1911",
+                "1911",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "In April 1911, France sent troops into Morocco, violating the 1906 Algeciras agreement. Germany responded by sending the gunboat SMS Panther to Agadir on July 1, 1911, ostensibly to protect German interests. The crisis sparked war fears; Britain made preparations for potential conflict. The convention of November 4, 1911, resolved the crisis: France gained a protectorate over Morocco while Germany received territory in the French Congo. The crisis further hardened the alliance system and increased the sense that a general European war was inevitable.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "9&0EN*>y@Y",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Africa::Central",
+                "UH::Region::Africa::North",
+                "UH::Region::Europe::Western",
+                "UH::Theme::Politics"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
                 "Second Schleswig War",
                 "War between Denmark and Prussia-Austria over Schleswig-Holstein; Denmark's defeat led to major territorial losses and strengthened Prussia.",
                 "1864",
@@ -6816,7 +8336,84 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Treaty of Brest-Litovsk",
+                "Peace treaty where Soviet Russia surrendered vast territories to the Central Powers to exit WWI",
+                "1918",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "German Spring Offensive (1918): freed German divisions from the Eastern Front, enabling Ludendorff's final offensive attempt on the Western Front",
+                "World War I (1914–1918): ended Russia's participation in the war on harsh German terms, allowing Germany to concentrate forces on the Western Front",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Signed March 3, 1918. Lenin, facing a collapsing army and the imperative to consolidate Bolshevik power, accepted harsh German terms. Russia lost approximately one-third of its European population, one-third of its agricultural land, half its industrial capacity, and nearly all its coal and iron deposits. Finland, the Baltic states, Poland, Belarus, and Ukraine were separated from Russia. Trotsky initially tried to delay ('no war, no peace'), but German advances forced acceptance. The treaty freed German forces for the 1918 Spring Offensive but caused resentment and was voided by the Armistice. It demonstrated the ruthlessness of German war aims and influenced the harshness of the Versailles Treaty.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "]X>]zB=%+S",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe::Central",
+                "UH::Region::Europe::Eastern",
+                "UH::Theme::Politics",
+                "UH::Theme::War"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "Treaty of Versailles",
+                "Peace treaty ending WWI that imposed harsh terms on Germany including war guilt, reparations, territorial losses, and military restrictions",
+                "1919",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "World War I (1914–1918): formally ended the war with Germany, imposing harsh terms that shaped interwar Europe and contributed to future instability",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Signed June 28, 1919, in the Hall of Mirrors at the Palace of Versailles—exactly five years after Franz Ferdinand's assassination. Key terms: Article 231 (the 'war guilt clause') made Germany solely responsible for the war; Germany lost 13% of its territory and 10% of its population (Alsace-Lorraine to France, West Prussia and Posen to Poland, all colonies); the Rhineland was demilitarized; the German army was limited to 100,000 men with no conscription, tanks, or air force; the navy was restricted to 15,000 men and no submarines; reparations were set at 132 billion gold marks (£6.6 billion, equivalent to ~£284 billion in 2021); union with Austria (Anschluss) was prohibited; the League of Nations was established. Germans viewed the treaty as a 'Diktat' (dictated peace) and national humiliation. The treaty's harshness and the failure to enforce it consistently contributed to Hitler's rise and World War II. Foch reportedly said: 'This is not a peace. It is an armistice for twenty years'—WWI ended in 1918; WWII began in 1939.",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "0zJN6&(z%v",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Europe",
+                "UH::Region::Global",
+                "UH::Theme::Politics"
             ]
         },
         {
@@ -6924,7 +8521,7 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         },
         {
@@ -6960,7 +8557,7 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -7032,9 +8629,46 @@
             "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
             "tags": [
                 "UH::Period::19th_Century",
+                "UH::Region::Americas::South",
                 "UH::Region::Europe",
-                "UH::Region::Oceania",
-                "UH::Region::South_America"
+                "UH::Region::Oceania"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "data": "",
+            "fields": [
+                "World War I",
+                "Global conflict between Allied and Central Powers that killed 9 million soldiers and ended four empires",
+                "1914",
+                "1918",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Began July 28, 1914, when Austria-Hungary declared war on Serbia, triggering a cascade of alliance obligations. The Central Powers (Germany, Austria-Hungary, Ottoman Empire, Bulgaria) fought the Allied Powers (France, Britain, Russia, Italy, Japan, USA, and others). The war introduced trench warfare, poison gas, tanks, submarines, and aircraft on a massive scale. Major fronts included the Western Front (France/Belgium), Eastern Front (Russia), Italian Front, Balkans, Middle East, and colonial theaters. The war killed approximately 9 million soldiers and 21 million wounded, plus 5+ million civilian deaths from disease, starvation, and exposure. Four imperial dynasties collapsed: the Habsburgs, Hohenzollerns, Ottomans, and Romanovs. Ended with the Armistice of November 11, 1918, and formally concluded by the Treaty of Versailles (June 28, 1919).",
+                "",
+                ""
+            ],
+            "flags": 0,
+            "guid": "BqKaH8})pF",
+            "note_model_uuid": "61d8b298-ceb4-11f0-8661-6154742e1518",
+            "tags": [
+                "UH::Period::20th_Century",
+                "UH::Region::Global",
+                "UH::Theme::War"
             ]
         },
         {
@@ -7118,7 +8752,7 @@
             "note_model_uuid": "909dc8e2-d022-11f0-b0c0-bf12fd7e12f7",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::North_America"
+                "UH::Region::Americas::North"
             ]
         },
         {
@@ -7228,7 +8862,7 @@
             "note_model_uuid": "909dcbb2-d022-11f0-b0c0-bf12fd7e12f7",
             "tags": [
                 "UH::Period::19th_Century",
-                "UH::Region::South_America"
+                "UH::Region::Americas::South"
             ]
         }
     ]
