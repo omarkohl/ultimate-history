@@ -37,7 +37,7 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
    uv run main.py bump-version
    ```
 
-2. Update [CHANGELOG.md](../CHANGELOG.md) with the release notes and commit the changes
+2. Update [CHANGELOG.md](../CHANGELOG.md) with the release notes and update [ankiweb-description.md](ankiweb-description.md) with the new version and a summary of changes, then commit
 
 3. Run `uv run main.py sync`
 
@@ -65,7 +65,7 @@ uv run main.py list-relationships --search "Napoleon"   # Filter by search term
     `Ultimate_History.apkg`. Copy the relevant changelog parts from
     [CHANGELOG.md](../CHANGELOG.md).
 
-11. Go to https://ankiweb.net/decks and share the deck. Update the version number in the description.
+11. Go to https://ankiweb.net/decks and share the deck. Copy the description from [ankiweb-description.md](ankiweb-description.md) (update it first with the latest version and changes).
 
 12. Bump the version to the next `-dev` by repeating steps 1-3.
 

@@ -9,6 +9,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Nothing yet._
 
+## [0.4.0] - 2026-01-20
+
+### Added
+- Ancient Rome: Marcus Aurelius, Antoninus Pius, Lucius Verus, Faustina the Younger, Lucilla, Bruttia Crispina, Commodus, Epictetus, Pax Romana, Antonine Plague, Marcomannic Wars
+- Classical composers: Wolfgang Amadeus Mozart, Franz Schubert
+- WWI: World War I, Battle of Tannenberg, First Battle of the Marne, Battle of Verdun, Battle of the Somme, Gallipoli Campaign, German Spring Offensive (Kaiserschlacht), Armistice of 11 November 1918
+- WWI leaders: Wilhelm II, Theobald von Bethmann Hollweg, Erich von Falkenhayn, Paul von Hindenburg, Erich Ludendorff, Helmuth von Moltke the Younger, Alfred von Tirpitz, Ferdinand Foch, Philippe Pétain, Douglas Haig, David Lloyd George, Georges Clemenceau, Woodrow Wilson, John J. Pershing, Gavrilo Princip
+- WWI diplomatic buildup: Franco-Russian Alliance (1894), Entente Cordiale (1904), Anglo-Russian Entente (1907), First Moroccan Crisis, Bosnian Crisis, Second Moroccan Crisis, Balkan Wars, July Crisis
+- Russian Revolution: Russian Revolution of 1905, February Revolution, October Revolution, Vladimir Lenin, Leon Trotsky, Alexander Kerensky, Alexandra Feodorovna (Alix of Hesse), Grigori Rasputin, Treaty of Brest-Litovsk, Russian Civil War, Execution of the Romanovs
+- Post-WWI: Paris Peace Conference, Treaty of Versailles, Mustafa Kemal Atatürk
+- Early 20th century diplomacy: Edward VII, Russo-Japanese War, Dismissal of Bismarck
+- Pronunciations for many names
+
+### Changed
+- Improved relationships for many existing persons and events
+- Cleaned up region tags (consolidated Americas regions)
+
+### Development
+- Neo4j integration improvements: tag support, picture field support
+- Enhanced entity-manager skill documentation
+- Added historical accuracy policy
+- Added ADR explaining Neo4j choice
+
 ## [0.3.0] - 2025-12-31
 
 ### Added
@@ -54,7 +77,8 @@ _Nothing yet._
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/omarkohl/ultimate-history/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/omarkohl/ultimate-history/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/omarkohl/ultimate-history/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/omarkohl/ultimate-history/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/omarkohl/ultimate-history/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/omarkohl/ultimate-history/compare/v0.1.0...v0.2.0
