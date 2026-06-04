@@ -2,7 +2,7 @@
 
 Contributions are welcome! You can help by adding new historical figures and events, or improving existing cards.
 
-Note that this guide refers exclusively to modifying the content of the cards, for example fix an incorrect birth date, rewrite the summary of a historical event or add a new historical person. For larger or structural changes see the "Development" section of the main [README.md](../README.md).
+Note that this guide refers exclusively to modifying the content of the cards, for example fix an incorrect birth date, rewrite the summary of a historical event or add a new historical person. For larger or structural changes see the [development guide](docs/development.md).
 
 ## Two Ways to Contribute
 

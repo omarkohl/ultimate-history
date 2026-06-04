@@ -29,7 +29,7 @@ See [docs/learning.md](docs/learning.md) for recommendations on how to study eff
 
 ## Contributing
 
-Want to add historical figures, events, or improve existing cards? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on how to contribute.
+Want to add historical figures, events, or improve existing cards? See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
 
 ## Changelog
 
